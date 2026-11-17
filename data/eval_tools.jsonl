@@ -1,0 +1,20 @@
+{"q": "show my open pull requests", "accept": ["gh pr list", "gh pr list --author '@me'", "gh pr list --author @me", "gh pr status"]}
+{"q": "list pods in every namespace", "accept": ["kubectl get pods -A", "kubectl get pods --all-namespaces"]}
+{"q": "add httpx to the project", "accept": ["uv add httpx"]}
+{"q": "make a virtual env", "accept": ["uv venv"]}
+{"q": "follow logs of the web service in compose", "accept": ["docker compose logs -f web"]}
+{"q": "which models are loaded in ollama", "accept": ["ollama ps"]}
+{"q": "how much gpu memory is used", "accept": ["nvidia-smi --query-gpu=memory.used,memory.total --format=csv", "nvidia-smi"]}
+{"q": "get the name field from user.json with jq", "accept": ["jq '.name' user.json", "jq -r '.name' user.json"]}
+{"q": "files that start with invoice in this folder only", "accept": ["fd -t f '^invoice' -d 1", "fd '^invoice' -d 1", "fd -d 1 -t f '^invoice'", "fd -t f -d 1 '^invoice'"]}
+{"q": "files ending in _spec.rb", "accept": ["fd -t f '_spec\\.rb$'", "fd '_spec\\.rb$'"]}
+{"q": "jump to the dotfiles folder", "accept": ["z dotfiles"]}
+{"q": "download the audio of https://youtu.be/xyz as mp3", "accept": ["yt-dlp -x --audio-format mp3 https://youtu.be/xyz", "yt-dlp -x --audio-format mp3 'https://youtu.be/xyz'"]}
+{"q": "convert notes.md to docx", "accept": ["pandoc notes.md -o notes.docx"]}
+{"q": "merge part1.pdf and part2.pdf into all.pdf", "accept": ["pdfunite part1.pdf part2.pdf all.pdf"]}
+{"q": "build paper.tex into a pdf", "accept": ["latexmk -pdf paper.tex"]}
+{"q": "run the go tests in all packages", "accept": ["go test ./..."]}
+{"q": "run cargo clippy for all targets", "accept": ["cargo clippy --all-targets"]}
+{"q": "download meta-llama/Llama-3.2-1B from hugging face", "accept": ["hf download meta-llama/Llama-3.2-1B"]}
+{"q": "run forge tests with verbose traces", "accept": ["forge test -vvv", "forge test -vvvv"]}
+{"q": "make a trusted local cert for localhost", "accept": ["mkcert localhost", "mkcert localhost 127.0.0.1 ::1"]}

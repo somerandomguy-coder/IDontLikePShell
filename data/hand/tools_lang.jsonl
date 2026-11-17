@@ -1,0 +1,427 @@
+{"q": "make a venv", "cmd": "uv venv"}
+{"q": "create a virtual env with python 3.12", "cmd": "uv venv --python 3.12"}
+{"q": "new venv called env", "cmd": "uv venv env"}
+{"q": "uv venv and activate it", "cmd": "uv venv; if ($?) { .\\.venv\\Scripts\\Activate.ps1 }"}
+{"q": "source .venv/bin/activate", "cmd": ".\\.venv\\Scripts\\Activate.ps1"}
+{"q": "activate the venv", "cmd": ".\\.venv\\Scripts\\Activate.ps1"}
+{"q": "deactivate venv", "cmd": "deactivate"}
+{"q": "start a new python project", "cmd": "uv init"}
+{"q": "init a python project called scraper", "cmd": "uv init scraper"}
+{"q": "uv init a library project", "cmd": "uv init --lib"}
+{"q": "new python app with no readme", "cmd": "uv init --no-readme"}
+{"q": "add requests", "cmd": "uv add requests"}
+{"q": "add fastapi and uvicorn to the project", "cmd": "uv add fastapi uvicorn"}
+{"q": "add pytest as dev dep", "cmd": "uv add --dev pytest"}
+{"q": "add ruff and mypy as dev dependencies", "cmd": "uv add --dev ruff mypy"}
+{"q": "add pandas >= 2.0", "cmd": "uv add 'pandas>=2.0'"}
+{"q": "add httpx to the docs group", "cmd": "uv add --group docs httpx"}
+{"q": "add torch as an optional dep under gpu extra", "cmd": "uv add --optional gpu torch"}
+{"q": "add everything from requirements.txt to pyproject", "cmd": "uv add -r requirements.txt"}
+{"q": "add a dependency straight from a git repo https://github.com/psf/black", "cmd": "uv add git+https://github.com/psf/black"}
+{"q": "remove requests", "cmd": "uv remove requests"}
+{"q": "drop pytest from dev deps", "cmd": "uv remove --dev pytest"}
+{"q": "uninstall numpy from the project", "cmd": "uv remove numpy"}
+{"q": "snyc deps", "cmd": "uv sync"}
+{"q": "install all project dependencies", "cmd": "uv sync"}
+{"q": "sync but skip dev deps", "cmd": "uv sync --no-dev"}
+{"q": "sync with all extras", "cmd": "uv sync --all-extras"}
+{"q": "install exactly whats in the lockfile, dont update it", "cmd": "uv sync --locked"}
+{"q": "sync every dependency group", "cmd": "uv sync --all-groups"}
+{"q": "lock deps", "cmd": "uv lock"}
+{"q": "regenerate the lockfile upgrading everything", "cmd": "uv lock --upgrade"}
+{"q": "bump just django in the lock file", "cmd": "uv lock --upgrade-package django"}
+{"q": "is uv.lock up to date", "cmd": "uv lock --check"}
+{"q": "upgrade all packages in the project", "cmd": "uv sync --upgrade"}
+{"q": "run main.py with uv", "cmd": "uv run main.py"}
+{"q": "run the tests", "cmd": "uv run pytest"}
+{"q": "run pytest verbose", "cmd": "uv run pytest -v"}
+{"q": "run tests matchign auth", "cmd": "uv run pytest -k auth"}
+{"q": "run only tests/test_api.py", "cmd": "uv run pytest tests/test_api.py"}
+{"q": "stop at first failing test", "cmd": "uv run pytest -x"}
+{"q": "run the app module", "cmd": "uv run python -m app"}
+{"q": "open a python repl in the project env", "cmd": "uv run python"}
+{"q": "run script.py with rich available without adding it", "cmd": "uv run --with rich script.py"}
+{"q": "run manage.py migrate", "cmd": "uv run manage.py migrate"}
+{"q": "start the django dev server", "cmd": "uv run manage.py runserver"}
+{"q": "start uvicorn on main:app with reload", "cmd": "uv run uvicorn main:app --reload"}
+{"q": "run jupyter lab in this project", "cmd": "uv run --with jupyter jupyter lab"}
+{"q": "pip install -r requirements.txt but fast", "cmd": "uv pip install -r requirements.txt"}
+{"q": "uv pip install requests", "cmd": "uv pip install requests"}
+{"q": "install this package in editable mode", "cmd": "uv pip install -e ."}
+{"q": "pip list but with uv", "cmd": "uv pip list"}
+{"q": "uv pip freeze to requirements.txt", "cmd": "uv pip freeze | Set-Content requirements.txt"}
+{"q": "export the lockfile as requirements.txt", "cmd": "uv export --format requirements.txt -o requirements.txt"}
+{"q": "export reqs without hashes", "cmd": "uv export --no-hashes -o requirements.txt"}
+{"q": "show dependency tree", "cmd": "uv tree"}
+{"q": "dep tree just 1 level deep", "cmd": "uv tree --depth 1"}
+{"q": "which packages are outdated in the tree", "cmd": "uv tree --outdated"}
+{"q": "why is idna installed", "cmd": "uv tree --invert --package idna"}
+{"q": "install python 3.13", "cmd": "uv python install 3.13"}
+{"q": "install python 3.12 and 3.11", "cmd": "uv python install 3.12 3.11"}
+{"q": "list python versions uv knows about", "cmd": "uv python list"}
+{"q": "which pythons do i have installed", "cmd": "uv python list --only-installed"}
+{"q": "pin python 3.12 for this project", "cmd": "uv python pin 3.12"}
+{"q": "where is python 3.12 installed", "cmd": "uv python find 3.12"}
+{"q": "install ruff globally as a tool", "cmd": "uv tool install ruff"}
+{"q": "install httpie as a cli tool", "cmd": "uv tool install httpie"}
+{"q": "list installed uv tools", "cmd": "uv tool list"}
+{"q": "upgrade all my uv tools", "cmd": "uv tool upgrade --all"}
+{"q": "uninstall the black tool", "cmd": "uv tool uninstall black"}
+{"q": "run cowsay once without installing", "cmd": "uvx cowsay -t hello"}
+{"q": "lint with ruff", "cmd": "uvx ruff check ."}
+{"q": "ruff fix everything", "cmd": "uvx ruff check --fix ."}
+{"q": "fromat code with ruff", "cmd": "uvx ruff format ."}
+{"q": "format with black", "cmd": "uvx black ."}
+{"q": "black check only, dont change files", "cmd": "uvx black --check ."}
+{"q": "uvx pytest", "cmd": "uvx pytest"}
+{"q": "run mypy on src", "cmd": "uv run mypy src"}
+{"q": "run pycowsay from the pycowsay package via uv tool run", "cmd": "uv tool run pycowsay hi"}
+{"q": "build the python package", "cmd": "uv build"}
+{"q": "bump project version patch", "cmd": "uv version --bump patch"}
+{"q": "what version is this project", "cmd": "uv version"}
+{"q": "update uv itself", "cmd": "uv self update"}
+{"q": "clear uv cache", "cmd": "uv cache clean"}
+{"q": "how big is the uv cache", "cmd": "uv cache size"}
+{"q": "where does uv keep its cache", "cmd": "uv cache dir"}
+{"q": "recreate the venv from scratch", "cmd": "uv venv --clear"}
+{"q": "venv with pip inside", "cmd": "uv venv --seed"}
+{"q": "set PYTHONPATH to src and run tests", "cmd": "$env:PYTHONPATH = 'src'; uv run pytest"}
+{"q": "pip install requests", "cmd": "pip install requests"}
+{"q": "pip install upgrade numpy", "cmd": "pip install --upgrade numpy"}
+{"q": "pip install editable current dir", "cmd": "pip install -e ."}
+{"q": "pip show requests", "cmd": "pip show requests"}
+{"q": "pip list", "cmd": "pip list"}
+{"q": "with pip, install torch from the cu121 index", "cmd": "pip install torch --index-url https://download.pytorch.org/whl/cu121"}
+{"q": "pip install a specific version of flask 2.3.3", "cmd": "pip install flask==2.3.3"}
+{"q": "pip check for broken deps", "cmd": "pip check"}
+{"q": "pip cache purge", "cmd": "pip cache purge"}
+{"q": "python -m venv venv", "cmd": "python -m venv venv"}
+{"q": "pyenv versions", "cmd": "pyenv versions"}
+{"q": "which python versions does pyenv have", "cmd": "pyenv versions"}
+{"q": "current python version pyenv", "cmd": "pyenv version"}
+{"q": "pyenv install 3.11.9", "cmd": "pyenv install 3.11.9"}
+{"q": "list python versions available to install with pyenv", "cmd": "pyenv install --list"}
+{"q": "pyenv set local python to 3.12.4", "cmd": "pyenv local 3.12.4"}
+{"q": "set global python with pyenv to 3.13.1", "cmd": "pyenv global 3.13.1"}
+{"q": "use python 3.10.11 just in this shell via pyenv", "cmd": "pyenv shell 3.10.11"}
+{"q": "pyenv rehash shims", "cmd": "pyenv rehash"}
+{"q": "which python exe is pyenv actually using", "cmd": "pyenv which python"}
+{"q": "pyenv uninstall 3.9.13", "cmd": "pyenv uninstall 3.9.13"}
+{"q": "refresh pyenv's version list", "cmd": "pyenv update"}
+{"q": "serve this folder over http", "cmd": "python -m http.server"}
+{"q": "quick http server on port 9000", "cmd": "python -m http.server 9000"}
+{"q": "python simple server bound to localhost only", "cmd": "python -m http.server 8000 --bind 127.0.0.1"}
+{"q": "serve the dist folder on 8080", "cmd": "python -m http.server 8080 --directory dist"}
+{"q": "pretty print data.json", "cmd": "python -m json.tool data.json"}
+{"q": "pretty print json with sorted keys", "cmd": "python -m json.tool --sort-keys data.json"}
+{"q": "validate config.json is valid json", "cmd": "python -m json.tool config.json"}
+{"q": "python version", "cmd": "python --version"}
+{"q": "which python", "cmd": "(Get-Command python).Source"}
+{"q": "python -c print sys.path", "cmd": "python -c 'import sys; print(sys.path)'"}
+{"q": "check if torch sees cuda", "cmd": "python -c 'import torch; print(torch.cuda.is_available())'"}
+{"q": "check torch cuda in the uv env", "cmd": "uv run python -c 'import torch; print(torch.cuda.is_available())'"}
+{"q": "python one liner to print a uuid", "cmd": "python -c 'import uuid; print(uuid.uuid4())'"}
+{"q": "generate a random secret key in python", "cmd": "python -c 'import secrets; print(secrets.token_hex(32))'"}
+{"q": "run unittest discovery", "cmd": "python -m unittest discover"}
+{"q": "profile script.py", "cmd": "python -m cProfile -s cumtime script.py"}
+{"q": "compile all py files to check syntax", "cmd": "python -m compileall ."}
+{"q": "node version", "cmd": "node --version"}
+{"q": "npm version", "cmd": "npm --version"}
+{"q": "install deps", "cmd": "npm install"}
+{"q": "npm i express", "cmd": "npm install express"}
+{"q": "add axios", "cmd": "npm install axios"}
+{"q": "add typescript as dev dep", "cmd": "npm install -D typescript"}
+{"q": "add eslint and prettier as devDependencies", "cmd": "npm install -D eslint prettier"}
+{"q": "install @types/node dev", "cmd": "npm install -D @types/node"}
+{"q": "install react exactly 18.3.1", "cmd": "npm install react@18.3.1 --save-exact"}
+{"q": "install typescript globally", "cmd": "npm install -g typescript"}
+{"q": "uninstall lodash", "cmd": "npm uninstall lodash"}
+{"q": "npm remove global package nodemon", "cmd": "npm uninstall -g nodemon"}
+{"q": "run build", "cmd": "npm run build"}
+{"q": "run the test script", "cmd": "npm test"}
+{"q": "start the app", "cmd": "npm start"}
+{"q": "run tests in watch mode", "cmd": "npm test -- --watch"}
+{"q": "list npm scripts", "cmd": "npm run"}
+{"q": "run lint if it exists", "cmd": "npm run lint --if-present"}
+{"q": "which packges are outdated", "cmd": "npm outdated"}
+{"q": "update packages", "cmd": "npm update"}
+{"q": "update just react", "cmd": "npm update react"}
+{"q": "npm ls top level only", "cmd": "npm ls --depth=0"}
+{"q": "what global npm stuff do i have installed", "cmd": "npm ls -g"}
+{"q": "why is lodash in node_modules", "cmd": "npm why lodash"}
+{"q": "npm audit", "cmd": "npm audit"}
+{"q": "fix vulnerabilities", "cmd": "npm audit fix"}
+{"q": "npm init -y", "cmd": "npm init -y"}
+{"q": "create a vite app called web", "cmd": "npm create vite@latest web"}
+{"q": "new vite react ts project named dashboard", "cmd": "npm create vite@latest dashboard -- --template react-ts"}
+{"q": "scaffold a vue app with vite", "cmd": "npm create vite@latest my-app -- --template vue"}
+{"q": "rm -rf node_modules and reinstall", "cmd": "Remove-Item -Recurse -Force node_modules; npm install"}
+{"q": "where does npm install global packages", "cmd": "npm root -g"}
+{"q": "show npm config", "cmd": "npm config list"}
+{"q": "what versions of react exist on npm", "cmd": "npm view react versions"}
+{"q": "latest version of vite on npm", "cmd": "npm view vite version"}
+{"q": "bump package version minor", "cmd": "npm version minor"}
+{"q": "npm pack a tarball", "cmd": "npm pack"}
+{"q": "link this package globally", "cmd": "npm link"}
+{"q": "typecheck without emitting", "cmd": "npx tsc --noEmit"}
+{"q": "npx tsc", "cmd": "npx tsc"}
+{"q": "init a tsconfig", "cmd": "npx tsc --init"}
+{"q": "compile typescript in watch mode", "cmd": "npx tsc --watch"}
+{"q": "run prettier on everything", "cmd": "npx prettier --write ."}
+{"q": "eslint fix src", "cmd": "npx eslint --fix src"}
+{"q": "run vitest once", "cmd": "npx vitest run"}
+{"q": "run a ts file with tsx", "cmd": "npx tsx script.ts"}
+{"q": "serve current folder with npx serve", "cmd": "npx serve"}
+{"q": "run node script with env NODE_ENV=production", "cmd": "$env:NODE_ENV = 'production'; node server.js"}
+{"q": "node -e print 2+2", "cmd": "node -e 'console.log(2 + 2)'"}
+{"q": "debug index.js with inspector", "cmd": "node --inspect index.js"}
+{"q": "node watch mode for app.js", "cmd": "node --watch app.js"}
+{"q": "enable corepack", "cmd": "corepack enable"}
+{"q": "use pnpm 9 via corepack", "cmd": "corepack use pnpm@9"}
+{"q": "set this project to yarn with corepack", "cmd": "corepack use yarn@latest"}
+{"q": "pnpm install", "cmd": "pnpm install"}
+{"q": "pnpm add zod", "cmd": "pnpm add zod"}
+{"q": "pnpm add vitest as dev dep", "cmd": "pnpm add -D vitest"}
+{"q": "pnpm remove moment", "cmd": "pnpm remove moment"}
+{"q": "pnpm run dev", "cmd": "pnpm dev"}
+{"q": "pnpm build in every workspace package", "cmd": "pnpm -r build"}
+{"q": "pnpm outdated", "cmd": "pnpm outdated"}
+{"q": "pnpm update everything to latest ignoring ranges", "cmd": "pnpm update --latest"}
+{"q": "pnpm update interactive", "cmd": "pnpm update -i"}
+{"q": "pnpm why react-dom", "cmd": "pnpm why react-dom"}
+{"q": "pnpm ls depth 0", "cmd": "pnpm ls --depth 0"}
+{"q": "global pnpm packages", "cmd": "pnpm ls -g"}
+{"q": "pnpm dlx create-next-app", "cmd": "pnpm dlx create-next-app"}
+{"q": "pnpm add a package only to the web workspace", "cmd": "pnpm --filter web add axios"}
+{"q": "pnpm frozen lockfile install for ci", "cmd": "pnpm install --frozen-lockfile"}
+{"q": "prune the pnpm store", "cmd": "pnpm store prune"}
+{"q": "new rust project called hello", "cmd": "cargo new hello"}
+{"q": "new rust library crate parser", "cmd": "cargo new parser --lib"}
+{"q": "cargo init here", "cmd": "cargo init"}
+{"q": "build it", "cmd": "cargo build"}
+{"q": "relase build", "cmd": "cargo build --release"}
+{"q": "build rust project in release mode", "cmd": "cargo build --release"}
+{"q": "run the rust app", "cmd": "cargo run"}
+{"q": "cargo run release with args --port 8080", "cmd": "cargo run --release -- --port 8080"}
+{"q": "run the server binary", "cmd": "cargo run --bin server"}
+{"q": "run the basic example", "cmd": "cargo run --example basic"}
+{"q": "cargo test", "cmd": "cargo test"}
+{"q": "run rust tests matching parse", "cmd": "cargo test parse"}
+{"q": "cargo test and show println output", "cmd": "cargo test -- --nocapture"}
+{"q": "run only the integration test api", "cmd": "cargo test --test api"}
+{"q": "run tests for all workspace crates", "cmd": "cargo test --workspace"}
+{"q": "run doc tests only", "cmd": "cargo test --doc"}
+{"q": "dont stop at first failing test crate", "cmd": "cargo test --no-fail-fast"}
+{"q": "type check the crate", "cmd": "cargo check"}
+{"q": "cargo check everything incl tests and benches", "cmd": "cargo check --all-targets"}
+{"q": "clippy", "cmd": "cargo clippy"}
+{"q": "clipy on all targets", "cmd": "cargo clippy --all-targets"}
+{"q": "clippy treat warnings as errors", "cmd": "cargo clippy --all-targets -- -D warnings"}
+{"q": "auto fix clippy lints", "cmd": "cargo clippy --fix"}
+{"q": "format the rust code", "cmd": "cargo fmt"}
+{"q": "check formatting without changing anything", "cmd": "cargo fmt --check"}
+{"q": "add serde", "cmd": "cargo add serde"}
+{"q": "add serde with derive feature", "cmd": "cargo add serde --features derive"}
+{"q": "add tokio full", "cmd": "cargo add tokio --features full"}
+{"q": "add criterion as a dev dependency", "cmd": "cargo add --dev criterion"}
+{"q": "add cc as build dependency", "cmd": "cargo add --build cc"}
+{"q": "remove the rand crate", "cmd": "cargo remove rand"}
+{"q": "update crates", "cmd": "cargo update"}
+{"q": "update only the serde crate", "cmd": "cargo update serde"}
+{"q": "dry run cargo update", "cmd": "cargo update --dry-run"}
+{"q": "build and open the docs", "cmd": "cargo doc --open"}
+{"q": "docs for just my crate, no deps", "cmd": "cargo doc --no-deps --open"}
+{"q": "cargo clean", "cmd": "cargo clean"}
+{"q": "cargo build with all features", "cmd": "cargo build --all-features"}
+{"q": "build for wasm", "cmd": "cargo build --target wasm32-unknown-unknown"}
+{"q": "build release for wasm32", "cmd": "cargo build --release --target wasm32-unknown-unknown"}
+{"q": "run benchmarks", "cmd": "cargo bench"}
+{"q": "cargo install ripgrep", "cmd": "cargo install ripgrep"}
+{"q": "list installed cargo binaries", "cmd": "cargo install --list"}
+{"q": "rust dependency tree", "cmd": "cargo tree"}
+{"q": "show what depends on syn", "cmd": "cargo tree -i syn"}
+{"q": "info about the reqwest crate", "cmd": "cargo info reqwest"}
+{"q": "rustc version", "cmd": "rustc --version"}
+{"q": "verbose rustc version info", "cmd": "rustc -vV"}
+{"q": "compile main.rs with rustc", "cmd": "rustc main.rs"}
+{"q": "compile with optimizations using rustc", "cmd": "rustc -O main.rs"}
+{"q": "cargo version", "cmd": "cargo --version"}
+{"q": "update rust", "cmd": "rustup update"}
+{"q": "update stable toolchain", "cmd": "rustup update stable"}
+{"q": "add wasm target", "cmd": "rustup target add wasm32-unknown-unknown"}
+{"q": "which targets do i have installed", "cmd": "rustup target list --installed"}
+{"q": "list rust toolchains", "cmd": "rustup toolchain list"}
+{"q": "install nightly rust", "cmd": "rustup toolchain install nightly"}
+{"q": "make nightly the default", "cmd": "rustup default nightly"}
+{"q": "switch back to stable by default", "cmd": "rustup default stable"}
+{"q": "use nightly just for this project", "cmd": "rustup override set nightly"}
+{"q": "show active rust toolchain", "cmd": "rustup show"}
+{"q": "add clippy and rustfmt components", "cmd": "rustup component add clippy rustfmt"}
+{"q": "install rust-analyzer component", "cmd": "rustup component add rust-analyzer"}
+{"q": "open the rust std docs offline", "cmd": "rustup doc --std"}
+{"q": "check for rust updates", "cmd": "rustup check"}
+{"q": "run cargo build with nightly once", "cmd": "cargo +nightly build"}
+{"q": "go test everything", "cmd": "go test ./..."}
+{"q": "go test verbose", "cmd": "go test -v ./..."}
+{"q": "run go tests matching Auth", "cmd": "go test -v -run Auth ./..."}
+{"q": "run TestLogin only", "cmd": "go test -run '^TestLogin$' ./..."}
+{"q": "go tests with race detector", "cmd": "go test -race ./..."}
+{"q": "go test with coverage", "cmd": "go test -cover ./..."}
+{"q": "write go coverage profile to cover.out", "cmd": "go test -coverprofile cover.out ./..."}
+{"q": "open coverage html report", "cmd": "go tool cover -html cover.out"}
+{"q": "run go benchmarks", "cmd": "go test -bench . ./..."}
+{"q": "go bench with mem stats", "cmd": "go test -bench . -benchmem ./..."}
+{"q": "run tests without cache", "cmd": "go test -count 1 ./..."}
+{"q": "stop go tests on first failure", "cmd": "go test -failfast ./..."}
+{"q": "tests only in the ./internal/db package", "cmd": "go test ./internal/db"}
+{"q": "go short tests only", "cmd": "go test -short ./..."}
+{"q": "tidy go mods", "cmd": "go mod tidy"}
+{"q": "init go module github.com/me/api", "cmd": "go mod init github.com/me/api"}
+{"q": "download go deps", "cmd": "go mod download"}
+{"q": "vendor dependencies", "cmd": "go mod vendor"}
+{"q": "why do we depend on golang.org/x/net", "cmd": "go mod why golang.org/x/net"}
+{"q": "go build", "cmd": "go build"}
+{"q": "build to bin/app.exe", "cmd": "go build -o bin/app.exe"}
+{"q": "build the cmd/server package to server.exe", "cmd": "go build -o server.exe ./cmd/server"}
+{"q": "build all packages", "cmd": "go build ./..."}
+{"q": "strip symbols, small binary", "cmd": "go build -ldflags '-s -w' -o app.exe"}
+{"q": "cross compile for linux amd64", "cmd": "$env:GOOS = 'linux'; $env:GOARCH = 'amd64'; go build -o app"}
+{"q": "go run .", "cmd": "go run ."}
+{"q": "run main.go", "cmd": "go run main.go"}
+{"q": "run the cmd/worker program", "cmd": "go run ./cmd/worker"}
+{"q": "go get gin", "cmd": "go get github.com/gin-gonic/gin"}
+{"q": "upgrade all go deps", "cmd": "go get -u ./..."}
+{"q": "go get a specific version of cobra v1.8.0", "cmd": "go get github.com/spf13/cobra@v1.8.0"}
+{"q": "go vet", "cmd": "go vet ./..."}
+{"q": "format go code", "cmd": "go fmt ./..."}
+{"q": "where is GOPATH", "cmd": "go env GOPATH"}
+{"q": "show go env", "cmd": "go env"}
+{"q": "install gopls", "cmd": "go install golang.org/x/tools/gopls@latest"}
+{"q": "install golangci-lint latest", "cmd": "go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest"}
+{"q": "go version", "cmd": "go version"}
+{"q": "list all go packages in this module", "cmd": "go list ./..."}
+{"q": "list go module deps", "cmd": "go list -m all"}
+{"q": "go generate", "cmd": "go generate ./..."}
+{"q": "clean go build cache", "cmd": "go clean -cache"}
+{"q": "go docs for strings.Split", "cmd": "go doc strings.Split"}
+{"q": "make", "cmd": "make"}
+{"q": "make build", "cmd": "make build"}
+{"q": "run the test target", "cmd": "make test"}
+{"q": "make clean", "cmd": "make clean"}
+{"q": "dry run make install, just print commands", "cmd": "make -n install"}
+{"q": "what would make do", "cmd": "make -n"}
+{"q": "make with 8 jobs", "cmd": "make -j8"}
+{"q": "make in parallel", "cmd": "make -j"}
+{"q": "force rebuild everything with make", "cmd": "make -B"}
+{"q": "run make in the backend folder", "cmd": "make -C backend"}
+{"q": "use Makefile.dev", "cmd": "make -f Makefile.dev"}
+{"q": "make keep going after errors", "cmd": "make -k"}
+{"q": "make silently", "cmd": "make -s"}
+{"q": "make release with VERSION=1.2.0", "cmd": "make release VERSION=1.2.0"}
+{"q": "configure cmake into build", "cmd": "cmake -S . -B build"}
+{"q": "cmake configure release", "cmd": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release"}
+{"q": "cmake configure with ninja", "cmd": "cmake -S . -B build -G Ninja"}
+{"q": "cmake export compile commands", "cmd": "cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"}
+{"q": "fresh cmake configure", "cmd": "cmake --fresh -S . -B build"}
+{"q": "cmake buld", "cmd": "cmake --build build"}
+{"q": "build release config", "cmd": "cmake --build build --config Release"}
+{"q": "cmake build in parallel", "cmd": "cmake --build build --parallel"}
+{"q": "cmake build only target app", "cmd": "cmake --build build --target app"}
+{"q": "clean then build with cmake", "cmd": "cmake --build build --clean-first"}
+{"q": "cmake install", "cmd": "cmake --install build"}
+{"q": "configure then build", "cmd": "cmake -S . -B build; if ($?) { cmake --build build }"}
+{"q": "run ctest", "cmd": "ctest --test-dir build"}
+{"q": "ctest show output on failure", "cmd": "ctest --test-dir build --output-on-failure"}
+{"q": "ctest release config", "cmd": "ctest --test-dir build -C Release"}
+{"q": "run ctest tests matching math", "cmd": "ctest --test-dir build -R math"}
+{"q": "rerun failed ctest tests", "cmd": "ctest --test-dir build --rerun-failed --output-on-failure"}
+{"q": "ctest in parallel", "cmd": "ctest --test-dir build -j 8"}
+{"q": "cmake version", "cmd": "cmake --version"}
+{"q": "forge build", "cmd": "forge build"}
+{"q": "compile the contracts", "cmd": "forge build"}
+{"q": "contract sizes", "cmd": "forge build --sizes"}
+{"q": "forge test", "cmd": "forge test"}
+{"q": "run solidity tests with traces", "cmd": "forge test -vvv"}
+{"q": "forge test mathcing testTransfer", "cmd": "forge test --match-test testTransfer"}
+{"q": "run tests in the Vault contract only", "cmd": "forge test --match-contract Vault"}
+{"q": "forge tests with gas report", "cmd": "forge test --gas-report"}
+{"q": "forge test watch mode", "cmd": "forge test --watch"}
+{"q": "run forge tests against a fork of https://eth.llamarpc.com", "cmd": "forge test --fork-url https://eth.llamarpc.com"}
+{"q": "new foundry project", "cmd": "forge init"}
+{"q": "forge init counter", "cmd": "forge init counter"}
+{"q": "install openzeppelin contracts with forge", "cmd": "forge install OpenZeppelin/openzeppelin-contracts"}
+{"q": "forge fmt", "cmd": "forge fmt"}
+{"q": "check solidity formatting", "cmd": "forge fmt --check"}
+{"q": "solidity coverage", "cmd": "forge coverage"}
+{"q": "gas snapshot", "cmd": "forge snapshot"}
+{"q": "forge clean", "cmd": "forge clean"}
+{"q": "show forge remappings", "cmd": "forge remappings"}
+{"q": "eth balance of 0x70997970C51812dc3A010C7d01b50e0d17dc79C8", "cmd": "cast balance 0x70997970C51812dc3A010C7d01b50e0d17dc79C8"}
+{"q": "balance of 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 in ether", "cmd": "cast balance --ether 0x70997970C51812dc3A010C7d01b50e0d17dc79C8"}
+{"q": "cast balance on sepolia rpc https://rpc.sepolia.org for 0x70997970C51812dc3A010C7d01b50e0d17dc79C8", "cmd": "cast balance 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 --rpc-url https://rpc.sepolia.org"}
+{"q": "latest block number", "cmd": "cast block-number"}
+{"q": "current block number on https://eth.llamarpc.com", "cmd": "cast block-number --rpc-url https://eth.llamarpc.com"}
+{"q": "call totalSupply on 0x5FbDB2315678afecb367f032d93F642f64180aa3", "cmd": "cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 'totalSupply()(uint256)'"}
+{"q": "cast call balanceOf 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 on token 0x5FbDB2315678afecb367f032d93F642f64180aa3", "cmd": "cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 'balanceOf(address)(uint256)' 0x70997970C51812dc3A010C7d01b50e0d17dc79C8"}
+{"q": "send 1 eth to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 using the key in PRIVATE_KEY", "cmd": "cast send 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 --value 1ether --private-key $env:PRIVATE_KEY"}
+{"q": "cast send increment() to 0x5FbDB2315678afecb367f032d93F642f64180aa3 with my PRIVATE_KEY env var", "cmd": "cast send 0x5FbDB2315678afecb367f032d93F642f64180aa3 'increment()' --private-key $env:PRIVATE_KEY"}
+{"q": "1.5 eth in wei", "cmd": "cast to-wei 1.5"}
+{"q": "convert 20 gwei to wei", "cmd": "cast to-wei 20 gwei"}
+{"q": "1000000000000000000 wei to eth", "cmd": "cast from-wei 1000000000000000000"}
+{"q": "keccak hash of hello", "cmd": "cast keccak 'hello'"}
+{"q": "function selector for transfer(address,uint256)", "cmd": "cast sig 'transfer(address,uint256)'"}
+{"q": "chain id", "cmd": "cast chain-id"}
+{"q": "current gas price", "cmd": "cast gas-price"}
+{"q": "nonce of 0x70997970C51812dc3A010C7d01b50e0d17dc79C8", "cmd": "cast nonce 0x70997970C51812dc3A010C7d01b50e0d17dc79C8"}
+{"q": "decimal 255 to hex with cast", "cmd": "cast to-hex 255"}
+{"q": "bytecode at 0x5FbDB2315678afecb367f032d93F642f64180aa3", "cmd": "cast code 0x5FbDB2315678afecb367f032d93F642f64180aa3"}
+{"q": "cast receipt for tx 0xabc123", "cmd": "cast receipt 0xabc123"}
+{"q": "make a new random eth wallet", "cmd": "cast wallet new"}
+{"q": "start anvil", "cmd": "anvil"}
+{"q": "start a local eth node", "cmd": "anvil"}
+{"q": "anvil on port 8546", "cmd": "anvil --port 8546"}
+{"q": "anvil fork mainnet from https://eth.llamarpc.com", "cmd": "anvil --fork-url https://eth.llamarpc.com"}
+{"q": "fork using the rpc url in $env:ETH_RPC_URL", "cmd": "anvil --fork-url $env:ETH_RPC_URL"}
+{"q": "anvil fork at block 19000000 from https://eth.llamarpc.com", "cmd": "anvil --fork-url https://eth.llamarpc.com --fork-block-number 19000000"}
+{"q": "anvil with 2 second block time", "cmd": "anvil --block-time 2"}
+{"q": "anvil with 20 accounts", "cmd": "anvil --accounts 20"}
+{"q": "anvil chain id 1337", "cmd": "anvil --chain-id 1337"}
+{"q": "anvil listen on all interfaces", "cmd": "anvil --host 0.0.0.0"}
+{"q": "download gpt2", "cmd": "hf download gpt2"}
+{"q": "download meta-llama/Llama-3.1-8B-Instruct", "cmd": "hf download meta-llama/Llama-3.1-8B-Instruct"}
+{"q": "download just config.json from bert-base-uncased", "cmd": "hf download bert-base-uncased config.json"}
+{"q": "download Qwen/Qwen2.5-0.5B into ./models/qwen", "cmd": "hf download Qwen/Qwen2.5-0.5B --local-dir models/qwen"}
+{"q": "download only the safetensors from mistralai/Mistral-7B-v0.1", "cmd": "hf download mistralai/Mistral-7B-v0.1 --include '*.safetensors'"}
+{"q": "grab the q4_k_m gguf from TheBloke/Mistral-7B-Instruct-v0.2-GGUF to models", "cmd": "hf download TheBloke/Mistral-7B-Instruct-v0.2-GGUF --include '*Q4_K_M.gguf' --local-dir models"}
+{"q": "download dataset squad", "cmd": "hf download squad --repo-type dataset"}
+{"q": "download the model but skip .bin files", "cmd": "hf download gpt2 --exclude '*.bin'"}
+{"q": "hf login", "cmd": "hf auth login"}
+{"q": "log in to hugging face", "cmd": "hf auth login"}
+{"q": "who am i on huggingface", "cmd": "hf auth whoami"}
+{"q": "log out of hf", "cmd": "hf auth logout"}
+{"q": "upload ./out to my repo me/my-model", "cmd": "hf upload me/my-model out"}
+{"q": "upload model.safetensors to me/tiny-model", "cmd": "hf upload me/tiny-model model.safetensors"}
+{"q": "push this folder to hf as a private repo me/test-run", "cmd": "hf upload me/test-run . --private"}
+{"q": "show hf cache", "cmd": "hf cache ls"}
+{"q": "hf cache scan", "cmd": "hf cache ls"}
+{"q": "biggest models in my hf cache", "cmd": "hf cache ls --sort size"}
+{"q": "clean up detached revisions in hf cache", "cmd": "hf cache prune"}
+{"q": "remove gpt2 from the hf cache", "cmd": "hf cache rm model/gpt2"}
+{"q": "gpu useage", "cmd": "nvidia-smi"}
+{"q": "how much vram am i using", "cmd": "nvidia-smi --query-gpu=memory.used,memory.total --format=csv"}
+{"q": "watch gpu every second", "cmd": "nvidia-smi -l 1"}
+{"q": "nvidia-smi refreshing every 5 seconds", "cmd": "nvidia-smi -l 5"}
+{"q": "gpu temp", "cmd": "nvidia-smi --query-gpu=temperature.gpu --format=csv"}
+{"q": "gpu name, driver and total memory as csv", "cmd": "nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv"}
+{"q": "gpu utilization percent without header or units", "cmd": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"}
+{"q": "power draw of the gpu", "cmd": "nvidia-smi --query-gpu=power.draw,power.limit --format=csv"}
+{"q": "what processes are using the gpu", "cmd": "nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv"}
+{"q": "list gpus", "cmd": "nvidia-smi -L"}
+{"q": "full gpu memory info", "cmd": "nvidia-smi -q -d MEMORY"}
+{"q": "only show gpu 1", "cmd": "nvidia-smi -i 1"}
+{"q": "log gpu util and mem to gpu.csv every second", "cmd": "nvidia-smi --query-gpu=timestamp,utilization.gpu,memory.used --format=csv -l 1 | Tee-Object gpu.csv"}
+{"q": "scrolling gpu device stats", "cmd": "nvidia-smi dmon"}
+{"q": "which driver version", "cmd": "nvidia-smi --query-gpu=driver_version --format=csv,noheader"}
+{"q": "cuda version", "cmd": "nvcc --version"}
+{"q": "nvcc version", "cmd": "nvcc --version"}
+{"q": "compile kernel.cu with nvcc", "cmd": "nvcc kernel.cu -o kernel.exe"}

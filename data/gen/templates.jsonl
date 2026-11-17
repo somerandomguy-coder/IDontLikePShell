@@ -1,0 +1,1295 @@
+{"q": "where are the .yaml files in this folder", "cmd": "fd -t f -e yaml"}
+{"q": "find all notebook files", "cmd": "fd -t f -e ipynb"}
+{"q": "find all html files in notebooks", "cmd": "fd -t f -e html . notebooks"}
+{"q": "all *.js", "cmd": "fd -t f -e js"}
+{"q": "find all json files", "cmd": "fd -t f -e json"}
+{"q": "where are the .ts files recursively", "cmd": "fd -t f -e ts"}
+{"q": "find all notebook files here", "cmd": "fd -t f -e ipynb"}
+{"q": "find all .sql files here", "cmd": "fd -t f -e sql"}
+{"q": "find -name '*.rs'", "cmd": "fd -t f -e rs"}
+{"q": "all *.html here", "cmd": "fd -t f -e html"}
+{"q": "find -name '*.ts' here", "cmd": "fd -t f -e ts"}
+{"q": "find all .sh files in this folder", "cmd": "fd -t f -e sh"}
+{"q": "list yml files in the tests folder", "cmd": "fd -t f -e yml . tests"}
+{"q": "all *.toml in server", "cmd": "fd -t f -e toml . server"}
+{"q": "find -name '*.go' recursively", "cmd": "fd -t f -e go"}
+{"q": "show me every java file under scripts", "cmd": "fd -t f -e java . scripts"}
+{"q": "list rs files under src", "cmd": "fd -t f -e rs . src"}
+{"q": "show me every .sql file", "cmd": "fd -t f -e sql"}
+{"q": "show me every csv file", "cmd": "fd -t f -e csv"}
+{"q": "where are the .yaml files", "cmd": "fd -t f -e yaml"}
+{"q": "find all .csv files in the server folder", "cmd": "fd -t f -e csv . server"}
+{"q": "all *.pdf in the dist folder", "cmd": "fd -t f -e pdf . dist"}
+{"q": "all *.h", "cmd": "fd -t f -e h"}
+{"q": "list rust files from build", "cmd": "fd -t f -e rs . build"}
+{"q": "find all .pdf files", "cmd": "fd -t f -e pdf"}
+{"q": "find all .csv files inside assets", "cmd": "fd -t f -e csv . assets"}
+{"q": "show me every java file here", "cmd": "fd -t f -e java"}
+{"q": "show me every yml file", "cmd": "fd -t f -e yml"}
+{"q": "show me every .log file here", "cmd": "fd -t f -e log"}
+{"q": "all *.ts", "cmd": "fd -t f -e ts"}
+{"q": "all *.jpg recursively", "cmd": "fd -t f -e jpg"}
+{"q": "list py files in bin", "cmd": "fd -t f -e py . bin"}
+{"q": "list cs files from build", "cmd": "fd -t f -e cs . build"}
+{"q": "all *.pdf from packages", "cmd": "fd -t f -e pdf . packages"}
+{"q": "list zip files from scripts", "cmd": "fd -t f -e zip . scripts"}
+{"q": "list pdf files inside lib", "cmd": "fd -t f -e pdf . lib"}
+{"q": "show me every javascript file recursively", "cmd": "fd -t f -e js"}
+{"q": "all *.sql", "cmd": "fd -t f -e sql"}
+{"q": "show me every h file here", "cmd": "fd -t f -e h"}
+{"q": "find -name '*.txt' under migrations", "cmd": "fd -t f -e txt . migrations"}
+{"q": "list tsx files", "cmd": "fd -t f -e tsx"}
+{"q": "find -name '*.java'", "cmd": "fd -t f -e java"}
+{"q": "list rs files recursively", "cmd": "fd -t f -e rs"}
+{"q": "find -name '*.ts'", "cmd": "fd -t f -e ts"}
+{"q": "find all yaml files here", "cmd": "fd -t f -e yaml"}
+{"q": "show me every md file inside scripts", "cmd": "fd -t f -e md . scripts"}
+{"q": "find all jupyter notebook files in this folder", "cmd": "fd -t f -e ipynb"}
+{"q": "find all rust files inside app", "cmd": "fd -t f -e rs . app"}
+{"q": "where are the .java files in the tests folder", "cmd": "fd -t f -e java . tests"}
+{"q": "find all javascript files", "cmd": "fd -t f -e js"}
+{"q": "all *.ipynb from logs", "cmd": "fd -t f -e ipynb . logs"}
+{"q": "find -name '*.md' inside src", "cmd": "fd -t f -e md . src"}
+{"q": "find -name '*.cs'", "cmd": "fd -t f -e cs"}
+{"q": "where are the .mp4 files recursively", "cmd": "fd -t f -e mp4"}
+{"q": "list .xml files", "cmd": "fd -t f -e xml"}
+{"q": "find all .sh files here", "cmd": "fd -t f -e sh"}
+{"q": "show me every toml file here", "cmd": "fd -t f -e toml"}
+{"q": "find all md files inside dist", "cmd": "fd -t f -e md . dist"}
+{"q": "show me every json file in scripts", "cmd": "fd -t f -e json . scripts"}
+{"q": "list .sh files in client", "cmd": "fd -t f -e sh . client"}
+{"q": "find -name '*.js' inside logs", "cmd": "fd -t f -e js . logs"}
+{"q": "where are the .jpg files in this folder", "cmd": "fd -t f -e jpg"}
+{"q": "find all sh files in the client folder", "cmd": "fd -t f -e sh . client"}
+{"q": "find -name '*.go'", "cmd": "fd -t f -e go"}
+{"q": "find all .html files in this folder", "cmd": "fd -t f -e html"}
+{"q": "find all sql files", "cmd": "fd -t f -e sql"}
+{"q": "show me every .java file", "cmd": "fd -t f -e java"}
+{"q": "where are the .ipynb files", "cmd": "fd -t f -e ipynb"}
+{"q": "find all pdf files recursively", "cmd": "fd -t f -e pdf"}
+{"q": "show me every cpp file in the config folder", "cmd": "fd -t f -e cpp . config"}
+{"q": "show me every tsx file recursively", "cmd": "fd -t f -e tsx"}
+{"q": "list .txt files in the client folder", "cmd": "fd -t f -e txt . client"}
+{"q": "find all ts files inside client", "cmd": "fd -t f -e ts . client"}
+{"q": "find all .java files in this folder", "cmd": "fd -t f -e java"}
+{"q": "show me every cpp file here", "cmd": "fd -t f -e cpp"}
+{"q": "find -name '*.mp4' inside data", "cmd": "fd -t f -e mp4 . data"}
+{"q": "where are the .pdf files in api", "cmd": "fd -t f -e pdf . api"}
+{"q": "find -name '*.png' inside lib", "cmd": "fd -t f -e png . lib"}
+{"q": "show me every .java file in this folder", "cmd": "fd -t f -e java"}
+{"q": "find -name '*.jpg' in this folder", "cmd": "fd -t f -e jpg"}
+{"q": "list powershell files here", "cmd": "fd -t f -e ps1"}
+{"q": "show me every .yaml file inside dist", "cmd": "fd -t f -e yaml . dist"}
+{"q": "all *.toml under bin", "cmd": "fd -t f -e toml . bin"}
+{"q": "find all notebook files in the packages folder", "cmd": "fd -t f -e ipynb . packages"}
+{"q": "find -name '*.html' inside build", "cmd": "fd -t f -e html . build"}
+{"q": "find all .toml files under client", "cmd": "fd -t f -e toml . client"}
+{"q": "list css files", "cmd": "fd -t f -e css"}
+{"q": "find -name '*.sh' in logs", "cmd": "fd -t f -e sh . logs"}
+{"q": "show me every jpg file recursively", "cmd": "fd -t f -e jpg"}
+{"q": "list notebook files in this folder", "cmd": "fd -t f -e ipynb"}
+{"q": "find all .sql files", "cmd": "fd -t f -e sql"}
+{"q": "all *.java", "cmd": "fd -t f -e java"}
+{"q": "show me every h file", "cmd": "fd -t f -e h"}
+{"q": "where are the .jpg files", "cmd": "fd -t f -e jpg"}
+{"q": "find -name '*.xml' under client", "cmd": "fd -t f -e xml . client"}
+{"q": "find -name '*.js' in the server folder", "cmd": "fd -t f -e js . server"}
+{"q": "list .yml files inside lib", "cmd": "fd -t f -e yml . lib"}
+{"q": "list json files recursively", "cmd": "fd -t f -e json"}
+{"q": "all *.mp4 under packages", "cmd": "fd -t f -e mp4 . packages"}
+{"q": "show me every rust file in this folder", "cmd": "fd -t f -e rs"}
+{"q": "list python files", "cmd": "fd -t f -e py"}
+{"q": "where are the .xml files here", "cmd": "fd -t f -e xml"}
+{"q": "where are the .sh files in this folder", "cmd": "fd -t f -e sh"}
+{"q": "show me every .txt file in src", "cmd": "fd -t f -e txt . src"}
+{"q": "show me every .tsx file", "cmd": "fd -t f -e tsx"}
+{"q": "where are the .h files here", "cmd": "fd -t f -e h"}
+{"q": "find all .csv files under utils", "cmd": "fd -t f -e csv . utils"}
+{"q": "where are the .jpg files here", "cmd": "fd -t f -e jpg"}
+{"q": "find all ps1 files inside data", "cmd": "fd -t f -e ps1 . data"}
+{"q": "show me every .tsx file in this folder", "cmd": "fd -t f -e tsx"}
+{"q": "show me every .csv file under logs", "cmd": "fd -t f -e csv . logs"}
+{"q": "list .jpg files recursively", "cmd": "fd -t f -e jpg"}
+{"q": "find all .sh files from infra", "cmd": "fd -t f -e sh . infra"}
+{"q": "find -name '*.md'", "cmd": "fd -t f -e md"}
+{"q": "where are the .rs files in the utils folder", "cmd": "fd -t f -e rs . utils"}
+{"q": "list markdown files under dist", "cmd": "fd -t f -e md . dist"}
+{"q": "show me every json file recursively", "cmd": "fd -t f -e json"}
+{"q": "find all java files", "cmd": "fd -t f -e java"}
+{"q": "list xml files in this folder", "cmd": "fd -t f -e xml"}
+{"q": "all *.cs recursively", "cmd": "fd -t f -e cs"}
+{"q": "find all txt files", "cmd": "fd -t f -e txt"}
+{"q": "show me every go file in dist", "cmd": "fd -t f -e go . dist"}
+{"q": "all *.rs", "cmd": "fd -t f -e rs"}
+{"q": "show me every log file from components", "cmd": "fd -t f -e log . components"}
+{"q": "find -name '*.log' here", "cmd": "fd -t f -e log"}
+{"q": "list .yml files inside src", "cmd": "fd -t f -e yml . src"}
+{"q": "all *.log in this folder", "cmd": "fd -t f -e log"}
+{"q": "find -name '*.txt'", "cmd": "fd -t f -e txt"}
+{"q": "where are the .toml files inside assets", "cmd": "fd -t f -e toml . assets"}
+{"q": "where are the .rs files", "cmd": "fd -t f -e rs"}
+{"q": "find all js files in this folder", "cmd": "fd -t f -e js"}
+{"q": "show me every powershell file", "cmd": "fd -t f -e ps1"}
+{"q": "list cs files under client", "cmd": "fd -t f -e cs . client"}
+{"q": "find all pdf files", "cmd": "fd -t f -e pdf"}
+{"q": "show me every txt file here", "cmd": "fd -t f -e txt"}
+{"q": "show me every .yml file under packages", "cmd": "fd -t f -e yml . packages"}
+{"q": "find all png files in this folder", "cmd": "fd -t f -e png"}
+{"q": "find all yml files in the app folder", "cmd": "fd -t f -e yml . app"}
+{"q": "find -name '*.yaml' recursively", "cmd": "fd -t f -e yaml"}
+{"q": "show me every go file from app", "cmd": "fd -t f -e go . app"}
+{"q": "all *.jpg", "cmd": "fd -t f -e jpg"}
+{"q": "all *.rs inside assets", "cmd": "fd -t f -e rs . assets"}
+{"q": "find all csv files from dist", "cmd": "fd -t f -e csv . dist"}
+{"q": "find all .toml files inside dist", "cmd": "fd -t f -e toml . dist"}
+{"q": "all *.js here", "cmd": "fd -t f -e js"}
+{"q": "all *.toml here", "cmd": "fd -t f -e toml"}
+{"q": "list markdown files inside notebooks", "cmd": "fd -t f -e md . notebooks"}
+{"q": "list sh files inside client", "cmd": "fd -t f -e sh . client"}
+{"q": "all *.js from src", "cmd": "fd -t f -e js . src"}
+{"q": "all *.java from logs", "cmd": "fd -t f -e java . logs"}
+{"q": "find -name '*.rs' under build", "cmd": "fd -t f -e rs . build"}
+{"q": "find -name '*.cpp' in this folder", "cmd": "fd -t f -e cpp"}
+{"q": "list .xml files from bin", "cmd": "fd -t f -e xml . bin"}
+{"q": "find all javascript files in the src folder", "cmd": "fd -t f -e js . src"}
+{"q": "all *.tsx under infra", "cmd": "fd -t f -e tsx . infra"}
+{"q": "where are the .sql files in this folder", "cmd": "fd -t f -e sql"}
+{"q": "find -name '*.xml' in this folder", "cmd": "fd -t f -e xml"}
+{"q": "where are the .ts files in this folder", "cmd": "fd -t f -e ts"}
+{"q": "where are the .js files in dist", "cmd": "fd -t f -e js . dist"}
+{"q": "find -name '*.xml' in client", "cmd": "fd -t f -e xml . client"}
+{"q": "all *.rs here", "cmd": "fd -t f -e rs"}
+{"q": "find all jupyter notebook files recursively", "cmd": "fd -t f -e ipynb"}
+{"q": "list pdf files under logs", "cmd": "fd -t f -e pdf . logs"}
+{"q": "find all tsx files inside scripts", "cmd": "fd -t f -e tsx . scripts"}
+{"q": "list sh files", "cmd": "fd -t f -e sh"}
+{"q": "list mp4 files", "cmd": "fd -t f -e mp4"}
+{"q": "list js files in bin", "cmd": "fd -t f -e js . bin"}
+{"q": "where are the .png files here", "cmd": "fd -t f -e png"}
+{"q": "where are the .md files", "cmd": "fd -t f -e md"}
+{"q": "show me every py file", "cmd": "fd -t f -e py"}
+{"q": "find all .html files", "cmd": "fd -t f -e html"}
+{"q": "find -name '*.h' in scripts", "cmd": "fd -t f -e h . scripts"}
+{"q": "list tsx files in components", "cmd": "fd -t f -e tsx . components"}
+{"q": "show me every log file recursively", "cmd": "fd -t f -e log"}
+{"q": "all *.ps1 recursively", "cmd": "fd -t f -e ps1"}
+{"q": "show me every .mp4 file recursively", "cmd": "fd -t f -e mp4"}
+{"q": "all *.md", "cmd": "fd -t f -e md"}
+{"q": "find -name '*.json' recursively", "cmd": "fd -t f -e json"}
+{"q": "list .sql files inside build", "cmd": "fd -t f -e sql . build"}
+{"q": "where are the .tsx files under docs", "cmd": "fd -t f -e tsx . docs"}
+{"q": "find all sh files here", "cmd": "fd -t f -e sh"}
+{"q": "list .zip files", "cmd": "fd -t f -e zip"}
+{"q": "find -name '*.pdf' in the build folder", "cmd": "fd -t f -e pdf . build"}
+{"q": "list tsx files here", "cmd": "fd -t f -e tsx"}
+{"q": "show me every .h file", "cmd": "fd -t f -e h"}
+{"q": "show me every .zip file under migrations", "cmd": "fd -t f -e zip . migrations"}
+{"q": "find all tsx files under infra", "cmd": "fd -t f -e tsx . infra"}
+{"q": "show me every .txt file in this folder", "cmd": "fd -t f -e txt"}
+{"q": "find -name '*.md' in lib", "cmd": "fd -t f -e md . lib"}
+{"q": "all *.yml", "cmd": "fd -t f -e yml"}
+{"q": "find all jpg files in this folder", "cmd": "fd -t f -e jpg"}
+{"q": "find -name '*.sh' from bin", "cmd": "fd -t f -e sh . bin"}
+{"q": "show me every mp4 file in this folder", "cmd": "fd -t f -e mp4"}
+{"q": "find all .zip files inside components", "cmd": "fd -t f -e zip . components"}
+{"q": "show me every .jpg file inside build", "cmd": "fd -t f -e jpg . build"}
+{"q": "find all typescript files here", "cmd": "fd -t f -e ts"}
+{"q": "show me every sh file in assets", "cmd": "fd -t f -e sh . assets"}
+{"q": "list go files from components", "cmd": "fd -t f -e go . components"}
+{"q": "show me every cs file in this folder", "cmd": "fd -t f -e cs"}
+{"q": "list go files recursively", "cmd": "fd -t f -e go"}
+{"q": "show me every .java file recursively", "cmd": "fd -t f -e java"}
+{"q": "find -name '*.csv' in this folder", "cmd": "fd -t f -e csv"}
+{"q": "find all sh files in bin", "cmd": "fd -t f -e sh . bin"}
+{"q": "find -name '*.csv'", "cmd": "fd -t f -e csv"}
+{"q": "where are the .tsx files here", "cmd": "fd -t f -e tsx"}
+{"q": "show me every .log file inside lib", "cmd": "fd -t f -e log . lib"}
+{"q": "where are the .md files here", "cmd": "fd -t f -e md"}
+{"q": "all *.h in notebooks", "cmd": "fd -t f -e h . notebooks"}
+{"q": "all *.toml in src", "cmd": "fd -t f -e toml . src"}
+{"q": "find -name '*.ps1' from docs", "cmd": "fd -t f -e ps1 . docs"}
+{"q": "find all sh files", "cmd": "fd -t f -e sh"}
+{"q": "show me every sh file inside docs", "cmd": "fd -t f -e sh . docs"}
+{"q": "find all python files from bin", "cmd": "fd -t f -e py . bin"}
+{"q": "find -name '*.log' in this folder", "cmd": "fd -t f -e log"}
+{"q": "find all .css files", "cmd": "fd -t f -e css"}
+{"q": "find -name '*.zip' under tests", "cmd": "fd -t f -e zip . tests"}
+{"q": "find -name '*.json' in this folder", "cmd": "fd -t f -e json"}
+{"q": "where are the .js files from bin", "cmd": "fd -t f -e js . bin"}
+{"q": "all *.rs in this folder", "cmd": "fd -t f -e rs"}
+{"q": "find all .csv files inside packages", "cmd": "fd -t f -e csv . packages"}
+{"q": "all *.sh recursively", "cmd": "fd -t f -e sh"}
+{"q": "show me every css file in the build folder", "cmd": "fd -t f -e css . build"}
+{"q": "list python files in the dist folder", "cmd": "fd -t f -e py . dist"}
+{"q": "all *.zip", "cmd": "fd -t f -e zip"}
+{"q": "all *.html in this folder", "cmd": "fd -t f -e html"}
+{"q": "show me every .toml file", "cmd": "fd -t f -e toml"}
+{"q": "all *.html", "cmd": "fd -t f -e html"}
+{"q": "list sql files", "cmd": "fd -t f -e sql"}
+{"q": "find all .json files inside notebooks", "cmd": "fd -t f -e json . notebooks"}
+{"q": "where are the .csv files inside tests", "cmd": "fd -t f -e csv . tests"}
+{"q": "all *.yml in assets", "cmd": "fd -t f -e yml . assets"}
+{"q": "where are the .css files in the dist folder", "cmd": "fd -t f -e css . dist"}
+{"q": "find all yaml files in the scripts folder", "cmd": "fd -t f -e yaml . scripts"}
+{"q": "find -name '*.zip' in this folder", "cmd": "fd -t f -e zip"}
+{"q": "list markdown files in build", "cmd": "fd -t f -e md . build"}
+{"q": "where are the .java files", "cmd": "fd -t f -e java"}
+{"q": "where are the .png files inside config", "cmd": "fd -t f -e png . config"}
+{"q": "list .toml files in the server folder", "cmd": "fd -t f -e toml . server"}
+{"q": "all *.xml in config", "cmd": "fd -t f -e xml . config"}
+{"q": "where are the .yaml files in the build folder", "cmd": "fd -t f -e yaml . build"}
+{"q": "where are the .js files from packages", "cmd": "fd -t f -e js . packages"}
+{"q": "where are the .java files from dist", "cmd": "fd -t f -e java . dist"}
+{"q": "find -name '*.yaml' in this folder", "cmd": "fd -t f -e yaml"}
+{"q": "where are the .cpp files recursively", "cmd": "fd -t f -e cpp"}
+{"q": "where are the .yml files under dist", "cmd": "fd -t f -e yml . dist"}
+{"q": "all *.rs under logs", "cmd": "fd -t f -e rs . logs"}
+{"q": "show me every py file recursively", "cmd": "fd -t f -e py"}
+{"q": "find -name '*.log' under notebooks", "cmd": "fd -t f -e log . notebooks"}
+{"q": "list ps1 files from app", "cmd": "fd -t f -e ps1 . app"}
+{"q": "locate folder called temp", "cmd": "fd -t d '^temp$'"}
+{"q": "locate directory called invoice", "cmd": "fd -t d '^invoice$'"}
+{"q": "find files containing notes in the utils folder", "cmd": "fd -t f 'notes' utils"}
+{"q": "where is the client file here", "cmd": "fd -t f '^client$'"}
+{"q": "locate file called makefile in the client folder", "cmd": "fd -t f '^Makefile$' client"}
+{"q": "dirs with package in the name here", "cmd": "fd -t d 'package'"}
+{"q": "locate dir called index in this folder", "cmd": "fd -t d '^index$'"}
+{"q": "where is the helpers file", "cmd": "fd -t f '^helpers$'"}
+{"q": "any file matching package", "cmd": "fd -t f 'package'"}
+{"q": "where is the config dir recursively", "cmd": "fd -t d '^config$'"}
+{"q": "locate folder called Makefile in scripts", "cmd": "fd -t d '^Makefile$' scripts"}
+{"q": "files with auth in the name in the tests folder", "cmd": "fd -t f 'auth' tests"}
+{"q": "folders with README in the name in this folder", "cmd": "fd -t d 'README'"}
+{"q": "find the file named backup recursively", "cmd": "fd -t f '^backup$'"}
+{"q": "directorys with routes in the name in the data folder", "cmd": "fd -t d 'routes' data"}
+{"q": "any file matching README here", "cmd": "fd -t f 'README'"}
+{"q": "locate directory called schema in scripts", "cmd": "fd -t d '^schema$' scripts"}
+{"q": "files with readme in the name in the components folder", "cmd": "fd -t f 'README' components"}
+{"q": "dirs with cache in the name recursively", "cmd": "fd -t d 'cache'"}
+{"q": "find files containing auth in the src folder", "cmd": "fd -t f 'auth' src"}
+{"q": "any file matching schema", "cmd": "fd -t f 'schema'"}
+{"q": "locate file called main recursively", "cmd": "fd -t f '^main$'"}
+{"q": "find the directory named models recursively", "cmd": "fd -t d '^models$'"}
+{"q": "files with models in the name recursively", "cmd": "fd -t f 'models'"}
+{"q": "where is the schema dir recursively", "cmd": "fd -t d '^schema$'"}
+{"q": "where is the routes dir from client", "cmd": "fd -t d '^routes$' client"}
+{"q": "directorys with helpers in the name in the data folder", "cmd": "fd -t d 'helpers' data"}
+{"q": "any directory matching env in infra", "cmd": "fd -t d 'env' infra"}
+{"q": "any file matching report from tests", "cmd": "fd -t f 'report' tests"}
+{"q": "any file matching README inside migrations", "cmd": "fd -t f 'README' migrations"}
+{"q": "any file matching auth recursively", "cmd": "fd -t f 'auth'"}
+{"q": "locate folder called notes under bin", "cmd": "fd -t d '^notes$' bin"}
+{"q": "any directory matching notes under notebooks", "cmd": "fd -t d 'notes' notebooks"}
+{"q": "where is the Makefile dir in this folder", "cmd": "fd -t d '^Makefile$'"}
+{"q": "find files containing server here", "cmd": "fd -t f 'server'"}
+{"q": "find the dir named models under logs", "cmd": "fd -t d '^models$' logs"}
+{"q": "folders with requirements in the name under assets", "cmd": "fd -t d 'requirements' assets"}
+{"q": "any dir matching auth in this folder", "cmd": "fd -t d 'auth'"}
+{"q": "find the directory named invoice recursively", "cmd": "fd -t d '^invoice$'"}
+{"q": "files with schema in the name", "cmd": "fd -t f 'schema'"}
+{"q": "find files containing todo from infra", "cmd": "fd -t f 'todo' infra"}
+{"q": "dirs with report in the name recursively", "cmd": "fd -t d 'report'"}
+{"q": "where is the routes file inside app", "cmd": "fd -t f '^routes$' app"}
+{"q": "where is the package dir recursively", "cmd": "fd -t d '^package$'"}
+{"q": "locate folder called settings", "cmd": "fd -t d '^settings$'"}
+{"q": "find folders containing schema", "cmd": "fd -t d 'schema'"}
+{"q": "any file matching server in the logs folder", "cmd": "fd -t f 'server' logs"}
+{"q": "any dir matching Dockerfile recursively", "cmd": "fd -t d 'Dockerfile'"}
+{"q": "locate file called client in assets", "cmd": "fd -t f '^client$' assets"}
+{"q": "find the dir named index in the client folder", "cmd": "fd -t d '^index$' client"}
+{"q": "find files containing temp here", "cmd": "fd -t f 'temp'"}
+{"q": "where is the utils file from tests", "cmd": "fd -t f '^utils$' tests"}
+{"q": "locate file called config from components", "cmd": "fd -t f '^config$' components"}
+{"q": "find folders containing helpers under notebooks", "cmd": "fd -t d 'helpers' notebooks"}
+{"q": "any file matching test in server", "cmd": "fd -t f 'test' server"}
+{"q": "files with helpers in the name in the components folder", "cmd": "fd -t f 'helpers' components"}
+{"q": "directorys with Dockerfile in the name in scripts", "cmd": "fd -t d 'Dockerfile' scripts"}
+{"q": "where is the Makefile file in components", "cmd": "fd -t f '^Makefile$' components"}
+{"q": "where is the backup file inside logs", "cmd": "fd -t f '^backup$' logs"}
+{"q": "where is the routes file", "cmd": "fd -t f '^routes$'"}
+{"q": "where is the secrets file in the packages folder", "cmd": "fd -t f '^secrets$' packages"}
+{"q": "directorys with backup in the name under notebooks", "cmd": "fd -t d 'backup' notebooks"}
+{"q": "any dir matching temp from dist", "cmd": "fd -t d 'temp' dist"}
+{"q": "files with test in the name", "cmd": "fd -t f 'test'"}
+{"q": "any file matching auth in this folder", "cmd": "fd -t f 'auth'"}
+{"q": "locate file called config under app", "cmd": "fd -t f '^config$' app"}
+{"q": "where is the main folder here", "cmd": "fd -t d '^main$'"}
+{"q": "find directorys containing models inside components", "cmd": "fd -t d 'models' components"}
+{"q": "locate folder called docker-compose", "cmd": "fd -t d '^docker-compose$'"}
+{"q": "find folders containing old in utils", "cmd": "fd -t d 'old' utils"}
+{"q": "any dir matching cache in logs", "cmd": "fd -t d 'cache' logs"}
+{"q": "files with backup in the name in the scripts folder", "cmd": "fd -t f 'backup' scripts"}
+{"q": "any file matching utils", "cmd": "fd -t f 'utils'"}
+{"q": "locate folder called requirements from migrations", "cmd": "fd -t d '^requirements$' migrations"}
+{"q": "any file matching utils recursively", "cmd": "fd -t f 'utils'"}
+{"q": "any dir matching secrets in api", "cmd": "fd -t d 'secrets' api"}
+{"q": "any directory matching helpers inside app", "cmd": "fd -t d 'helpers' app"}
+{"q": "files with old in the name in this folder", "cmd": "fd -t f 'old'"}
+{"q": "locate folder called todo", "cmd": "fd -t d '^todo$'"}
+{"q": "files with server in the name under infra", "cmd": "fd -t f 'server' infra"}
+{"q": "files with dockerfile in the name in utils", "cmd": "fd -t f 'Dockerfile' utils"}
+{"q": "folders with report in the name inside bin", "cmd": "fd -t d 'report' bin"}
+{"q": "folders with helpers in the name from tests", "cmd": "fd -t d 'helpers' tests"}
+{"q": "where is the report file in this folder", "cmd": "fd -t f '^report$'"}
+{"q": "where is the notes folder inside lib", "cmd": "fd -t d '^notes$' lib"}
+{"q": "find the directory named index in the packages folder", "cmd": "fd -t d '^index$' packages"}
+{"q": "find files containing report in this folder", "cmd": "fd -t f 'report'"}
+{"q": "locate directory called client in the bin folder", "cmd": "fd -t d '^client$' bin"}
+{"q": "find the dir named schema here", "cmd": "fd -t d '^schema$'"}
+{"q": "locate directory called config", "cmd": "fd -t d '^config$'"}
+{"q": "find files containing docker-compose", "cmd": "fd -t f 'docker-compose'"}
+{"q": "locate folder called routes inside bin", "cmd": "fd -t d '^routes$' bin"}
+{"q": "locate file called package", "cmd": "fd -t f '^package$'"}
+{"q": "find files containing requirements in this folder", "cmd": "fd -t f 'requirements'"}
+{"q": "find the file named draft from logs", "cmd": "fd -t f '^draft$' logs"}
+{"q": "any file matching settings", "cmd": "fd -t f 'settings'"}
+{"q": "find the directory named models from lib", "cmd": "fd -t d '^models$' lib"}
+{"q": "locate folder called package in the scripts folder", "cmd": "fd -t d '^package$' scripts"}
+{"q": "locate dir called client from app", "cmd": "fd -t d '^client$' app"}
+{"q": "files with Makefile in the name from components", "cmd": "fd -t f 'Makefile' components"}
+{"q": "locate directory called routes here", "cmd": "fd -t d '^routes$'"}
+{"q": "locate file called Makefile in bin", "cmd": "fd -t f '^Makefile$' bin"}
+{"q": "any directory matching main inside notebooks", "cmd": "fd -t d 'main' notebooks"}
+{"q": "where is the auth file under scripts", "cmd": "fd -t f '^auth$' scripts"}
+{"q": "folders with settings in the name here", "cmd": "fd -t d 'settings'"}
+{"q": "any file matching old from client", "cmd": "fd -t f 'old' client"}
+{"q": "any file matching report from client", "cmd": "fd -t f 'report' client"}
+{"q": "files with report in the name in this folder", "cmd": "fd -t f 'report'"}
+{"q": "find the file named env from api", "cmd": "fd -t f '^env$' api"}
+{"q": "find the directory named config", "cmd": "fd -t d '^config$'"}
+{"q": "find files containing docker-compose from config", "cmd": "fd -t f 'docker-compose' config"}
+{"q": "locate folder called draft", "cmd": "fd -t d '^draft$'"}
+{"q": "where is the schema folder", "cmd": "fd -t d '^schema$'"}
+{"q": "where is the index directory under migrations", "cmd": "fd -t d '^index$' migrations"}
+{"q": "where is the client file in the src folder", "cmd": "fd -t f '^client$' src"}
+{"q": "find files containing server in this folder", "cmd": "fd -t f 'server'"}
+{"q": "find the folder named old here", "cmd": "fd -t d '^old$'"}
+{"q": "locate file called notes", "cmd": "fd -t f '^notes$'"}
+{"q": "locate directory called backup", "cmd": "fd -t d '^backup$'"}
+{"q": "files with schema in the name inside config", "cmd": "fd -t f 'schema' config"}
+{"q": "find directorys containing package inside packages", "cmd": "fd -t d 'package' packages"}
+{"q": "locate file called client", "cmd": "fd -t f '^client$'"}
+{"q": "locate directory called README", "cmd": "fd -t d '^README$'"}
+{"q": "files with schema in the name recursively", "cmd": "fd -t f 'schema'"}
+{"q": "dirs with docker-compose in the name", "cmd": "fd -t d 'docker-compose'"}
+{"q": "find files containing models", "cmd": "fd -t f 'models'"}
+{"q": "locate file called routes recursively", "cmd": "fd -t f '^routes$'"}
+{"q": "find the dir named routes inside data", "cmd": "fd -t d '^routes$' data"}
+{"q": "locate directory called schema in config", "cmd": "fd -t d '^schema$' config"}
+{"q": "locate dir called requirements under app", "cmd": "fd -t d '^requirements$' app"}
+{"q": "any file matching temp here", "cmd": "fd -t f 'temp'"}
+{"q": "any directory matching client inside notebooks", "cmd": "fd -t d 'client' notebooks"}
+{"q": "where is the Makefile folder in this folder", "cmd": "fd -t d '^Makefile$'"}
+{"q": "where is the env file under dist", "cmd": "fd -t f '^env$' dist"}
+{"q": "locate file called docker-compose recursively", "cmd": "fd -t f '^docker-compose$'"}
+{"q": "any file matching README", "cmd": "fd -t f 'README'"}
+{"q": "files with readme in the name from dist", "cmd": "fd -t f 'README' dist"}
+{"q": "find directorys containing routes", "cmd": "fd -t d 'routes'"}
+{"q": "find directorys containing makefile in lib", "cmd": "fd -t d 'Makefile' lib"}
+{"q": "find dirs containing report", "cmd": "fd -t d 'report'"}
+{"q": "find the file named test here", "cmd": "fd -t f '^test$'"}
+{"q": "locate directory called todo", "cmd": "fd -t d '^todo$'"}
+{"q": "find folders containing Makefile recursively", "cmd": "fd -t d 'Makefile'"}
+{"q": "locate dir called notes here", "cmd": "fd -t d '^notes$'"}
+{"q": "find folders containing auth from src", "cmd": "fd -t d 'auth' src"}
+{"q": "locate file called cache in app", "cmd": "fd -t f '^cache$' app"}
+{"q": "find the dir named server here", "cmd": "fd -t d '^server$'"}
+{"q": "locate file called makefile", "cmd": "fd -t f '^Makefile$'"}
+{"q": "find the directory named makefile here", "cmd": "fd -t d '^Makefile$'"}
+{"q": "where is the draft folder in the bin folder", "cmd": "fd -t d '^draft$' bin"}
+{"q": "where is the requirements file under migrations", "cmd": "fd -t f '^requirements$' migrations"}
+{"q": "where is the helpers dir inside config", "cmd": "fd -t d '^helpers$' config"}
+{"q": "find folders containing client in this folder", "cmd": "fd -t d 'client'"}
+{"q": "locate file called config", "cmd": "fd -t f '^config$'"}
+{"q": "find folders containing report under lib", "cmd": "fd -t d 'report' lib"}
+{"q": "find the file named makefile in logs", "cmd": "fd -t f '^Makefile$' logs"}
+{"q": "where is the models file in api", "cmd": "fd -t f '^models$' api"}
+{"q": "folders with routes in the name in this folder", "cmd": "fd -t d 'routes'"}
+{"q": "any file matching old from docs", "cmd": "fd -t f 'old' docs"}
+{"q": "where is the config file in data", "cmd": "fd -t f '^config$' data"}
+{"q": "any file matching todo under scripts", "cmd": "fd -t f 'todo' scripts"}
+{"q": "find the file named index in this folder", "cmd": "fd -t f '^index$'"}
+{"q": "where is the docker-compose file inside app", "cmd": "fd -t f '^docker-compose$' app"}
+{"q": "locate directory called utils in the lib folder", "cmd": "fd -t d '^utils$' lib"}
+{"q": "locate dir called report recursively", "cmd": "fd -t d '^report$'"}
+{"q": "where is the backup folder in the infra folder", "cmd": "fd -t d '^backup$' infra"}
+{"q": "find files containing secrets in bin", "cmd": "fd -t f 'secrets' bin"}
+{"q": "locate file called draft under build", "cmd": "fd -t f '^draft$' build"}
+{"q": "any dir matching requirements in this folder", "cmd": "fd -t d 'requirements'"}
+{"q": "any file matching client in this folder", "cmd": "fd -t f 'client'"}
+{"q": "find dirs containing schema in this folder", "cmd": "fd -t d 'schema'"}
+{"q": "find directorys containing secrets", "cmd": "fd -t d 'secrets'"}
+{"q": "files with schema in the name in this folder", "cmd": "fd -t f 'schema'"}
+{"q": "files with todo in the name from config", "cmd": "fd -t f 'todo' config"}
+{"q": "any file matching README in this folder", "cmd": "fd -t f 'README'"}
+{"q": "locate file called utils in the api folder", "cmd": "fd -t f '^utils$' api"}
+{"q": "find directorys containing index from migrations", "cmd": "fd -t d 'index' migrations"}
+{"q": "any dir matching report in this folder", "cmd": "fd -t d 'report'"}
+{"q": "any file matching temp from server", "cmd": "fd -t f 'temp' server"}
+{"q": "files with backup in the name under infra", "cmd": "fd -t f 'backup' infra"}
+{"q": "where is the models directory here", "cmd": "fd -t d '^models$'"}
+{"q": "where is the cache file", "cmd": "fd -t f '^cache$'"}
+{"q": "where is the schema directory in this folder", "cmd": "fd -t d '^schema$'"}
+{"q": "locate folder called invoice here", "cmd": "fd -t d '^invoice$'"}
+{"q": "find files containing test inside notebooks", "cmd": "fd -t f 'test' notebooks"}
+{"q": "locate dir called main in this folder", "cmd": "fd -t d '^main$'"}
+{"q": "find dirs containing config in the notebooks folder", "cmd": "fd -t d 'config' notebooks"}
+{"q": "find the directory named Dockerfile in this folder", "cmd": "fd -t d '^Dockerfile$'"}
+{"q": "where is the draft dir in infra", "cmd": "fd -t d '^draft$' infra"}
+{"q": "find the file named index from app", "cmd": "fd -t f '^index$' app"}
+{"q": "find files containing settings", "cmd": "fd -t f 'settings'"}
+{"q": "files with server in the name in this folder", "cmd": "fd -t f 'server'"}
+{"q": "locate file called readme from config", "cmd": "fd -t f '^README$' config"}
+{"q": "where is the auth dir inside components", "cmd": "fd -t d '^auth$' components"}
+{"q": "find the directory named models in the components folder", "cmd": "fd -t d '^models$' components"}
+{"q": "where is the cache file in the packages folder", "cmd": "fd -t f '^cache$' packages"}
+{"q": "find folders containing requirements", "cmd": "fd -t d 'requirements'"}
+{"q": "js files over 1 gig", "cmd": "fd -t f -e js -S +1g"}
+{"q": ".java files under 100 megabytes", "cmd": "fd -t f -e java -S -100m"}
+{"q": "javascript files bigger than 100kb", "cmd": "fd -t f -e js -S +100k"}
+{"q": "find large yml files > 10mb", "cmd": "fd -t f -e yml -S +10m"}
+{"q": "c# files under 1 mb", "cmd": "fd -t f -e cs -S -1m"}
+{"q": "c# files smaller than 500mb", "cmd": "fd -t f -e cs -S -500m"}
+{"q": "rust files bigger than 100mb", "cmd": "fd -t f -e rs -S +100m"}
+{"q": "find large md files > 1mb", "cmd": "fd -t f -e md -S +1m"}
+{"q": "find large files > 5gb", "cmd": "fd -t f -S +5g"}
+{"q": "typescript files less than 50MB", "cmd": "fd -t f -e ts -S -50m"}
+{"q": "find large ts files > 50MB", "cmd": "fd -t f -e ts -S +50m"}
+{"q": "markdown files under 50 mb", "cmd": "fd -t f -e md -S -50m"}
+{"q": "md files bigger than 1gb", "cmd": "fd -t f -e md -S +1g"}
+{"q": "python files over 10 megs", "cmd": "fd -t f -e py -S +10m"}
+{"q": ".yml files bigger than 5GB", "cmd": "fd -t f -e yml -S +5g"}
+{"q": "c# files under 100 megabytes", "cmd": "fd -t f -e cs -S -100m"}
+{"q": "rust files smaller than 1mb", "cmd": "fd -t f -e rs -S -1m"}
+{"q": "c# files bigger than 500mb", "cmd": "fd -t f -e cs -S +500m"}
+{"q": "yaml files less than 500mb", "cmd": "fd -t f -e yaml -S -500m"}
+{"q": "files bigger than 1mb", "cmd": "fd -t f -S +1m"}
+{"q": "files bigger than 50MB", "cmd": "fd -t f -S +50m"}
+{"q": ".tsx files bigger than 100kb", "cmd": "fd -t f -e tsx -S +100k"}
+{"q": ".json files smaller than 500mb", "cmd": "fd -t f -e json -S -500m"}
+{"q": ".java files under 10 megs", "cmd": "fd -t f -e java -S -10m"}
+{"q": "files over 1 MB", "cmd": "fd -t f -S +1m"}
+{"q": ".yml files bigger than 50MB", "cmd": "fd -t f -e yml -S +50m"}
+{"q": "markdown files over 50 mb", "cmd": "fd -t f -e md -S +50m"}
+{"q": "typescript files bigger than 100kb", "cmd": "fd -t f -e ts -S +100k"}
+{"q": "typescript files over 10 megs", "cmd": "fd -t f -e ts -S +10m"}
+{"q": "find large files > 50mb", "cmd": "fd -t f -S +50m"}
+{"q": "c# files bigger than 100mb", "cmd": "fd -t f -e cs -S +100m"}
+{"q": "files smaller than 100mb", "cmd": "fd -t f -S -100m"}
+{"q": "json files less than 100kb", "cmd": "fd -t f -e json -S -100k"}
+{"q": "py files smaller than 10mb", "cmd": "fd -t f -e py -S -10m"}
+{"q": "files bigger than 10mb", "cmd": "fd -t f -S +10m"}
+{"q": "java files bigger than 100mb", "cmd": "fd -t f -e java -S +100m"}
+{"q": "files smaller than 1gb", "cmd": "fd -t f -S -1g"}
+{"q": "tsx files under 50 mb", "cmd": "fd -t f -e tsx -S -50m"}
+{"q": "go files bigger than 50mb", "cmd": "fd -t f -e go -S +50m"}
+{"q": "find large js files > 50MB", "cmd": "fd -t f -e js -S +50m"}
+{"q": "rust files under 1 MB", "cmd": "fd -t f -e rs -S -1m"}
+{"q": "yaml files smaller than 1gb", "cmd": "fd -t f -e yaml -S -1g"}
+{"q": ".yaml files smaller than 1mb", "cmd": "fd -t f -e yaml -S -1m"}
+{"q": "find large .yaml files > 1gb", "cmd": "fd -t f -e yaml -S +1g"}
+{"q": ".yml files bigger than 100kb", "cmd": "fd -t f -e yml -S +100k"}
+{"q": "find large .yml files > 50MB", "cmd": "fd -t f -e yml -S +50m"}
+{"q": ".yaml files bigger than 10mb", "cmd": "fd -t f -e yaml -S +10m"}
+{"q": "rust files over 100 KB", "cmd": "fd -t f -e rs -S +100k"}
+{"q": "md files under 5 gigs", "cmd": "fd -t f -e md -S -5g"}
+{"q": "find large md files > 10mb", "cmd": "fd -t f -e md -S +10m"}
+{"q": "files under 5 gigs", "cmd": "fd -t f -S -5g"}
+{"q": ".yaml files under 1 MB", "cmd": "fd -t f -e yaml -S -1m"}
+{"q": "tsx files bigger than 500mb", "cmd": "fd -t f -e tsx -S +500m"}
+{"q": "ts files bigger than 100kb", "cmd": "fd -t f -e ts -S +100k"}
+{"q": "rs files less than 50MB", "cmd": "fd -t f -e rs -S -50m"}
+{"q": "markdown files over 100 megabytes", "cmd": "fd -t f -e md -S +100m"}
+{"q": "tsx files over 50 mb", "cmd": "fd -t f -e tsx -S +50m"}
+{"q": ".java files under 1 gig", "cmd": "fd -t f -e java -S -1g"}
+{"q": "py files less than 100mb", "cmd": "fd -t f -e py -S -100m"}
+{"q": "markdown files less than 500mb", "cmd": "fd -t f -e md -S -500m"}
+{"q": "find large .yaml files > 5GB", "cmd": "fd -t f -e yaml -S +5g"}
+{"q": "ts files over 1 gig", "cmd": "fd -t f -e ts -S +1g"}
+{"q": "yaml files less than 5GB", "cmd": "fd -t f -e yaml -S -5g"}
+{"q": "files bigger than 1gb", "cmd": "fd -t f -S +1g"}
+{"q": "find large rs files > 10mb", "cmd": "fd -t f -e rs -S +10m"}
+{"q": "java files over half a gig", "cmd": "fd -t f -e java -S +500m"}
+{"q": "find large js files > 500mb", "cmd": "fd -t f -e js -S +500m"}
+{"q": ".yaml files over 5 gigs", "cmd": "fd -t f -e yaml -S +5g"}
+{"q": "ts files bigger than 1gb", "cmd": "fd -t f -e ts -S +1g"}
+{"q": ".yaml files smaller than 100kb", "cmd": "fd -t f -e yaml -S -100k"}
+{"q": "find large json files > 1mb", "cmd": "fd -t f -e json -S +1m"}
+{"q": "find large go files > 1mb", "cmd": "fd -t f -e go -S +1m"}
+{"q": "rust files less than 500mb", "cmd": "fd -t f -e rs -S -500m"}
+{"q": "md files over 100 KB", "cmd": "fd -t f -e md -S +100k"}
+{"q": "rs files smaller than 5gb", "cmd": "fd -t f -e rs -S -5g"}
+{"q": "go files over 100 kb", "cmd": "fd -t f -e go -S +100k"}
+{"q": "rs files smaller than 500mb", "cmd": "fd -t f -e rs -S -500m"}
+{"q": "go files less than 1gb", "cmd": "fd -t f -e go -S -1g"}
+{"q": "files less than 100kb", "cmd": "fd -t f -S -100k"}
+{"q": ".tsx files bigger than 500mb", "cmd": "fd -t f -e tsx -S +500m"}
+{"q": "md files less than 10mb", "cmd": "fd -t f -e md -S -10m"}
+{"q": "python files over half a gig", "cmd": "fd -t f -e py -S +500m"}
+{"q": "rs files over 1 gig", "cmd": "fd -t f -e rs -S +1g"}
+{"q": "find large cs files > 50MB", "cmd": "fd -t f -e cs -S +50m"}
+{"q": "tsx files over half a gig", "cmd": "fd -t f -e tsx -S +500m"}
+{"q": "markdown files less than 1mb", "cmd": "fd -t f -e md -S -1m"}
+{"q": "typescript files bigger than 100mb", "cmd": "fd -t f -e ts -S +100m"}
+{"q": "find large typescript files > 100mb", "cmd": "fd -t f -e ts -S +100m"}
+{"q": "py files less than 5GB", "cmd": "fd -t f -e py -S -5g"}
+{"q": ".java files less than 10mb", "cmd": "fd -t f -e java -S -10m"}
+{"q": "tsx files over 100 megabytes", "cmd": "fd -t f -e tsx -S +100m"}
+{"q": "tsx files bigger than 10mb", "cmd": "fd -t f -e tsx -S +10m"}
+{"q": "c# files over 50 mb", "cmd": "fd -t f -e cs -S +50m"}
+{"q": ".yml files bigger than 1mb", "cmd": "fd -t f -e yml -S +1m"}
+{"q": "find large .tsx files > 500mb", "cmd": "fd -t f -e tsx -S +500m"}
+{"q": "yml files over 100 megabytes", "cmd": "fd -t f -e yml -S +100m"}
+{"q": "find large python files > 1mb", "cmd": "fd -t f -e py -S +1m"}
+{"q": "find large md files > 1gb", "cmd": "fd -t f -e md -S +1g"}
+{"q": "cs files bigger than 10mb", "cmd": "fd -t f -e cs -S +10m"}
+{"q": "cs files less than 1mb", "cmd": "fd -t f -e cs -S -1m"}
+{"q": "java files over 10 megs", "cmd": "fd -t f -e java -S +10m"}
+{"q": "java files bigger than 100kb", "cmd": "fd -t f -e java -S +100k"}
+{"q": "files less than 500mb", "cmd": "fd -t f -S -500m"}
+{"q": "javascript files over 1 mb", "cmd": "fd -t f -e js -S +1m"}
+{"q": "js files bigger than 1mb", "cmd": "fd -t f -e js -S +1m"}
+{"q": "find large markdown files > 500mb", "cmd": "fd -t f -e md -S +500m"}
+{"q": "find large files > 1gb", "cmd": "fd -t f -S +1g"}
+{"q": "yml files over 10 megs", "cmd": "fd -t f -e yml -S +10m"}
+{"q": "files over 100 KB", "cmd": "fd -t f -S +100k"}
+{"q": "python files less than 100kb", "cmd": "fd -t f -e py -S -100k"}
+{"q": "typescript files bigger than 5GB", "cmd": "fd -t f -e ts -S +5g"}
+{"q": ".json files smaller than 5GB", "cmd": "fd -t f -e json -S -5g"}
+{"q": "files bigger than 5gb", "cmd": "fd -t f -S +5g"}
+{"q": "yml files over 5 gigs", "cmd": "fd -t f -e yml -S +5g"}
+{"q": "toml files modified this week", "cmd": "fd -t f -e toml --changed-within 1w"}
+{"q": "recently edited go files (last 2 hours) from notebooks", "cmd": "fd -t f -e go --changed-within 2h . notebooks"}
+{"q": "rs files modified last 10 minutes in this folder", "cmd": "fd -t f -e rs --changed-within 10min"}
+{"q": "rust files modified last 10 minutes under notebooks", "cmd": "fd -t f -e rs --changed-within 10min . notebooks"}
+{"q": "recently edited rust files (last 2 days)", "cmd": "fd -t f -e rs --changed-within 2d"}
+{"q": "recently edited javascript files (last 10 minutes)", "cmd": "fd -t f -e js --changed-within 10min"}
+{"q": "python files modified the last 1h recursively", "cmd": "fd -t f -e py --changed-within 1h"}
+{"q": "java files modified last month", "cmd": "fd -t f -e java --changed-within 30d"}
+{"q": "go files modified past 30 days", "cmd": "fd -t f -e go --changed-within 30d"}
+{"q": ".java files modified past day under logs", "cmd": "fd -t f -e java --changed-within 1d . logs"}
+{"q": "javascript files changed past hour recursively", "cmd": "fd -t f -e js --changed-within 1h"}
+{"q": "what python files did i touch last month", "cmd": "fd -t f -e py --changed-within 30d"}
+{"q": "recently edited typescript files (last month) inside logs", "cmd": "fd -t f -e ts --changed-within 30d . logs"}
+{"q": "what .log files did i touch past 30 days here", "cmd": "fd -t f -e log --changed-within 30d"}
+{"q": "what markdown files did i touch today inside build", "cmd": "fd -t f -e md --changed-within 1d . build"}
+{"q": "json files changed past day in the tests folder", "cmd": "fd -t f -e json --changed-within 1d . tests"}
+{"q": "py files changed since yesterday", "cmd": "fd -t f -e py --changed-within 2d"}
+{"q": ".tsx files modified this week here", "cmd": "fd -t f -e tsx --changed-within 1w"}
+{"q": "c# files modified last 2 hours recursively", "cmd": "fd -t f -e cs --changed-within 2h"}
+{"q": "what files did i touch the last 1h under app", "cmd": "fd -t f --changed-within 1h . app"}
+{"q": ".tsx files modified since yesterday here", "cmd": "fd -t f -e tsx --changed-within 2d"}
+{"q": "what md files did i touch last 2 days in config", "cmd": "fd -t f -e md --changed-within 2d . config"}
+{"q": "go files changed past hour under app", "cmd": "fd -t f -e go --changed-within 1h . app"}
+{"q": "files modified last 10 minutes in bin", "cmd": "fd -t f --changed-within 10min . bin"}
+{"q": ".json files modified past two hours under scripts", "cmd": "fd -t f -e json --changed-within 2h . scripts"}
+{"q": "tsx files changed last 10 minutes in components", "cmd": "fd -t f -e tsx --changed-within 10min . components"}
+{"q": "c# files modified since yesterday", "cmd": "fd -t f -e cs --changed-within 2d"}
+{"q": "javascript files changed last 2 days in the infra folder", "cmd": "fd -t f -e js --changed-within 2d . infra"}
+{"q": "what .toml files did i touch since yesterday in config", "cmd": "fd -t f -e toml --changed-within 2d . config"}
+{"q": "rs files modified last hour", "cmd": "fd -t f -e rs --changed-within 1h"}
+{"q": "recently edited md files (last 2 hours) in the app folder", "cmd": "fd -t f -e md --changed-within 2h . app"}
+{"q": "go files changed past hour in api", "cmd": "fd -t f -e go --changed-within 1h . api"}
+{"q": "files changed past 30 days", "cmd": "fd -t f --changed-within 30d"}
+{"q": "files changed past day here", "cmd": "fd -t f --changed-within 1d"}
+{"q": "py files changed last 2 days inside lib", "cmd": "fd -t f -e py --changed-within 2d . lib"}
+{"q": "recently edited files (last 2 days)", "cmd": "fd -t f --changed-within 2d"}
+{"q": "recently edited log files (past 10 min)", "cmd": "fd -t f -e log --changed-within 10min"}
+{"q": "md files modified last 10 minutes inside scripts", "cmd": "fd -t f -e md --changed-within 10min . scripts"}
+{"q": "what cs files did i touch last 10 minutes in this folder", "cmd": "fd -t f -e cs --changed-within 10min"}
+{"q": "ts files changed last 2 hours", "cmd": "fd -t f -e ts --changed-within 2h"}
+{"q": "toml files modified last 10 minutes here", "cmd": "fd -t f -e toml --changed-within 10min"}
+{"q": "javascript files modified past 10 min here", "cmd": "fd -t f -e js --changed-within 10min"}
+{"q": "java files changed last 10 minutes recursively", "cmd": "fd -t f -e java --changed-within 10min"}
+{"q": "what cs files did i touch last week", "cmd": "fd -t f -e cs --changed-within 1w"}
+{"q": "recently edited files (last hour) in this folder", "cmd": "fd -t f --changed-within 1h"}
+{"q": "recently edited tsx files (past 30 days) here", "cmd": "fd -t f -e tsx --changed-within 30d"}
+{"q": "what rs files did i touch last month in the api folder", "cmd": "fd -t f -e rs --changed-within 30d . api"}
+{"q": "recently edited ts files (past 7 days) recursively", "cmd": "fd -t f -e ts --changed-within 1w"}
+{"q": "json files changed past 7 days inside utils", "cmd": "fd -t f -e json --changed-within 1w . utils"}
+{"q": "what java files did i touch last hour", "cmd": "fd -t f -e java --changed-within 1h"}
+{"q": "python files modified last 2 hours recursively", "cmd": "fd -t f -e py --changed-within 2h"}
+{"q": "tsx files changed last hour in build", "cmd": "fd -t f -e tsx --changed-within 1h . build"}
+{"q": "what python files did i touch last hour", "cmd": "fd -t f -e py --changed-within 1h"}
+{"q": "log files modified last 2 days here", "cmd": "fd -t f -e log --changed-within 2d"}
+{"q": "cs files modified last hour inside data", "cmd": "fd -t f -e cs --changed-within 1h . data"}
+{"q": ".yml files changed past 10 min under src", "cmd": "fd -t f -e yml --changed-within 10min . src"}
+{"q": "toml files changed past 30 days", "cmd": "fd -t f -e toml --changed-within 30d"}
+{"q": "javascript files modified past two hours in this folder", "cmd": "fd -t f -e js --changed-within 2h"}
+{"q": "what rs files did i touch last hour", "cmd": "fd -t f -e rs --changed-within 1h"}
+{"q": "what ts files did i touch past day in the build folder", "cmd": "fd -t f -e ts --changed-within 1d . build"}
+{"q": "java files changed this week inside assets", "cmd": "fd -t f -e java --changed-within 1w . assets"}
+{"q": "rs files modified last month", "cmd": "fd -t f -e rs --changed-within 30d"}
+{"q": "recently edited yaml files (the last 1h) inside app", "cmd": "fd -t f -e yaml --changed-within 1h . app"}
+{"q": "what toml files did i touch today here", "cmd": "fd -t f -e toml --changed-within 1d"}
+{"q": "typescript files modified past 10 min from migrations", "cmd": "fd -t f -e ts --changed-within 10min . migrations"}
+{"q": "what javascript files did i touch last month", "cmd": "fd -t f -e js --changed-within 30d"}
+{"q": ".yml files changed last week in the scripts folder", "cmd": "fd -t f -e yml --changed-within 1w . scripts"}
+{"q": "recently edited javascript files (last week) in the components folder", "cmd": "fd -t f -e js --changed-within 1w . components"}
+{"q": "recently edited typescript files (past 30 days) in this folder", "cmd": "fd -t f -e ts --changed-within 30d"}
+{"q": "recently edited ts files (last month) recursively", "cmd": "fd -t f -e ts --changed-within 30d"}
+{"q": "rs files changed last hour", "cmd": "fd -t f -e rs --changed-within 1h"}
+{"q": "cs files modified past 10 min here", "cmd": "fd -t f -e cs --changed-within 10min"}
+{"q": "yml files changed last hour recursively", "cmd": "fd -t f -e yml --changed-within 1h"}
+{"q": "markdown files modified past day under logs", "cmd": "fd -t f -e md --changed-within 1d . logs"}
+{"q": "tsx files changed past 10 min", "cmd": "fd -t f -e tsx --changed-within 10min"}
+{"q": "rust files modified today inside tests", "cmd": "fd -t f -e rs --changed-within 1d . tests"}
+{"q": "recently edited go files (the last 1h) in this folder", "cmd": "fd -t f -e go --changed-within 1h"}
+{"q": "recently edited java files (today) here", "cmd": "fd -t f -e java --changed-within 1d"}
+{"q": "rs files modified the last 1h from api", "cmd": "fd -t f -e rs --changed-within 1h . api"}
+{"q": "what yml files did i touch last week in the docs folder", "cmd": "fd -t f -e yml --changed-within 1w . docs"}
+{"q": "what files did i touch past 10 min under utils", "cmd": "fd -t f --changed-within 10min . utils"}
+{"q": "tsx files changed today recursively", "cmd": "fd -t f -e tsx --changed-within 1d"}
+{"q": "recently edited javascript files (last month) here", "cmd": "fd -t f -e js --changed-within 30d"}
+{"q": "what go files did i touch past 7 days in the bin folder", "cmd": "fd -t f -e go --changed-within 1w . bin"}
+{"q": "yml files changed last 2 hours in the bin folder", "cmd": "fd -t f -e yml --changed-within 2h . bin"}
+{"q": "tsx files modified past two hours under scripts", "cmd": "fd -t f -e tsx --changed-within 2h . scripts"}
+{"q": ".toml files changed past hour", "cmd": "fd -t f -e toml --changed-within 1h"}
+{"q": "recently edited yml files (last 24 hours)", "cmd": "fd -t f -e yml --changed-within 1d"}
+{"q": "recently edited go files (past two hours) under docs", "cmd": "fd -t f -e go --changed-within 2h . docs"}
+{"q": ".log files changed past 10 min here", "cmd": "fd -t f -e log --changed-within 10min"}
+{"q": "recently edited yaml files (past 30 days) in this folder", "cmd": "fd -t f -e yaml --changed-within 30d"}
+{"q": "files modified since yesterday inside server", "cmd": "fd -t f --changed-within 2d . server"}
+{"q": ".json files changed past two hours in this folder", "cmd": "fd -t f -e json --changed-within 2h"}
+{"q": "files modified past two hours in this folder", "cmd": "fd -t f --changed-within 2h"}
+{"q": "what markdown files did i touch last week in this folder", "cmd": "fd -t f -e md --changed-within 1w"}
+{"q": "yaml files changed past 10 min from bin", "cmd": "fd -t f -e yaml --changed-within 10min . bin"}
+{"q": "files changed last 2 days in config", "cmd": "fd -t f --changed-within 2d . config"}
+{"q": "recently edited javascript files (today)", "cmd": "fd -t f -e js --changed-within 1d"}
+{"q": ".log files changed the last 1h in this folder", "cmd": "fd -t f -e log --changed-within 1h"}
+{"q": "python files changed the last 1h in tests", "cmd": "fd -t f -e py --changed-within 1h . tests"}
+{"q": "recently edited javascript files (past two hours) inside assets", "cmd": "fd -t f -e js --changed-within 2h . assets"}
+{"q": "rust files modified last 2 days", "cmd": "fd -t f -e rs --changed-within 2d"}
+{"q": "files modified past 7 days recursively", "cmd": "fd -t f --changed-within 1w"}
+{"q": "yaml files changed past day", "cmd": "fd -t f -e yaml --changed-within 1d"}
+{"q": "recently edited files (last 2 hours) recursively", "cmd": "fd -t f --changed-within 2h"}
+{"q": "markdown files changed since yesterday recursively", "cmd": "fd -t f -e md --changed-within 2d"}
+{"q": "recently edited files (last 10 minutes) here", "cmd": "fd -t f --changed-within 10min"}
+{"q": "recently edited python files (past 10 min)", "cmd": "fd -t f -e py --changed-within 10min"}
+{"q": "recently edited python files (the last 1h)", "cmd": "fd -t f -e py --changed-within 1h"}
+{"q": "c# files modified last month inside packages", "cmd": "fd -t f -e cs --changed-within 30d . packages"}
+{"q": "recently edited .json files (last 24 hours) from client", "cmd": "fd -t f -e json --changed-within 1d . client"}
+{"q": "what yaml files did i touch today in this folder", "cmd": "fd -t f -e yaml --changed-within 1d"}
+{"q": "ts files modified last 10 minutes under components", "cmd": "fd -t f -e ts --changed-within 10min . components"}
+{"q": "files changed past 10 min in the assets folder", "cmd": "fd -t f --changed-within 10min . assets"}
+{"q": "recently edited js files (last 10 minutes) recursively", "cmd": "fd -t f -e js --changed-within 10min"}
+{"q": "c# files changed last 2 hours under lib", "cmd": "fd -t f -e cs --changed-within 2h . lib"}
+{"q": "markdown files changed since yesterday in this folder", "cmd": "fd -t f -e md --changed-within 2d"}
+{"q": "what md files did i touch past hour under scripts", "cmd": "fd -t f -e md --changed-within 1h . scripts"}
+{"q": "what md files did i touch since yesterday inside tests", "cmd": "fd -t f -e md --changed-within 2d . tests"}
+{"q": "what tsx files did i touch last week inside src", "cmd": "fd -t f -e tsx --changed-within 1w . src"}
+{"q": "what json files did i touch last month", "cmd": "fd -t f -e json --changed-within 30d"}
+{"q": "what python files did i touch last 2 hours from config", "cmd": "fd -t f -e py --changed-within 2h . config"}
+{"q": "what files did i touch last 2 hours in utils", "cmd": "fd -t f --changed-within 2h . utils"}
+{"q": "what tsx files did i touch this week under config", "cmd": "fd -t f -e tsx --changed-within 1w . config"}
+{"q": "recently edited yaml files (last 2 days)", "cmd": "fd -t f -e yaml --changed-within 2d"}
+{"q": "what files did i touch last month", "cmd": "fd -t f --changed-within 30d"}
+{"q": "json files modified today under docs", "cmd": "fd -t f -e json --changed-within 1d . docs"}
+{"q": "js files changed this week in this folder", "cmd": "fd -t f -e js --changed-within 1w"}
+{"q": "what files did i touch past two hours under api", "cmd": "fd -t f --changed-within 2h . api"}
+{"q": "py files modified past day", "cmd": "fd -t f -e py --changed-within 1d"}
+{"q": "rs files changed since yesterday", "cmd": "fd -t f -e rs --changed-within 2d"}
+{"q": "javascript files modified since yesterday", "cmd": "fd -t f -e js --changed-within 2d"}
+{"q": "go files modified last month", "cmd": "fd -t f -e go --changed-within 30d"}
+{"q": "what files did i touch since yesterday in this folder", "cmd": "fd -t f --changed-within 2d"}
+{"q": "recently edited rust files (past day) inside migrations", "cmd": "fd -t f -e rs --changed-within 1d . migrations"}
+{"q": "what python files did i touch the last 1h inside config", "cmd": "fd -t f -e py --changed-within 1h . config"}
+{"q": ".log files modified last month in this folder", "cmd": "fd -t f -e log --changed-within 30d"}
+{"q": "files changed last 2 hours recursively", "cmd": "fd -t f --changed-within 2h"}
+{"q": "cs files modified this week in the api folder", "cmd": "fd -t f -e cs --changed-within 1w . api"}
+{"q": "search whole word version in go files", "cmd": "rg -w -t go 'version'"}
+{"q": "search for console.log in go files inside lib", "cmd": "rg -F -g '*.go' 'console.log' lib"}
+{"q": "find http:// as a whole word in cs files in this folder", "cmd": "rg -w -t cs 'http://'"}
+{"q": "how many times does panic! appear in each file in rust files", "cmd": "rg -c -g '*.rs' 'panic!'"}
+{"q": "where is SELECT used here", "cmd": "rg 'SELECT'"}
+{"q": "how many times does token appear in each file in go files recursively", "cmd": "rg -c -g '*.go' 'token'"}
+{"q": "grep -w password in rs files", "cmd": "rg -w -g '*.rs' 'password'"}
+{"q": "find the exact text assert", "cmd": "rg -F 'assert'"}
+{"q": "grep -i version in rust files", "cmd": "rg -i -g '*.rs' 'version'"}
+{"q": "grep -F 'version' in log files here", "cmd": "rg -F -g '*.log' 'version'"}
+{"q": "just the filenames with SELECT in toml files inside config", "cmd": "rg -l -t toml 'SELECT' config"}
+{"q": "find localhost:8080 as a whole word in c# files under data", "cmd": "rg -w -t cs 'localhost:8080' data"}
+{"q": "find the exact text unwrap() in .java files in scripts", "cmd": "rg -F -t java 'unwrap()' scripts"}
+{"q": "count assert per file in .log files in the dist folder", "cmd": "rg -c -g '*.log' 'assert' dist"}
+{"q": "grep SELECT in .json files here", "cmd": "rg -g '*.json' 'SELECT'"}
+{"q": "count http:// per file in tsx files from migrations", "cmd": "rg -c -g '*.tsx' 'http://' migrations"}
+{"q": "grep -F 'unwrap()' in go files recursively", "cmd": "rg -F -t go 'unwrap()'"}
+{"q": "search for console.log in .log files", "cmd": "rg -F -g '*.log' 'console.log'"}
+{"q": "find TODO as a whole word in go files under components", "cmd": "rg -w -t go 'TODO' components"}
+{"q": "grep -f 'lambda' recursively", "cmd": "rg -F 'lambda'"}
+{"q": "search whole word token in .yml files", "cmd": "rg -w -g '*.yml' 'token'"}
+{"q": "where is SELECT used in toml files in this folder", "cmd": "rg -g '*.toml' 'SELECT'"}
+{"q": "search literal console.log in c# files", "cmd": "rg -F -t cs 'console.log'"}
+{"q": "just the filenames with SELECT in md files from utils", "cmd": "rg -l -g '*.md' 'SELECT' utils"}
+{"q": "look for 'async def' in py files in this folder", "cmd": "rg -g '*.py' 'async def'"}
+{"q": "count lambda per file in md files recursively", "cmd": "rg -c -g '*.md' 'lambda'"}
+{"q": "find assert in py files inside infra", "cmd": "rg -t py 'assert' infra"}
+{"q": "find FIXME as a whole word in markdown files under src", "cmd": "rg -w -g '*.md' 'FIXME' src"}
+{"q": "search for panic! in ts files in this folder", "cmd": "rg -t ts 'panic!'"}
+{"q": "grep -c error in .json files in this folder", "cmd": "rg -c -t json 'error'"}
+{"q": "find SELECT in typescript files from bin", "cmd": "rg -g '*.ts' 'SELECT' bin"}
+{"q": "find useState in .toml files", "cmd": "rg -g '*.toml' 'useState'"}
+{"q": "how many times does panic! appear in each file in yml files here", "cmd": "rg -c -g '*.yml' 'panic!'"}
+{"q": "look for 'async def'", "cmd": "rg 'async def'"}
+{"q": "look for 'deprecated' in rust files", "cmd": "rg -g '*.rs' 'deprecated'"}
+{"q": "count localhost:8080 per file in this folder", "cmd": "rg -c 'localhost:8080'"}
+{"q": "how many times does http:// appear in each file in java files here", "cmd": "rg -c -t java 'http://'"}
+{"q": "grep localhost", "cmd": "rg 'localhost'"}
+{"q": "grep -F 'debugger' in c# files", "cmd": "rg -F -g '*.cs' 'debugger'"}
+{"q": "search TODO case insensitive", "cmd": "rg -i 'TODO'"}
+{"q": "files that mention token in js files in the infra folder", "cmd": "rg -l -t js 'token' infra"}
+{"q": "find the exact text unwrap() in javascript files in this folder", "cmd": "rg -F -t js 'unwrap()'"}
+{"q": "grep -l assert in yml files recursively", "cmd": "rg -l -g '*.yml' 'assert'"}
+{"q": "find the exact text fetch( in toml files in this folder", "cmd": "rg -F -g '*.toml' 'fetch('"}
+{"q": "grep -i Exception in tsx files", "cmd": "rg -i -g '*.tsx' 'Exception'"}
+{"q": "search for import torch in toml files from notebooks", "cmd": "rg -F -g '*.toml' 'import torch' notebooks"}
+{"q": "how many times does DATABASE_URL appear in each file in rust files", "cmd": "rg -c -g '*.rs' 'DATABASE_URL'"}
+{"q": "search literal print( in .yaml files in this folder", "cmd": "rg -F -t yaml 'print('"}
+{"q": "find select in .log files here", "cmd": "rg -g '*.log' 'SELECT'"}
+{"q": "grep -l SELECT in csv files", "cmd": "rg -l -g '*.csv' 'SELECT'"}
+{"q": "find FIXME in .tsx files from bin", "cmd": "rg -g '*.tsx' 'FIXME' bin"}
+{"q": "grep panic! in .csv files inside api", "cmd": "rg -g '*.csv' 'panic!' api"}
+{"q": "grep deprecated in rust files", "cmd": "rg -g '*.rs' 'deprecated'"}
+{"q": "search literal TODO(nam) in rust files here", "cmd": "rg -F -g '*.rs' 'TODO(nam)'"}
+{"q": "search literal secret in go files in utils", "cmd": "rg -F -t go 'secret' utils"}
+{"q": "search literal print( in yml files", "cmd": "rg -F -g '*.yml' 'print('"}
+{"q": "grep -l lambda in yaml files recursively", "cmd": "rg -l -g '*.yaml' 'lambda'"}
+{"q": "find the exact text localhost:8080 in .yaml files recursively", "cmd": "rg -F -g '*.yaml' 'localhost:8080'"}
+{"q": "look for 'HACK' in .tsx files recursively", "cmd": "rg -g '*.tsx' 'HACK'"}
+{"q": "search for import torch in this folder", "cmd": "rg 'import torch'"}
+{"q": "search for retry in typescript files in this folder", "cmd": "rg -F -g '*.ts' 'retry'"}
+{"q": "find Exception as a whole word in js files", "cmd": "rg -w -t js 'Exception'"}
+{"q": "search for error in log files here", "cmd": "rg -g '*.log' 'error'"}
+{"q": "find connectionstring in c# files", "cmd": "rg -t cs 'connectionString'"}
+{"q": "search whole word assert in ts files recursively", "cmd": "rg -w -t ts 'assert'"}
+{"q": "where is DATABASE_URL used in .toml files in this folder", "cmd": "rg -t toml 'DATABASE_URL'"}
+{"q": "which files contain error in .toml files in this folder", "cmd": "rg -l -t toml 'error'"}
+{"q": "find the exact text TODO(nam) in .tsx files from components", "cmd": "rg -F -g '*.tsx' 'TODO(nam)' components"}
+{"q": "find debugger in go files in the src folder", "cmd": "rg -g '*.go' 'debugger' src"}
+{"q": "find localhost:8080 ignoring case in the tests folder", "cmd": "rg -i 'localhost:8080' tests"}
+{"q": "look for 'fixme' in json files in server", "cmd": "rg -t json 'FIXME' server"}
+{"q": "search literal console.log recursively", "cmd": "rg -F 'console.log'"}
+{"q": "search for HACK in yml files inside build", "cmd": "rg -F -g '*.yml' 'HACK' build"}
+{"q": "grep -w api_key in python files from app", "cmd": "rg -w -g '*.py' 'api_key' app"}
+{"q": "grep -c select in .csv files in the logs folder", "cmd": "rg -c -g '*.csv' 'SELECT' logs"}
+{"q": "search literal console.log in python files in this folder", "cmd": "rg -F -g '*.py' 'console.log'"}
+{"q": "grep -i connectionstring in c# files from utils", "cmd": "rg -i -g '*.cs' 'connectionString' utils"}
+{"q": "grep -F 'Exception' in javascript files", "cmd": "rg -F -t js 'Exception'"}
+{"q": "which files contain SELECT in md files under assets", "cmd": "rg -l -t md 'SELECT' assets"}
+{"q": "find the exact text print( in ts files recursively", "cmd": "rg -F -t ts 'print('"}
+{"q": "find XXX ignoring case in .json files", "cmd": "rg -i -g '*.json' 'XXX'"}
+{"q": "search literal XXX in .tsx files from docs", "cmd": "rg -F -g '*.tsx' 'XXX' docs"}
+{"q": "grep -F 'unwrap()'", "cmd": "rg -F 'unwrap()'"}
+{"q": "grep -c debugger in .yml files here", "cmd": "rg -c -g '*.yml' 'debugger'"}
+{"q": "where is async def used from notebooks", "cmd": "rg 'async def' notebooks"}
+{"q": "grep -f 'print(' in .log files under infra", "cmd": "rg -F -g '*.log' 'print(' infra"}
+{"q": "search for Exception in .json files in this folder", "cmd": "rg -g '*.json' 'Exception'"}
+{"q": "search lambda case insensitive in the build folder", "cmd": "rg -i 'lambda' build"}
+{"q": "search for print( in yml files recursively", "cmd": "rg -F -g '*.yml' 'print('"}
+{"q": "search for api_key in markdown files", "cmd": "rg -F -t md 'api_key'"}
+{"q": "search xxx case insensitive in js files in this folder", "cmd": "rg -i -g '*.js' 'XXX'"}
+{"q": "grep -c warning in .yaml files here", "cmd": "rg -c -t yaml 'warning'"}
+{"q": "grep -F 'print(' inside bin", "cmd": "rg -F 'print(' bin"}
+{"q": "search localhost:8080 case insensitive in yml files recursively", "cmd": "rg -i -g '*.yml' 'localhost:8080'"}
+{"q": "where is useState used in .tsx files inside server", "cmd": "rg -g '*.tsx' 'useState' server"}
+{"q": "which files contain select in app", "cmd": "rg -l 'SELECT' app"}
+{"q": "which files contain token in yaml files", "cmd": "rg -l -t yaml 'token'"}
+{"q": "grep -f 'unwrap()' in java files in the server folder", "cmd": "rg -F -t java 'unwrap()' server"}
+{"q": "where is version used in tsx files in src", "cmd": "rg -g '*.tsx' 'version' src"}
+{"q": "find assert ignoring case in python files recursively", "cmd": "rg -i -g '*.py' 'assert'"}
+{"q": "where is localhost used in .toml files in this folder", "cmd": "rg -t toml 'localhost'"}
+{"q": "find retry in yaml files recursively", "cmd": "rg -g '*.yaml' 'retry'"}
+{"q": "grep -F 'HACK' in rs files", "cmd": "rg -F -g '*.rs' 'HACK'"}
+{"q": "look for 'lambda' in py files from assets", "cmd": "rg -g '*.py' 'lambda' assets"}
+{"q": "grep -l XXX in .csv files", "cmd": "rg -l -g '*.csv' 'XXX'"}
+{"q": "grep password in cs files", "cmd": "rg -t cs 'password'"}
+{"q": "search whole word async def in rs files under components", "cmd": "rg -w -g '*.rs' 'async def' components"}
+{"q": "search literal lambda in md files under packages", "cmd": "rg -F -g '*.md' 'lambda' packages"}
+{"q": "search literal retry", "cmd": "rg -F 'retry'"}
+{"q": "look for 'localhost' in .java files in the docs folder", "cmd": "rg -t java 'localhost' docs"}
+{"q": "find the exact text secret in log files in this folder", "cmd": "rg -F -g '*.log' 'secret'"}
+{"q": "find the exact text panic! in dist", "cmd": "rg -F 'panic!' dist"}
+{"q": "grep -w error in js files here", "cmd": "rg -w -t js 'error'"}
+{"q": "grep debugger in rs files", "cmd": "rg -g '*.rs' 'debugger'"}
+{"q": "find fixme ignoring case in py files in logs", "cmd": "rg -i -t py 'FIXME' logs"}
+{"q": "search secret case insensitive in .txt files in tests", "cmd": "rg -i -g '*.txt' 'secret' tests"}
+{"q": "grep todo in this folder", "cmd": "rg 'TODO'"}
+{"q": "grep api_key in .yaml files", "cmd": "rg -g '*.yaml' 'api_key'"}
+{"q": "search version case insensitive in markdown files recursively", "cmd": "rg -i -g '*.md' 'version'"}
+{"q": "just the filenames with connectionstring in cs files", "cmd": "rg -l -g '*.cs' 'connectionString'"}
+{"q": "grep -l token in c# files in app", "cmd": "rg -l -g '*.cs' 'token' app"}
+{"q": "search literal TODO(nam) in .json files under client", "cmd": "rg -F -t json 'TODO(nam)' client"}
+{"q": "grep -w lambda in java files from tests", "cmd": "rg -w -g '*.java' 'lambda' tests"}
+{"q": "search for HACK in .log files in the data folder", "cmd": "rg -F -g '*.log' 'HACK' data"}
+{"q": "search literal usestate in typescript files recursively", "cmd": "rg -F -g '*.ts' 'useState'"}
+{"q": "grep -l retry in markdown files", "cmd": "rg -l -g '*.md' 'retry'"}
+{"q": "search for console.log", "cmd": "rg -F 'console.log'"}
+{"q": "find assert as a whole word in .csv files in this folder", "cmd": "rg -w -g '*.csv' 'assert'"}
+{"q": "grep -w localhost in cs files recursively", "cmd": "rg -w -g '*.cs' 'localhost'"}
+{"q": "how many times does HACK appear in each file in ts files from bin", "cmd": "rg -c -g '*.ts' 'HACK' bin"}
+{"q": "count retry per file in yml files from server", "cmd": "rg -c -g '*.yml' 'retry' server"}
+{"q": "just the filenames with DATABASE_URL", "cmd": "rg -l 'DATABASE_URL'"}
+{"q": "find hack as a whole word in txt files under app", "cmd": "rg -w -g '*.txt' 'HACK' app"}
+{"q": "search whole word database_url in md files inside infra", "cmd": "rg -w -t md 'DATABASE_URL' infra"}
+{"q": "grep -i retry in .java files inside components", "cmd": "rg -i -t java 'retry' components"}
+{"q": "grep -w SELECT in ts files in this folder", "cmd": "rg -w -t ts 'SELECT'"}
+{"q": "grep -w XXX in .txt files inside logs", "cmd": "rg -w -g '*.txt' 'XXX' logs"}
+{"q": "find warning in .json files in data", "cmd": "rg -g '*.json' 'warning' data"}
+{"q": "look for 'panic!' in .csv files here", "cmd": "rg -g '*.csv' 'panic!'"}
+{"q": "count lambda per file", "cmd": "rg -c 'lambda'"}
+{"q": "search literal lambda in java files in this folder", "cmd": "rg -F -g '*.java' 'lambda'"}
+{"q": "grep -w Exception in .java files", "cmd": "rg -w -g '*.java' 'Exception'"}
+{"q": "grep -w useState in yml files recursively", "cmd": "rg -w -g '*.yml' 'useState'"}
+{"q": "grep -i SELECT in tsx files in this folder", "cmd": "rg -i -g '*.tsx' 'SELECT'"}
+{"q": "search for http:// in .csv files inside utils", "cmd": "rg -g '*.csv' 'http://' utils"}
+{"q": "find HACK ignoring case in rs files in this folder", "cmd": "rg -i -g '*.rs' 'HACK'"}
+{"q": "grep -f 'todo' in go files under data", "cmd": "rg -F -g '*.go' 'TODO' data"}
+{"q": "find DATABASE_URL in cs files under dist", "cmd": "rg -t cs 'DATABASE_URL' dist"}
+{"q": "which files contain SELECT in .yaml files in the notebooks folder", "cmd": "rg -l -g '*.yaml' 'SELECT' notebooks"}
+{"q": "search literal todo(nam) in txt files inside server", "cmd": "rg -F -g '*.txt' 'TODO(nam)' server"}
+{"q": "search for unwrap() in go files under client", "cmd": "rg -F -g '*.go' 'unwrap()' client"}
+{"q": "which files contain api_key in .tsx files", "cmd": "rg -l -g '*.tsx' 'api_key'"}
+{"q": "look for 'password' in the tests folder", "cmd": "rg 'password' tests"}
+{"q": "grep -f 'select' in py files", "cmd": "rg -F -t py 'SELECT'"}
+{"q": "grep -f 'warning' in .toml files inside server", "cmd": "rg -F -t toml 'warning' server"}
+{"q": "look for 'retry' in .toml files from infra", "cmd": "rg -t toml 'retry' infra"}
+{"q": "search warning case insensitive in javascript files inside infra", "cmd": "rg -i -g '*.js' 'warning' infra"}
+{"q": "grep -F 'password' in cs files in this folder", "cmd": "rg -F -g '*.cs' 'password'"}
+{"q": "files that mention DATABASE_URL in txt files", "cmd": "rg -l -g '*.txt' 'DATABASE_URL'"}
+{"q": "grep -w version in tsx files", "cmd": "rg -w -g '*.tsx' 'version'"}
+{"q": "find retry ignoring case in yml files here", "cmd": "rg -i -g '*.yml' 'retry'"}
+{"q": "look for 'password' in rust files under config", "cmd": "rg -g '*.rs' 'password' config"}
+{"q": "grep -l retry in yaml files in the src folder", "cmd": "rg -l -t yaml 'retry' src"}
+{"q": "find the exact text password in .json files in this folder", "cmd": "rg -F -t json 'password'"}
+{"q": "count assert per file in csv files from client", "cmd": "rg -c -g '*.csv' 'assert' client"}
+{"q": "which files contain warning in go files in tests", "cmd": "rg -l -t go 'warning' tests"}
+{"q": "search for token in tsx files here", "cmd": "rg -F -g '*.tsx' 'token'"}
+{"q": "grep async def inside config", "cmd": "rg 'async def' config"}
+{"q": "grep -c import torch in java files recursively", "cmd": "rg -c -t java 'import torch'"}
+{"q": "how many times does TODO appear in each file in toml files in this folder", "cmd": "rg -c -t toml 'TODO'"}
+{"q": "find HACK ignoring case from infra", "cmd": "rg -i 'HACK' infra"}
+{"q": "which files contain version in rust files in assets", "cmd": "rg -l -g '*.rs' 'version' assets"}
+{"q": "grep localhost:8080 in typescript files here", "cmd": "rg -t ts 'localhost:8080'"}
+{"q": "find connectionString in yml files", "cmd": "rg -g '*.yml' 'connectionString'"}
+{"q": "grep -F 'token' in .yml files under build", "cmd": "rg -F -g '*.yml' 'token' build"}
+{"q": "grep -w secret in javascript files in this folder", "cmd": "rg -w -t js 'secret'"}
+{"q": "which files contain token in js files in notebooks", "cmd": "rg -l -t js 'token' notebooks"}
+{"q": "which files contain localhost:8080 in java files in data", "cmd": "rg -l -g '*.java' 'localhost:8080' data"}
+{"q": "find fixme as a whole word in py files under assets", "cmd": "rg -w -t py 'FIXME' assets"}
+{"q": "how many times does Exception appear in each file in typescript files recursively", "cmd": "rg -c -g '*.ts' 'Exception'"}
+{"q": "search debugger case insensitive in .yml files", "cmd": "rg -i -g '*.yml' 'debugger'"}
+{"q": "find async def as a whole word in .csv files under docs", "cmd": "rg -w -g '*.csv' 'async def' docs"}
+{"q": "where is DATABASE_URL used in .json files in this folder", "cmd": "rg -t json 'DATABASE_URL'"}
+{"q": "grep -F 'TODO(nam)' in typescript files recursively", "cmd": "rg -F -g '*.ts' 'TODO(nam)'"}
+{"q": "count useState per file in markdown files in this folder", "cmd": "rg -c -t md 'useState'"}
+{"q": "search literal TODO(nam) in this folder", "cmd": "rg -F 'TODO(nam)'"}
+{"q": "grep -F 'console.log' in .tsx files from logs", "cmd": "rg -F -g '*.tsx' 'console.log' logs"}
+{"q": "search literal fetch( recursively", "cmd": "rg -F 'fetch('"}
+{"q": "grep FIXME in ts files recursively", "cmd": "rg -t ts 'FIXME'"}
+{"q": "grep -F 'warning' in yml files inside logs", "cmd": "rg -F -g '*.yml' 'warning' logs"}
+{"q": "find database_url as a whole word in py files recursively", "cmd": "rg -w -g '*.py' 'DATABASE_URL'"}
+{"q": "find the exact text console.log in go files", "cmd": "rg -F -g '*.go' 'console.log'"}
+{"q": "grep -c warning in rs files from scripts", "cmd": "rg -c -g '*.rs' 'warning' scripts"}
+{"q": "grep -c import torch in .txt files inside build", "cmd": "rg -c -g '*.txt' 'import torch' build"}
+{"q": "find HACK ignoring case in csv files", "cmd": "rg -i -g '*.csv' 'HACK'"}
+{"q": "find deprecated", "cmd": "rg 'deprecated'"}
+{"q": "grep -f 'print(' in log files in this folder", "cmd": "rg -F -g '*.log' 'print('"}
+{"q": "find localhost:8080 ignoring case in ts files under scripts", "cmd": "rg -i -t ts 'localhost:8080' scripts"}
+{"q": "search literal unwrap() in .json files from app", "cmd": "rg -F -t json 'unwrap()' app"}
+{"q": "search literal print( in js files here", "cmd": "rg -F -t js 'print('"}
+{"q": "find HACK as a whole word in rust files inside docs", "cmd": "rg -w -g '*.rs' 'HACK' docs"}
+{"q": "find deprecated ignoring case in .yml files", "cmd": "rg -i -g '*.yml' 'deprecated'"}
+{"q": "find error as a whole word in the client folder", "cmd": "rg -w 'error' client"}
+{"q": "grep -w assert in yml files inside app", "cmd": "rg -w -g '*.yml' 'assert' app"}
+{"q": "find password ignoring case recursively", "cmd": "rg -i 'password'"}
+{"q": "search for SELECT in yaml files recursively", "cmd": "rg -t yaml 'SELECT'"}
+{"q": "search for localhost:8080", "cmd": "rg 'localhost:8080'"}
+{"q": "find deprecated in .json files", "cmd": "rg -g '*.json' 'deprecated'"}
+{"q": "find panic! ignoring case in .java files in server", "cmd": "rg -i -t java 'panic!' server"}
+{"q": "find useState ignoring case in csv files recursively", "cmd": "rg -i -g '*.csv' 'useState'"}
+{"q": "count deprecated per file inside components", "cmd": "rg -c 'deprecated' components"}
+{"q": "count password per file in py files", "cmd": "rg -c -g '*.py' 'password'"}
+{"q": "just the filenames with localhost:8080 from infra", "cmd": "rg -l 'localhost:8080' infra"}
+{"q": "search for fetch( in .toml files", "cmd": "rg -F -t toml 'fetch('"}
+{"q": "find the exact text fetch( in javascript files", "cmd": "rg -F -t js 'fetch('"}
+{"q": "just the filenames with XXX in rs files from src", "cmd": "rg -l -g '*.rs' 'XXX' src"}
+{"q": "grep -l async def in toml files here", "cmd": "rg -l -t toml 'async def'"}
+{"q": "grep error in ts files recursively", "cmd": "rg -t ts 'error'"}
+{"q": "just the filenames with import torch in java files inside api", "cmd": "rg -l -g '*.java' 'import torch' api"}
+{"q": "grep -F 'warning' in c# files from src", "cmd": "rg -F -g '*.cs' 'warning' src"}
+{"q": "grep -f 'print(' from utils", "cmd": "rg -F 'print(' utils"}
+{"q": "grep -w FIXME here", "cmd": "rg -w 'FIXME'"}
+{"q": "how many times does localhost appear in each file in .csv files in this folder", "cmd": "rg -c -g '*.csv' 'localhost'"}
+{"q": "search for connectionString in rust files from lib", "cmd": "rg -g '*.rs' 'connectionString' lib"}
+{"q": "search warning case insensitive here", "cmd": "rg -i 'warning'"}
+{"q": "grep -w localhost in .yml files under build", "cmd": "rg -w -g '*.yml' 'localhost' build"}
+{"q": "search literal TODO(nam) in yaml files recursively", "cmd": "rg -F -t yaml 'TODO(nam)'"}
+{"q": "grep -i api_key in javascript files in this folder", "cmd": "rg -i -g '*.js' 'api_key'"}
+{"q": "grep -F 'connectionString' in yaml files in migrations", "cmd": "rg -F -t yaml 'connectionString' migrations"}
+{"q": "how many times does SELECT appear in each file", "cmd": "rg -c 'SELECT'"}
+{"q": "search for api_key in .yaml files from build", "cmd": "rg -t yaml 'api_key' build"}
+{"q": "how many times does panic! appear in each file in python files in the tests folder", "cmd": "rg -c -g '*.py' 'panic!' tests"}
+{"q": "find token as a whole word in typescript files in this folder", "cmd": "rg -w -g '*.ts' 'token'"}
+{"q": "which files contain SELECT in .txt files in bin", "cmd": "rg -l -g '*.txt' 'SELECT' bin"}
+{"q": "files that mention assert in js files in the migrations folder", "cmd": "rg -l -g '*.js' 'assert' migrations"}
+{"q": "how many times does version appear in each file in toml files inside packages", "cmd": "rg -c -t toml 'version' packages"}
+{"q": "find the exact text unwrap() in go files from components", "cmd": "rg -F -t go 'unwrap()' components"}
+{"q": "where is warning used in the tests folder", "cmd": "rg 'warning' tests"}
+{"q": "how many times does secret appear in each file in notebooks", "cmd": "rg -c 'secret' notebooks"}
+{"q": "just the filenames with useState in .tsx files here", "cmd": "rg -l -g '*.tsx' 'useState'"}
+{"q": "grep -F 'http://' in txt files", "cmd": "rg -F -g '*.txt' 'http://'"}
+{"q": "grep -c api_key", "cmd": "rg -c 'api_key'"}
+{"q": "search for print( in this folder", "cmd": "rg -F 'print('"}
+{"q": "search for fetch( recursively", "cmd": "rg -F 'fetch('"}
+{"q": "search password case insensitive in ts files in this folder", "cmd": "rg -i -g '*.ts' 'password'"}
+{"q": "search literal fetch( in the app folder", "cmd": "rg -F 'fetch(' app"}
+{"q": "search literal import torch in toml files", "cmd": "rg -F -g '*.toml' 'import torch'"}
+{"q": "search for unwrap() in .json files", "cmd": "rg -F -t json 'unwrap()'"}
+{"q": "grep async def in log files", "cmd": "rg -g '*.log' 'async def'"}
+{"q": "find warning ignoring case in .json files", "cmd": "rg -i -t json 'warning'"}
+{"q": "where is retry used in tsx files recursively", "cmd": "rg -g '*.tsx' 'retry'"}
+{"q": "grep -c localhost:8080 in go files in the data folder", "cmd": "rg -c -g '*.go' 'localhost:8080' data"}
+{"q": "search literal console.log in python files in infra", "cmd": "rg -F -t py 'console.log' infra"}
+{"q": "just the filenames with usestate in log files in the notebooks folder", "cmd": "rg -l -g '*.log' 'useState' notebooks"}
+{"q": "which files contain warning in .yml files", "cmd": "rg -l -g '*.yml' 'warning'"}
+{"q": "grep -w Exception in .txt files from logs", "cmd": "rg -w -g '*.txt' 'Exception' logs"}
+{"q": "search literal usestate under build", "cmd": "rg -F 'useState' build"}
+{"q": "files that mention async def here", "cmd": "rg -l 'async def'"}
+{"q": "grep -F 'TODO(nam)' in go files", "cmd": "rg -F -g '*.go' 'TODO(nam)'"}
+{"q": "which files contain FIXME in log files recursively", "cmd": "rg -l -g '*.log' 'FIXME'"}
+{"q": "look for 'secret' in tsx files in this folder", "cmd": "rg -g '*.tsx' 'secret'"}
+{"q": "grep -w todo in .java files under infra", "cmd": "rg -w -t java 'TODO' infra"}
+{"q": "where is DATABASE_URL used", "cmd": "rg 'DATABASE_URL'"}
+{"q": "grep -i http:// in csv files in this folder", "cmd": "rg -i -g '*.csv' 'http://'"}
+{"q": "files that mention HACK in go files in utils", "cmd": "rg -l -t go 'HACK' utils"}
+{"q": "files that mention deprecated in javascript files", "cmd": "rg -l -t js 'deprecated'"}
+{"q": "grep -w xxx here", "cmd": "rg -w 'XXX'"}
+{"q": "search for panic! recursively", "cmd": "rg 'panic!'"}
+{"q": "grep -F 'console.log' in py files", "cmd": "rg -F -g '*.py' 'console.log'"}
+{"q": "find the exact text xxx in csv files under infra", "cmd": "rg -F -g '*.csv' 'XXX' infra"}
+{"q": "search literal XXX in .yml files in this folder", "cmd": "rg -F -g '*.yml' 'XXX'"}
+{"q": "which files contain version in .yaml files here", "cmd": "rg -l -g '*.yaml' 'version'"}
+{"q": "search literal fetch( in .log files under server", "cmd": "rg -F -g '*.log' 'fetch(' server"}
+{"q": "just the filenames with localhost in this folder", "cmd": "rg -l 'localhost'"}
+{"q": "just the filenames with debugger in log files under assets", "cmd": "rg -l -g '*.log' 'debugger' assets"}
+{"q": "find the exact text fetch( in java files in the utils folder", "cmd": "rg -F -t java 'fetch(' utils"}
+{"q": "grep -c assert in go files under components", "cmd": "rg -c -t go 'assert' components"}
+{"q": "grep -F 'unwrap()' in java files", "cmd": "rg -F -g '*.java' 'unwrap()'"}
+{"q": "grep retry in cs files inside client", "cmd": "rg -t cs 'retry' client"}
+{"q": "search for SELECT in toml files recursively", "cmd": "rg -g '*.toml' 'SELECT'"}
+{"q": "find the exact text TODO(nam) inside tests", "cmd": "rg -F 'TODO(nam)' tests"}
+{"q": "grep token in markdown files in the docs folder", "cmd": "rg -t md 'token' docs"}
+{"q": "find deprecated in go files in this folder", "cmd": "rg -g '*.go' 'deprecated'"}
+{"q": "search literal unwrap() in log files here", "cmd": "rg -F -g '*.log' 'unwrap()'"}
+{"q": "how many times does async def appear in each file in go files recursively", "cmd": "rg -c -t go 'async def'"}
+{"q": "search Exception case insensitive in .txt files in logs", "cmd": "rg -i -g '*.txt' 'Exception' logs"}
+{"q": "grep localhost:8080 in javascript files under tests", "cmd": "rg -g '*.js' 'localhost:8080' tests"}
+{"q": "where is secret used in java files", "cmd": "rg -g '*.java' 'secret'"}
+{"q": "grep token in python files in the app folder", "cmd": "rg -t py 'token' app"}
+{"q": "how many times does error appear in each file in this folder", "cmd": "rg -c 'error'"}
+{"q": "which files contain password in .log files in client", "cmd": "rg -l -g '*.log' 'password' client"}
+{"q": "grep -F 'console.log' in py files in data", "cmd": "rg -F -t py 'console.log' data"}
+{"q": "count import torch per file in .toml files", "cmd": "rg -c -t toml 'import torch'"}
+{"q": "search literal useState recursively", "cmd": "rg -F 'useState'"}
+{"q": "grep -F 'localhost' in typescript files under dist", "cmd": "rg -F -t ts 'localhost' dist"}
+{"q": "which files contain todo in typescript files recursively", "cmd": "rg -l -t ts 'TODO'"}
+{"q": "find api_key ignoring case here", "cmd": "rg -i 'api_key'"}
+{"q": "grep -c XXX in markdown files", "cmd": "rg -c -t md 'XXX'"}
+{"q": "count api_key per file in md files in this folder", "cmd": "rg -c -g '*.md' 'api_key'"}
+{"q": "look for 'error' in .csv files", "cmd": "rg -g '*.csv' 'error'"}
+{"q": "count secret per file under dist", "cmd": "rg -c 'secret' dist"}
+{"q": "find panic! in .json files in this folder", "cmd": "rg -g '*.json' 'panic!'"}
+{"q": "grep -w database_url in markdown files from app", "cmd": "rg -w -t md 'DATABASE_URL' app"}
+{"q": "which files contain localhost:8080 in rs files", "cmd": "rg -l -g '*.rs' 'localhost:8080'"}
+{"q": "search for print( in py files in dist", "cmd": "rg -F -g '*.py' 'print(' dist"}
+{"q": "grep -F 'fetch(' in c# files in the lib folder", "cmd": "rg -F -g '*.cs' 'fetch(' lib"}
+{"q": "find the exact text console.log in this folder", "cmd": "rg -F 'console.log'"}
+{"q": "search for console.log in json files from components", "cmd": "rg -F -t json 'console.log' components"}
+{"q": "grep -c FIXME in javascript files in tests", "cmd": "rg -c -t js 'FIXME' tests"}
+{"q": "grep -f 'console.log' in rust files in this folder", "cmd": "rg -F -g '*.rs' 'console.log'"}
+{"q": "files that mention localhost in txt files recursively", "cmd": "rg -l -g '*.txt' 'localhost'"}
+{"q": "look for 'deprecated' in yml files", "cmd": "rg -g '*.yml' 'deprecated'"}
+{"q": "find assert as a whole word in toml files here", "cmd": "rg -w -t toml 'assert'"}
+{"q": "grep -F 'TODO(nam)' in cs files in this folder", "cmd": "rg -F -g '*.cs' 'TODO(nam)'"}
+{"q": "find panic! as a whole word in ts files inside server", "cmd": "rg -w -t ts 'panic!' server"}
+{"q": "where is api_key used in rust files here", "cmd": "rg -g '*.rs' 'api_key'"}
+{"q": "grep -l error recursively", "cmd": "rg -l 'error'"}
+{"q": "grep -w Exception in .log files", "cmd": "rg -w -g '*.log' 'Exception'"}
+{"q": "which files contain import torch in csv files in this folder", "cmd": "rg -l -g '*.csv' 'import torch'"}
+{"q": "count toml files in client", "cmd": "(fd -t f -e toml . client | Measure-Object).Count"}
+{"q": "how many folders named package recursively", "cmd": "(fd -t d '^package$' | Measure-Object).Count"}
+{"q": "count dirs called invoice in infra", "cmd": "(fd -t d '^invoice$' infra | Measure-Object).Count"}
+{"q": "count dirs called temp from docs", "cmd": "(fd -t d '^temp$' docs | Measure-Object).Count"}
+{"q": "grep -l FIXME | wc -l here", "cmd": "(rg -l -F 'FIXME' | Measure-Object).Count"}
+{"q": "how many md files are there", "cmd": "(fd -t f -e md | Measure-Object).Count"}
+{"q": "how many folders named Makefile", "cmd": "(fd -t d '^Makefile$' | Measure-Object).Count"}
+{"q": "count dirs called invoice", "cmd": "(fd -t d '^invoice$' | Measure-Object).Count"}
+{"q": "count sql files here", "cmd": "(fd -t f -e sql | Measure-Object).Count"}
+{"q": "how many xml files are there recursively", "cmd": "(fd -t f -e xml | Measure-Object).Count"}
+{"q": "how many folders named package", "cmd": "(fd -t d '^package$' | Measure-Object).Count"}
+{"q": "count dirs called main from packages", "cmd": "(fd -t d '^main$' packages | Measure-Object).Count"}
+{"q": "how many files contain token here", "cmd": "(rg -l -F 'token' | Measure-Object).Count"}
+{"q": "count dirs called backup from app", "cmd": "(fd -t d '^backup$' app | Measure-Object).Count"}
+{"q": "count files mentioning secret from packages", "cmd": "(rg -l -F 'secret' packages | Measure-Object).Count"}
+{"q": "count .h files", "cmd": "(fd -t f -e h | Measure-Object).Count"}
+{"q": "grep -l password | wc -l", "cmd": "(rg -l -F 'password' | Measure-Object).Count"}
+{"q": "count dirs called old", "cmd": "(fd -t d '^old$' | Measure-Object).Count"}
+{"q": "how many files contain api_key here", "cmd": "(rg -l -F 'api_key' | Measure-Object).Count"}
+{"q": "count files mentioning http:// here", "cmd": "(rg -l -F 'http://' | Measure-Object).Count"}
+{"q": "count dirs called settings", "cmd": "(fd -t d '^settings$' | Measure-Object).Count"}
+{"q": "grep -l HACK | wc -l in the migrations folder", "cmd": "(rg -l -F 'HACK' migrations | Measure-Object).Count"}
+{"q": "grep -l fetch( | wc -l recursively", "cmd": "(rg -l -F 'fetch(' | Measure-Object).Count"}
+{"q": "number of .log files in logs", "cmd": "(fd -t f -e log . logs | Measure-Object).Count"}
+{"q": "how many c++ files are there", "cmd": "(fd -t f -e cpp | Measure-Object).Count"}
+{"q": "number of .pdf files here", "cmd": "(fd -t f -e pdf | Measure-Object).Count"}
+{"q": "how many folders named index inside app", "cmd": "(fd -t d '^index$' app | Measure-Object).Count"}
+{"q": "count files mentioning assert inside api", "cmd": "(rg -l -F 'assert' api | Measure-Object).Count"}
+{"q": "count dirs called Makefile from migrations", "cmd": "(fd -t d '^Makefile$' migrations | Measure-Object).Count"}
+{"q": "count dirs called test under docs", "cmd": "(fd -t d '^test$' docs | Measure-Object).Count"}
+{"q": "how many folders named settings under notebooks", "cmd": "(fd -t d '^settings$' notebooks | Measure-Object).Count"}
+{"q": "number of .log files here", "cmd": "(fd -t f -e log | Measure-Object).Count"}
+{"q": "grep -l retry | wc -l under app", "cmd": "(rg -l -F 'retry' app | Measure-Object).Count"}
+{"q": "how many rust files are there", "cmd": "(fd -t f -e rs | Measure-Object).Count"}
+{"q": "count files mentioning import torch here", "cmd": "(rg -l -F 'import torch' | Measure-Object).Count"}
+{"q": "grep -l HACK | wc -l", "cmd": "(rg -l -F 'HACK' | Measure-Object).Count"}
+{"q": "number of .toml files recursively", "cmd": "(fd -t f -e toml | Measure-Object).Count"}
+{"q": "how many files contain http://", "cmd": "(rg -l -F 'http://' | Measure-Object).Count"}
+{"q": "how many folders named config from notebooks", "cmd": "(fd -t d '^config$' notebooks | Measure-Object).Count"}
+{"q": "how many ps1 files are there in the infra folder", "cmd": "(fd -t f -e ps1 . infra | Measure-Object).Count"}
+{"q": "grep -l localhost | wc -l in the tests folder", "cmd": "(rg -l -F 'localhost' tests | Measure-Object).Count"}
+{"q": "count files mentioning lambda", "cmd": "(rg -l -F 'lambda' | Measure-Object).Count"}
+{"q": "how many files contain secret inside notebooks", "cmd": "(rg -l -F 'secret' notebooks | Measure-Object).Count"}
+{"q": "how many folders named notes recursively", "cmd": "(fd -t d '^notes$' | Measure-Object).Count"}
+{"q": "count dirs called models in the src folder", "cmd": "(fd -t d '^models$' src | Measure-Object).Count"}
+{"q": "number of .html files", "cmd": "(fd -t f -e html | Measure-Object).Count"}
+{"q": "number of .mp4 files from lib", "cmd": "(fd -t f -e mp4 . lib | Measure-Object).Count"}
+{"q": "grep -l assert | wc -l recursively", "cmd": "(rg -l -F 'assert' | Measure-Object).Count"}
+{"q": "grep -l select | wc -l in this folder", "cmd": "(rg -l -F 'SELECT' | Measure-Object).Count"}
+{"q": "how many folders named schema in bin", "cmd": "(fd -t d '^schema$' bin | Measure-Object).Count"}
+{"q": "count dirs called draft recursively", "cmd": "(fd -t d '^draft$' | Measure-Object).Count"}
+{"q": "how many folders named test under server", "cmd": "(fd -t d '^test$' server | Measure-Object).Count"}
+{"q": "how many .json files are there in this folder", "cmd": "(fd -t f -e json | Measure-Object).Count"}
+{"q": "count .log files here", "cmd": "(fd -t f -e log | Measure-Object).Count"}
+{"q": "how many json files are there", "cmd": "(fd -t f -e json | Measure-Object).Count"}
+{"q": "count files mentioning debugger", "cmd": "(rg -l -F 'debugger' | Measure-Object).Count"}
+{"q": "how many files contain panic! from packages", "cmd": "(rg -l -F 'panic!' packages | Measure-Object).Count"}
+{"q": "how many folders named server in assets", "cmd": "(fd -t d '^server$' assets | Measure-Object).Count"}
+{"q": "number of .ps1 files in this folder", "cmd": "(fd -t f -e ps1 | Measure-Object).Count"}
+{"q": "count files mentioning fixme recursively", "cmd": "(rg -l -F 'FIXME' | Measure-Object).Count"}
+{"q": "how many .jpg files are there in server", "cmd": "(fd -t f -e jpg . server | Measure-Object).Count"}
+{"q": "how many zip files are there here", "cmd": "(fd -t f -e zip | Measure-Object).Count"}
+{"q": "how many js files are there in dist", "cmd": "(fd -t f -e js . dist | Measure-Object).Count"}
+{"q": "how many go files are there in the tests folder", "cmd": "(fd -t f -e go . tests | Measure-Object).Count"}
+{"q": "number of .sql files inside config", "cmd": "(fd -t f -e sql . config | Measure-Object).Count"}
+{"q": "number of .ts files recursively", "cmd": "(fd -t f -e ts | Measure-Object).Count"}
+{"q": "how many java files are there in this folder", "cmd": "(fd -t f -e java | Measure-Object).Count"}
+{"q": "number of .mp4 files", "cmd": "(fd -t f -e mp4 | Measure-Object).Count"}
+{"q": "grep -l todo(nam) | wc -l", "cmd": "(rg -l -F 'TODO(nam)' | Measure-Object).Count"}
+{"q": "how many files contain assert from packages", "cmd": "(rg -l -F 'assert' packages | Measure-Object).Count"}
+{"q": "count dirs called temp in src", "cmd": "(fd -t d '^temp$' src | Measure-Object).Count"}
+{"q": "how many folders named docker-compose", "cmd": "(fd -t d '^docker-compose$' | Measure-Object).Count"}
+{"q": "how many folders named helpers in components", "cmd": "(fd -t d '^helpers$' components | Measure-Object).Count"}
+{"q": "grep -l async def | wc -l inside components", "cmd": "(rg -l -F 'async def' components | Measure-Object).Count"}
+{"q": "grep -l select | wc -l from app", "cmd": "(rg -l -F 'SELECT' app | Measure-Object).Count"}
+{"q": "how many folders named utils under utils", "cmd": "(fd -t d '^utils$' utils | Measure-Object).Count"}
+{"q": "count files mentioning DATABASE_URL", "cmd": "(rg -l -F 'DATABASE_URL' | Measure-Object).Count"}
+{"q": "count files mentioning assert in this folder", "cmd": "(rg -l -F 'assert' | Measure-Object).Count"}
+{"q": "how many .html files are there in src", "cmd": "(fd -t f -e html . src | Measure-Object).Count"}
+{"q": "how many files contain error under bin", "cmd": "(rg -l -F 'error' bin | Measure-Object).Count"}
+{"q": "count files mentioning unwrap() recursively", "cmd": "(rg -l -F 'unwrap()' | Measure-Object).Count"}
+{"q": "count zip files from packages", "cmd": "(fd -t f -e zip . packages | Measure-Object).Count"}
+{"q": "how many files contain debugger under packages", "cmd": "(rg -l -F 'debugger' packages | Measure-Object).Count"}
+{"q": "grep -l api_key | wc -l here", "cmd": "(rg -l -F 'api_key' | Measure-Object).Count"}
+{"q": "grep -l error | wc -l in the logs folder", "cmd": "(rg -l -F 'error' logs | Measure-Object).Count"}
+{"q": "count dirs called test recursively", "cmd": "(fd -t d '^test$' | Measure-Object).Count"}
+{"q": "count dirs called client in app", "cmd": "(fd -t d '^client$' app | Measure-Object).Count"}
+{"q": "count dirs called models recursively", "cmd": "(fd -t d '^models$' | Measure-Object).Count"}
+{"q": "count files mentioning usestate under src", "cmd": "(rg -l -F 'useState' src | Measure-Object).Count"}
+{"q": "how many folders named notes here", "cmd": "(fd -t d '^notes$' | Measure-Object).Count"}
+{"q": "how many folders named client", "cmd": "(fd -t d '^client$' | Measure-Object).Count"}
+{"q": "how many files contain import torch under app", "cmd": "(rg -l -F 'import torch' app | Measure-Object).Count"}
+{"q": "count xml files", "cmd": "(fd -t f -e xml | Measure-Object).Count"}
+{"q": "how many files contain useState under api", "cmd": "(rg -l -F 'useState' api | Measure-Object).Count"}
+{"q": "count files mentioning connectionstring", "cmd": "(rg -l -F 'connectionString' | Measure-Object).Count"}
+{"q": "number of .csv files in this folder", "cmd": "(fd -t f -e csv | Measure-Object).Count"}
+{"q": "how many folders named settings recursively", "cmd": "(fd -t d '^settings$' | Measure-Object).Count"}
+{"q": "grep -l Exception | wc -l", "cmd": "(rg -l -F 'Exception' | Measure-Object).Count"}
+{"q": "number of .h files in this folder", "cmd": "(fd -t f -e h | Measure-Object).Count"}
+{"q": "count .pdf files inside data", "cmd": "(fd -t f -e pdf . data | Measure-Object).Count"}
+{"q": "number of .pdf files from infra", "cmd": "(fd -t f -e pdf . infra | Measure-Object).Count"}
+{"q": "count files mentioning token", "cmd": "(rg -l -F 'token' | Measure-Object).Count"}
+{"q": "count files mentioning xxx in this folder", "cmd": "(rg -l -F 'XXX' | Measure-Object).Count"}
+{"q": "how many folders named requirements under lib", "cmd": "(fd -t d '^requirements$' lib | Measure-Object).Count"}
+{"q": "count csv files in the bin folder", "cmd": "(fd -t f -e csv . bin | Measure-Object).Count"}
+{"q": "how many .mp4 files are there here", "cmd": "(fd -t f -e mp4 | Measure-Object).Count"}
+{"q": "count dirs called Makefile in build", "cmd": "(fd -t d '^Makefile$' build | Measure-Object).Count"}
+{"q": "grep -l panic! | wc -l in notebooks", "cmd": "(rg -l -F 'panic!' notebooks | Measure-Object).Count"}
+{"q": "how many java files are there from lib", "cmd": "(fd -t f -e java . lib | Measure-Object).Count"}
+{"q": "how many files contain async def in docs", "cmd": "(rg -l -F 'async def' docs | Measure-Object).Count"}
+{"q": "count files mentioning TODO", "cmd": "(rg -l -F 'TODO' | Measure-Object).Count"}
+{"q": "grep -l print( | wc -l", "cmd": "(rg -l -F 'print(' | Measure-Object).Count"}
+{"q": "how many folders named old", "cmd": "(fd -t d '^old$' | Measure-Object).Count"}
+{"q": "how many files contain useState", "cmd": "(rg -l -F 'useState' | Measure-Object).Count"}
+{"q": "count dirs called utils in infra", "cmd": "(fd -t d '^utils$' infra | Measure-Object).Count"}
+{"q": "how many files contain assert", "cmd": "(rg -l -F 'assert' | Measure-Object).Count"}
+{"q": "how many folders named utils recursively", "cmd": "(fd -t d '^utils$' | Measure-Object).Count"}
+{"q": "how many folders named secrets in components", "cmd": "(fd -t d '^secrets$' components | Measure-Object).Count"}
+{"q": "how many files contain console.log under client", "cmd": "(rg -l -F 'console.log' client | Measure-Object).Count"}
+{"q": "grep -l async def | wc -l in this folder", "cmd": "(rg -l -F 'async def' | Measure-Object).Count"}
+{"q": "count dirs called Makefile in tests", "cmd": "(fd -t d '^Makefile$' tests | Measure-Object).Count"}
+{"q": "how many png files are there recursively", "cmd": "(fd -t f -e png | Measure-Object).Count"}
+{"q": "count dirs called env recursively", "cmd": "(fd -t d '^env$' | Measure-Object).Count"}
+{"q": "count notebook files here", "cmd": "(fd -t f -e ipynb | Measure-Object).Count"}
+{"q": "grep -l import torch | wc -l from app", "cmd": "(rg -l -F 'import torch' app | Measure-Object).Count"}
+{"q": "count dirs called README", "cmd": "(fd -t d '^README$' | Measure-Object).Count"}
+{"q": "how many .html files are there in the components folder", "cmd": "(fd -t f -e html . components | Measure-Object).Count"}
+{"q": "grep -l DATABASE_URL | wc -l", "cmd": "(rg -l -F 'DATABASE_URL' | Measure-Object).Count"}
+{"q": "how many folders named utils under tests", "cmd": "(fd -t d '^utils$' tests | Measure-Object).Count"}
+{"q": "count h files from lib", "cmd": "(fd -t f -e h . lib | Measure-Object).Count"}
+{"q": "count files mentioning fixme here", "cmd": "(rg -l -F 'FIXME' | Measure-Object).Count"}
+{"q": "count files mentioning api_key in the infra folder", "cmd": "(rg -l -F 'api_key' infra | Measure-Object).Count"}
+{"q": "how many folders named draft in the tests folder", "cmd": "(fd -t d '^draft$' tests | Measure-Object).Count"}
+{"q": "count h files", "cmd": "(fd -t f -e h | Measure-Object).Count"}
+{"q": "how many files contain fetch( in app", "cmd": "(rg -l -F 'fetch(' app | Measure-Object).Count"}
+{"q": "how many .txt files are there", "cmd": "(fd -t f -e txt | Measure-Object).Count"}
+{"q": "count python files recursively", "cmd": "(fd -t f -e py | Measure-Object).Count"}
+{"q": "how many folders named test in this folder", "cmd": "(fd -t d '^test$' | Measure-Object).Count"}
+{"q": "count files mentioning assert in the scripts folder", "cmd": "(rg -l -F 'assert' scripts | Measure-Object).Count"}
+{"q": "how many xml files are there in this folder", "cmd": "(fd -t f -e xml | Measure-Object).Count"}
+{"q": "grep -l hack | wc -l inside data", "cmd": "(rg -l -F 'HACK' data | Measure-Object).Count"}
+{"q": "how many files contain HACK here", "cmd": "(rg -l -F 'HACK' | Measure-Object).Count"}
+{"q": "count files mentioning HACK inside server", "cmd": "(rg -l -F 'HACK' server | Measure-Object).Count"}
+{"q": "number of .html files in the notebooks folder", "cmd": "(fd -t f -e html . notebooks | Measure-Object).Count"}
+{"q": "how many files contain panic! inside assets", "cmd": "(rg -l -F 'panic!' assets | Measure-Object).Count"}
+{"q": "count dirs called env", "cmd": "(fd -t d '^env$' | Measure-Object).Count"}
+{"q": "how many .h files are there in the client folder", "cmd": "(fd -t f -e h . client | Measure-Object).Count"}
+{"q": "count csv files in the tests folder", "cmd": "(fd -t f -e csv . tests | Measure-Object).Count"}
+{"q": "count ps1 files", "cmd": "(fd -t f -e ps1 | Measure-Object).Count"}
+{"q": "count files mentioning warning here", "cmd": "(rg -l -F 'warning' | Measure-Object).Count"}
+{"q": "count java files inside migrations", "cmd": "(fd -t f -e java . migrations | Measure-Object).Count"}
+{"q": "how many rs files are there in the build folder", "cmd": "(fd -t f -e rs . build | Measure-Object).Count"}
+{"q": "how many files contain http:// recursively", "cmd": "(rg -l -F 'http://' | Measure-Object).Count"}
+{"q": "how many folders named index", "cmd": "(fd -t d '^index$' | Measure-Object).Count"}
+{"q": "grep -l http:// | wc -l inside lib", "cmd": "(rg -l -F 'http://' lib | Measure-Object).Count"}
+{"q": "count dirs called requirements here", "cmd": "(fd -t d '^requirements$' | Measure-Object).Count"}
+{"q": "how many files contain unwrap()", "cmd": "(rg -l -F 'unwrap()' | Measure-Object).Count"}
+{"q": "how many files match helpers? then find that count in the docs folder", "cmd": "$n = (fd -t f 'helpers' | Measure-Object).Count; rg -F \"$n\" docs"}
+{"q": "count files with report in the name then search that number in server", "cmd": "$n = (fd -t f 'report' | Measure-Object).Count; rg -F \"$n\" server"}
+{"q": "get the number of dirs matching auth and grep it inside packages", "cmd": "$n = (fd -t d 'auth' | Measure-Object).Count; rg -F \"$n\" packages"}
+{"q": "get the number of dirs matching draft and grep it inside infra", "cmd": "$n = (fd -t d 'draft' | Measure-Object).Count; rg -F \"$n\" infra"}
+{"q": "get the number of folders matching helpers and grep it inside api", "cmd": "$n = (fd -t d 'helpers' | Measure-Object).Count; rg -F \"$n\" api"}
+{"q": "count files with old in the name then search that number in migrations", "cmd": "$n = (fd -t f 'old' | Measure-Object).Count; rg -F \"$n\" migrations"}
+{"q": "get the number of files matching temp and grep it inside dist", "cmd": "$n = (fd -t f 'temp' | Measure-Object).Count; rg -F \"$n\" dist"}
+{"q": "get the number of files matching main and grep it inside data", "cmd": "$n = (fd -t f 'main' | Measure-Object).Count; rg -F \"$n\" data"}
+{"q": "how many directories match invoice? then find that count in the dist folder", "cmd": "$n = (fd -t d 'invoice' | Measure-Object).Count; rg -F \"$n\" dist"}
+{"q": "count files with todo in the name then search that number in logs", "cmd": "$n = (fd -t f 'todo' | Measure-Object).Count; rg -F \"$n\" logs"}
+{"q": "count dirs with server in the name then search that number in app", "cmd": "$n = (fd -t d 'server' | Measure-Object).Count; rg -F \"$n\" app"}
+{"q": "count directories with config in the name then search that number in build", "cmd": "$n = (fd -t d 'config' | Measure-Object).Count; rg -F \"$n\" build"}
+{"q": "get the number of files matching todo and grep it inside server", "cmd": "$n = (fd -t f 'todo' | Measure-Object).Count; rg -F \"$n\" server"}
+{"q": "how many directories match test? then find that count in the app folder", "cmd": "$n = (fd -t d 'test' | Measure-Object).Count; rg -F \"$n\" app"}
+{"q": "how many files match server? then find that count in the build folder", "cmd": "$n = (fd -t f 'server' | Measure-Object).Count; rg -F \"$n\" build"}
+{"q": "count files with invoice in the name then search that number in tests", "cmd": "$n = (fd -t f 'invoice' | Measure-Object).Count; rg -F \"$n\" tests"}
+{"q": "how many folders match requirements? then find that count in the utils folder", "cmd": "$n = (fd -t d 'requirements' | Measure-Object).Count; rg -F \"$n\" utils"}
+{"q": "how many directories match cache? then find that count in the lib folder", "cmd": "$n = (fd -t d 'cache' | Measure-Object).Count; rg -F \"$n\" lib"}
+{"q": "get the number of dirs matching old and grep it inside data", "cmd": "$n = (fd -t d 'old' | Measure-Object).Count; rg -F \"$n\" data"}
+{"q": "how many folders match docker-compose? then find that count in the src folder", "cmd": "$n = (fd -t d 'docker-compose' | Measure-Object).Count; rg -F \"$n\" src"}
+{"q": "get the number of dirs matching backup and grep it inside dist", "cmd": "$n = (fd -t d 'backup' | Measure-Object).Count; rg -F \"$n\" dist"}
+{"q": "how many folders match notes? then find that count in the docs folder", "cmd": "$n = (fd -t d 'notes' | Measure-Object).Count; rg -F \"$n\" docs"}
+{"q": "get the number of files matching README and grep it inside utils", "cmd": "$n = (fd -t f 'README' | Measure-Object).Count; rg -F \"$n\" utils"}
+{"q": "how many folders match client? then find that count in the app folder", "cmd": "$n = (fd -t d 'client' | Measure-Object).Count; rg -F \"$n\" app"}
+{"q": "count files with routes in the name then search that number in src", "cmd": "$n = (fd -t f 'routes' | Measure-Object).Count; rg -F \"$n\" src"}
+{"q": "count files with cache in the name then search that number in docs", "cmd": "$n = (fd -t f 'cache' | Measure-Object).Count; rg -F \"$n\" docs"}
+{"q": "get the number of directories matching auth and grep it inside notebooks", "cmd": "$n = (fd -t d 'auth' | Measure-Object).Count; rg -F \"$n\" notebooks"}
+{"q": "get the number of files matching env and grep it inside dist", "cmd": "$n = (fd -t f 'env' | Measure-Object).Count; rg -F \"$n\" dist"}
+{"q": "get the number of dirs matching notes and grep it inside infra", "cmd": "$n = (fd -t d 'notes' | Measure-Object).Count; rg -F \"$n\" infra"}
+{"q": "how many directories match config? then find that count in the build folder", "cmd": "$n = (fd -t d 'config' | Measure-Object).Count; rg -F \"$n\" build"}
+{"q": "get the number of directories matching package and grep it inside scripts", "cmd": "$n = (fd -t d 'package' | Measure-Object).Count; rg -F \"$n\" scripts"}
+{"q": "get the number of files matching schema and grep it inside tests", "cmd": "$n = (fd -t f 'schema' | Measure-Object).Count; rg -F \"$n\" tests"}
+{"q": "get the number of files matching cache and grep it inside data", "cmd": "$n = (fd -t f 'cache' | Measure-Object).Count; rg -F \"$n\" data"}
+{"q": "get the number of dirs matching requirements and grep it inside assets", "cmd": "$n = (fd -t d 'requirements' | Measure-Object).Count; rg -F \"$n\" assets"}
+{"q": "get the number of files matching utils and grep it inside api", "cmd": "$n = (fd -t f 'utils' | Measure-Object).Count; rg -F \"$n\" api"}
+{"q": "how many files match helpers? then find that count in the components folder", "cmd": "$n = (fd -t f 'helpers' | Measure-Object).Count; rg -F \"$n\" components"}
+{"q": "how many files match models? then find that count in the notebooks folder", "cmd": "$n = (fd -t f 'models' | Measure-Object).Count; rg -F \"$n\" notebooks"}
+{"q": "count dirs with index in the name then search that number in utils", "cmd": "$n = (fd -t d 'index' | Measure-Object).Count; rg -F \"$n\" utils"}
+{"q": "how many directories match helpers? then find that count in the api folder", "cmd": "$n = (fd -t d 'helpers' | Measure-Object).Count; rg -F \"$n\" api"}
+{"q": "get the number of files matching main and grep it inside utils", "cmd": "$n = (fd -t f 'main' | Measure-Object).Count; rg -F \"$n\" utils"}
+{"q": "count folders with docker-compose in the name then search that number in src", "cmd": "$n = (fd -t d 'docker-compose' | Measure-Object).Count; rg -F \"$n\" src"}
+{"q": "how many files match old? then find that count in the lib folder", "cmd": "$n = (fd -t f 'old' | Measure-Object).Count; rg -F \"$n\" lib"}
+{"q": "get the number of dirs matching config and grep it inside tests", "cmd": "$n = (fd -t d 'config' | Measure-Object).Count; rg -F \"$n\" tests"}
+{"q": "how many dirs match draft? then find that count in the app folder", "cmd": "$n = (fd -t d 'draft' | Measure-Object).Count; rg -F \"$n\" app"}
+{"q": "count folders with secrets in the name then search that number in components", "cmd": "$n = (fd -t d 'secrets' | Measure-Object).Count; rg -F \"$n\" components"}
+{"q": "get the number of dirs matching invoice and grep it inside notebooks", "cmd": "$n = (fd -t d 'invoice' | Measure-Object).Count; rg -F \"$n\" notebooks"}
+{"q": "count files with README in the name then search that number in server", "cmd": "$n = (fd -t f 'README' | Measure-Object).Count; rg -F \"$n\" server"}
+{"q": "count directories with invoice in the name then search that number in api", "cmd": "$n = (fd -t d 'invoice' | Measure-Object).Count; rg -F \"$n\" api"}
+{"q": "count folders with draft in the name then search that number in infra", "cmd": "$n = (fd -t d 'draft' | Measure-Object).Count; rg -F \"$n\" infra"}
+{"q": "count files with models in the name then search that number in api", "cmd": "$n = (fd -t f 'models' | Measure-Object).Count; rg -F \"$n\" api"}
+{"q": "how many folders match models? then find that count in the packages folder", "cmd": "$n = (fd -t d 'models' | Measure-Object).Count; rg -F \"$n\" packages"}
+{"q": "count dirs with secrets in the name then search that number in src", "cmd": "$n = (fd -t d 'secrets' | Measure-Object).Count; rg -F \"$n\" src"}
+{"q": "get the number of files matching client and grep it inside server", "cmd": "$n = (fd -t f 'client' | Measure-Object).Count; rg -F \"$n\" server"}
+{"q": "how many directories match notes? then find that count in the notebooks folder", "cmd": "$n = (fd -t d 'notes' | Measure-Object).Count; rg -F \"$n\" notebooks"}
+{"q": "get the number of files matching notes and grep it inside data", "cmd": "$n = (fd -t f 'notes' | Measure-Object).Count; rg -F \"$n\" data"}
+{"q": "how many files match package? then find that count in the components folder", "cmd": "$n = (fd -t f 'package' | Measure-Object).Count; rg -F \"$n\" components"}
+{"q": "get the number of dirs matching env and grep it inside tests", "cmd": "$n = (fd -t d 'env' | Measure-Object).Count; rg -F \"$n\" tests"}
+{"q": "count directories with client in the name then search that number in lib", "cmd": "$n = (fd -t d 'client' | Measure-Object).Count; rg -F \"$n\" lib"}
+{"q": "get the number of files matching secrets and grep it inside notebooks", "cmd": "$n = (fd -t f 'secrets' | Measure-Object).Count; rg -F \"$n\" notebooks"}
+{"q": "how many dirs match draft? then find that count in the lib folder", "cmd": "$n = (fd -t d 'draft' | Measure-Object).Count; rg -F \"$n\" lib"}
+{"q": "how many files match Makefile? then find that count in the infra folder", "cmd": "$n = (fd -t f 'Makefile' | Measure-Object).Count; rg -F \"$n\" infra"}
+{"q": "get the number of directories matching test and grep it inside server", "cmd": "$n = (fd -t d 'test' | Measure-Object).Count; rg -F \"$n\" server"}
+{"q": "how many dirs match secrets? then find that count in the packages folder", "cmd": "$n = (fd -t d 'secrets' | Measure-Object).Count; rg -F \"$n\" packages"}
+{"q": "count files with draft in the name then search that number in scripts", "cmd": "$n = (fd -t f 'draft' | Measure-Object).Count; rg -F \"$n\" scripts"}
+{"q": "how many dirs match test? then find that count in the notebooks folder", "cmd": "$n = (fd -t d 'test' | Measure-Object).Count; rg -F \"$n\" notebooks"}
+{"q": "get the number of files matching schema and grep it inside server", "cmd": "$n = (fd -t f 'schema' | Measure-Object).Count; rg -F \"$n\" server"}
+{"q": "how many files match models? then find that count in the src folder", "cmd": "$n = (fd -t f 'models' | Measure-Object).Count; rg -F \"$n\" src"}
+{"q": "get the number of dirs matching env and grep it inside migrations", "cmd": "$n = (fd -t d 'env' | Measure-Object).Count; rg -F \"$n\" migrations"}
+{"q": "get the number of dirs matching draft and grep it inside build", "cmd": "$n = (fd -t d 'draft' | Measure-Object).Count; rg -F \"$n\" build"}
+{"q": "how many folders match routes? then find that count in the docs folder", "cmd": "$n = (fd -t d 'routes' | Measure-Object).Count; rg -F \"$n\" docs"}
+{"q": "get the number of folders matching main and grep it inside infra", "cmd": "$n = (fd -t d 'main' | Measure-Object).Count; rg -F \"$n\" infra"}
+{"q": "how many folders match secrets? then find that count in the build folder", "cmd": "$n = (fd -t d 'secrets' | Measure-Object).Count; rg -F \"$n\" build"}
+{"q": "count files with report in the name then search that number in bin", "cmd": "$n = (fd -t f 'report' | Measure-Object).Count; rg -F \"$n\" bin"}
+{"q": "count folders with old in the name then search that number in notebooks", "cmd": "$n = (fd -t d 'old' | Measure-Object).Count; rg -F \"$n\" notebooks"}
+{"q": "count directories with routes in the name then search that number in dist", "cmd": "$n = (fd -t d 'routes' | Measure-Object).Count; rg -F \"$n\" dist"}
+{"q": "how many files match backup? then find that count in the config folder", "cmd": "$n = (fd -t f 'backup' | Measure-Object).Count; rg -F \"$n\" config"}
+{"q": "how many directories match server? then find that count in the notebooks folder", "cmd": "$n = (fd -t d 'server' | Measure-Object).Count; rg -F \"$n\" notebooks"}
+{"q": "how many directories match invoice? then find that count in the src folder", "cmd": "$n = (fd -t d 'invoice' | Measure-Object).Count; rg -F \"$n\" src"}
+{"q": "count directories with requirements in the name then search that number in build", "cmd": "$n = (fd -t d 'requirements' | Measure-Object).Count; rg -F \"$n\" build"}
+{"q": "count directories with test in the name then search that number in scripts", "cmd": "$n = (fd -t d 'test' | Measure-Object).Count; rg -F \"$n\" scripts"}
+{"q": "get the number of files matching settings and grep it inside logs", "cmd": "$n = (fd -t f 'settings' | Measure-Object).Count; rg -F \"$n\" logs"}
+{"q": "get the number of dirs matching secrets and grep it inside tests", "cmd": "$n = (fd -t d 'secrets' | Measure-Object).Count; rg -F \"$n\" tests"}
+{"q": "count dirs with temp in the name then search that number in scripts", "cmd": "$n = (fd -t d 'temp' | Measure-Object).Count; rg -F \"$n\" scripts"}
+{"q": "how many directories match cache? then find that count in the data folder", "cmd": "$n = (fd -t d 'cache' | Measure-Object).Count; rg -F \"$n\" data"}
+{"q": "count directories with utils in the name then search that number in utils", "cmd": "$n = (fd -t d 'utils' | Measure-Object).Count; rg -F \"$n\" utils"}
+{"q": "get the number of folders matching utils and grep it inside data", "cmd": "$n = (fd -t d 'utils' | Measure-Object).Count; rg -F \"$n\" data"}
+{"q": "get the number of files matching old and grep it inside tests", "cmd": "$n = (fd -t f 'old' | Measure-Object).Count; rg -F \"$n\" tests"}
+{"q": "how many folders match utils? then find that count in the app folder", "cmd": "$n = (fd -t d 'utils' | Measure-Object).Count; rg -F \"$n\" app"}
+{"q": "get the number of dirs matching routes and grep it inside client", "cmd": "$n = (fd -t d 'routes' | Measure-Object).Count; rg -F \"$n\" client"}
+{"q": "get the number of dirs matching client and grep it inside migrations", "cmd": "$n = (fd -t d 'client' | Measure-Object).Count; rg -F \"$n\" migrations"}
+{"q": "get the number of files matching backup and grep it inside config", "cmd": "$n = (fd -t f 'backup' | Measure-Object).Count; rg -F \"$n\" config"}
+{"q": "get the number of folders matching draft and grep it inside config", "cmd": "$n = (fd -t d 'draft' | Measure-Object).Count; rg -F \"$n\" config"}
+{"q": "how many files match test? then find that count in the build folder", "cmd": "$n = (fd -t f 'test' | Measure-Object).Count; rg -F \"$n\" build"}
+{"q": "get the number of files matching settings and grep it inside build", "cmd": "$n = (fd -t f 'settings' | Measure-Object).Count; rg -F \"$n\" build"}
+{"q": "get the number of dirs matching models and grep it inside data", "cmd": "$n = (fd -t d 'models' | Measure-Object).Count; rg -F \"$n\" data"}
+{"q": "get the number of folders matching draft and grep it inside packages", "cmd": "$n = (fd -t d 'draft' | Measure-Object).Count; rg -F \"$n\" packages"}
+{"q": "count directories with env in the name then search that number in logs", "cmd": "$n = (fd -t d 'env' | Measure-Object).Count; rg -F \"$n\" logs"}
+{"q": "get the number of directories matching cache and grep it inside client", "cmd": "$n = (fd -t d 'cache' | Measure-Object).Count; rg -F \"$n\" client"}
+{"q": "how many dirs match auth? then find that count in the server folder", "cmd": "$n = (fd -t d 'auth' | Measure-Object).Count; rg -F \"$n\" server"}
+{"q": "count dirs with requirements in the name then search that number in build", "cmd": "$n = (fd -t d 'requirements' | Measure-Object).Count; rg -F \"$n\" build"}
+{"q": "how many files match docker-compose? then find that count in the app folder", "cmd": "$n = (fd -t f 'docker-compose' | Measure-Object).Count; rg -F \"$n\" app"}
+{"q": "count dirs with temp in the name then search that number in server", "cmd": "$n = (fd -t d 'temp' | Measure-Object).Count; rg -F \"$n\" server"}
+{"q": "get the number of files matching routes and grep it inside config", "cmd": "$n = (fd -t f 'routes' | Measure-Object).Count; rg -F \"$n\" config"}
+{"q": "how many dirs match requirements? then find that count in the tests folder", "cmd": "$n = (fd -t d 'requirements' | Measure-Object).Count; rg -F \"$n\" tests"}
+{"q": "count files with temp in the name then search that number in notebooks", "cmd": "$n = (fd -t f 'temp' | Measure-Object).Count; rg -F \"$n\" notebooks"}
+{"q": "count files with report in the name then search that number in scripts", "cmd": "$n = (fd -t f 'report' | Measure-Object).Count; rg -F \"$n\" scripts"}
+{"q": "how many files match draft? then find that count in the tests folder", "cmd": "$n = (fd -t f 'draft' | Measure-Object).Count; rg -F \"$n\" tests"}
+{"q": "get the number of files matching client and grep it inside lib", "cmd": "$n = (fd -t f 'client' | Measure-Object).Count; rg -F \"$n\" lib"}
+{"q": "count folders with temp in the name then search that number in bin", "cmd": "$n = (fd -t d 'temp' | Measure-Object).Count; rg -F \"$n\" bin"}
+{"q": "get the number of dirs matching Makefile and grep it inside scripts", "cmd": "$n = (fd -t d 'Makefile' | Measure-Object).Count; rg -F \"$n\" scripts"}
+{"q": "count dirs with config in the name then search that number in client", "cmd": "$n = (fd -t d 'config' | Measure-Object).Count; rg -F \"$n\" client"}
+{"q": "get the number of folders matching config and grep it inside docs", "cmd": "$n = (fd -t d 'config' | Measure-Object).Count; rg -F \"$n\" docs"}
+{"q": "count directories with index in the name then search that number in client", "cmd": "$n = (fd -t d 'index' | Measure-Object).Count; rg -F \"$n\" client"}
+{"q": "how many folders match main? then find that count in the docs folder", "cmd": "$n = (fd -t d 'main' | Measure-Object).Count; rg -F \"$n\" docs"}
+{"q": "count dirs with requirements in the name then search that number in tests", "cmd": "$n = (fd -t d 'requirements' | Measure-Object).Count; rg -F \"$n\" tests"}
+{"q": "get the number of folders matching makefile and grep it inside docs", "cmd": "$n = (fd -t d 'Makefile' | Measure-Object).Count; rg -F \"$n\" docs"}
+{"q": "count files with auth in the name then search that number in config", "cmd": "$n = (fd -t f 'auth' | Measure-Object).Count; rg -F \"$n\" config"}
+{"q": "how many files match schema? then find that count in the migrations folder", "cmd": "$n = (fd -t f 'schema' | Measure-Object).Count; rg -F \"$n\" migrations"}
+{"q": "get the number of dirs matching todo and grep it inside tests", "cmd": "$n = (fd -t d 'todo' | Measure-Object).Count; rg -F \"$n\" tests"}
+{"q": "count directories with README in the name then search that number in utils", "cmd": "$n = (fd -t d 'README' | Measure-Object).Count; rg -F \"$n\" utils"}

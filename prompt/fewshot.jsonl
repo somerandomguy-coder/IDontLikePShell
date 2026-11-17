@@ -1,0 +1,5 @@
+{"q": "find folders named node_modules under src", "cmd": "fd -t d -H -I '^node_modules$' src"}
+{"q": "search for TODO in python files, ignore case", "cmd": "rg -i 'TODO' -t py"}
+{"q": "how many json files are here", "cmd": "(fd -t f -e json | Measure-Object).Count"}
+{"q": "kill the process using port 3000", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 3000).OwningProcess"}
+{"q": "count folders matching test, then search that number in the logs folder", "cmd": "$n = (fd -t d 'test' | Measure-Object).Count; rg -F \"$n\" logs"}

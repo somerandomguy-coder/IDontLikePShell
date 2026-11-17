@@ -1,0 +1,415 @@
+{"q": "show my open PRs", "cmd": "gh pr list --author '@me'"}
+{"q": "gh pr list", "cmd": "gh pr list"}
+{"q": "prs waiting for my review", "cmd": "gh pr list --search 'review-requested:@me'"}
+{"q": "list closed prs", "cmd": "gh pr list --state closed"}
+{"q": "last 20 merged pull requests", "cmd": "gh pr list --state merged --limit 20"}
+{"q": "prs with the bug label", "cmd": "gh pr list --label bug"}
+{"q": "open a pr from this branch", "cmd": "gh pr create --fill"}
+{"q": "make a draft pr into develop", "cmd": "gh pr create --draft --base develop --fill"}
+{"q": "pr to main and ask alice to review", "cmd": "gh pr create --base main --reviewer alice --fill"}
+{"q": "create a pr in the browser", "cmd": "gh pr create --web"}
+{"q": "checkout pr 42", "cmd": "gh pr checkout 42"}
+{"q": "look at pr 17", "cmd": "gh pr view 17"}
+{"q": "open the pr in the browser", "cmd": "gh pr view --web"}
+{"q": "pr 23 with all the comments", "cmd": "gh pr view 23 --comments"}
+{"q": "diff of pr 88", "cmd": "gh pr diff 88"}
+{"q": "which files does pr 61 change", "cmd": "gh pr diff 61 --name-only"}
+{"q": "did ci pass on my pr", "cmd": "gh pr checks"}
+{"q": "watch the checks on pr 51", "cmd": "gh pr checks 51 --watch"}
+{"q": "squash merge pr 33 and delete the branch", "cmd": "gh pr merge 33 --squash --delete-branch"}
+{"q": "rebase merge pr 9", "cmd": "gh pr merge 9 --rebase"}
+{"q": "auto merge pr 70 once checks pass", "cmd": "gh pr merge 70 --auto --squash"}
+{"q": "approve pr 19", "cmd": "gh pr review 19 --approve"}
+{"q": "request changes on pr 12 saying 'needs tests'", "cmd": "gh pr review 12 --request-changes --body 'needs tests'"}
+{"q": "status of my prs", "cmd": "gh pr status"}
+{"q": "pr numbers and titles as json", "cmd": "gh pr list --json number,title"}
+{"q": "gh issue list", "cmd": "gh issue list"}
+{"q": "issues assigned to me", "cmd": "gh issue list --assignee '@me'"}
+{"q": "open bugs on github", "cmd": "gh issue list --label bug"}
+{"q": "closed issues in cli/cli", "cmd": "gh issue list --repo cli/cli --state closed"}
+{"q": "new issue 'crash on startup'", "cmd": "gh issue create --title 'crash on startup'"}
+{"q": "file an issue titled 'docs typo' with label docs", "cmd": "gh issue create --title 'docs typo' --label docs"}
+{"q": "close issue 12", "cmd": "gh issue close 12"}
+{"q": "close issue 40 as not planned", "cmd": "gh issue close 40 --reason 'not planned'"}
+{"q": "show issue 7 with comments", "cmd": "gh issue view 7 --comments"}
+{"q": "clone cli/cli", "cmd": "gh repo clone cli/cli"}
+{"q": "clone my repo dotfiles", "cmd": "gh repo clone dotfiles"}
+{"q": "open this repo on github", "cmd": "gh browse"}
+{"q": "open src/main.go on github", "cmd": "gh browse src/main.go"}
+{"q": "make a private github repo from this folder and push it", "cmd": "gh repo create --private --source . --push"}
+{"q": "fork octocat/Hello-World and clone it", "cmd": "gh repo fork octocat/Hello-World --clone"}
+{"q": "repo info", "cmd": "gh repo view"}
+{"q": "latest github actions runs", "cmd": "gh run list"}
+{"q": "failed workflow runs", "cmd": "gh run list --status failure"}
+{"q": "runs on the main branch", "cmd": "gh run list --branch main"}
+{"q": "logs of the failed jobs in run 123456", "cmd": "gh run view 123456 --log-failed"}
+{"q": "watch the current actions run", "cmd": "gh run watch"}
+{"q": "trigger the deploy.yml workflow", "cmd": "gh workflow run deploy.yml"}
+{"q": "run release.yml workflow on branch staging", "cmd": "gh workflow run release.yml --ref staging"}
+{"q": "list releases", "cmd": "gh release list"}
+{"q": "cut release v1.2.0 with auto generated notes", "cmd": "gh release create v1.2.0 --generate-notes"}
+{"q": "download the latest release assets", "cmd": "gh release download"}
+{"q": "download only the windows zip from release v2.1.0", "cmd": "gh release download v2.1.0 --pattern '*windows*.zip'"}
+{"q": "gist this file notes.txt", "cmd": "gh gist create notes.txt"}
+{"q": "public gist of script.ps1", "cmd": "gh gist create --public script.ps1"}
+{"q": "search github repos about rust tui sorted by stars", "cmd": "gh search repos 'rust tui' --sort stars"}
+{"q": "am i logged into gh", "cmd": "gh auth status"}
+{"q": "set repo secret API_KEY", "cmd": "gh secret set API_KEY"}
+{"q": "gh pr lsit", "cmd": "gh pr list"}
+{"q": "my prs", "cmd": "gh pr list --author '@me'"}
+{"q": "whats the url of pr 5", "cmd": "gh pr view 5 --json url --jq .url"}
+{"q": "git stash list", "cmd": "git stash list"}
+{"q": "stash including untracked files", "cmd": "git stash -u"}
+{"q": "stash with message 'wip login'", "cmd": "git stash push -m 'wip login'"}
+{"q": "show whats in stash 2", "cmd": "git stash show -p 'stash@{2}'"}
+{"q": "drop the latest stash", "cmd": "git stash drop"}
+{"q": "apply stash 1 but keep it", "cmd": "git stash apply 'stash@{1}'"}
+{"q": "throw away all my stashes", "cmd": "git stash clear"}
+{"q": "rebase onto main", "cmd": "git rebase main"}
+{"q": "rebase my branch on top of origin/main", "cmd": "git fetch origin; git rebase origin/main"}
+{"q": "squash the last 3 commits interactively", "cmd": "git rebase -i HEAD~3"}
+{"q": "abort the rebase", "cmd": "git rebase --abort"}
+{"q": "rebase continue", "cmd": "git rebase --continue"}
+{"q": "skip this commit in the rebase", "cmd": "git rebase --skip"}
+{"q": "cherry pick abc123", "cmd": "git cherry-pick abc123"}
+{"q": "cherry pick 9f3e2a1 but dont commit", "cmd": "git cherry-pick -n 9f3e2a1"}
+{"q": "cherry-pick a range a1b2c3..d4e5f6", "cmd": "git cherry-pick a1b2c3..d4e5f6"}
+{"q": "abort cherry pick", "cmd": "git cherry-pick --abort"}
+{"q": "start bisect, HEAD is bad and v1.0 was good", "cmd": "git bisect start HEAD v1.0"}
+{"q": "mark this commit good", "cmd": "git bisect good"}
+{"q": "bisect: this one is bad", "cmd": "git bisect bad"}
+{"q": "done bisecting go back", "cmd": "git bisect reset"}
+{"q": "new worktree for branch hotfix in ../hotfix", "cmd": "git worktree add ../hotfix hotfix"}
+{"q": "worktree with a new branch feat-x in ../feat-x", "cmd": "git worktree add -b feat-x ../feat-x"}
+{"q": "list worktrees", "cmd": "git worktree list"}
+{"q": "remove worktree ../hotfix", "cmd": "git worktree remove ../hotfix"}
+{"q": "tag v2.0.0 and push it", "cmd": "git tag v2.0.0; git push origin v2.0.0"}
+{"q": "annotated tag v1.3 with message 'release 1.3'", "cmd": "git tag -a v1.3 -m 'release 1.3'"}
+{"q": "list tags newest first", "cmd": "git tag --sort=-creatordate"}
+{"q": "push all tags", "cmd": "git push --tags"}
+{"q": "delete tag v0.9 locally and on origin", "cmd": "git tag -d v0.9; git push origin --delete v0.9"}
+{"q": "latest tag", "cmd": "git describe --tags --abbrev=0"}
+{"q": "show remotes", "cmd": "git remote -v"}
+{"q": "add upstream remote https://github.com/foo/bar.git", "cmd": "git remote add upstream https://github.com/foo/bar.git"}
+{"q": "change origin url to git@github.com:me/app.git", "cmd": "git remote set-url origin git@github.com:me/app.git"}
+{"q": "sync my fork with upstream main", "cmd": "git fetch upstream; git merge upstream/main"}
+{"q": "who wrote lines 40-60 of src/app.py", "cmd": "git blame -L 40,60 src/app.py"}
+{"q": "git blame main.go", "cmd": "git blame main.go"}
+{"q": "blame ignoring whitespace changes in utils.js", "cmd": "git blame -w utils.js"}
+{"q": "i lost a commit show the reflog", "cmd": "git reflog"}
+{"q": "undo that reset, go back to where HEAD was before", "cmd": "git reset --hard 'HEAD@{1}'"}
+{"q": "what would git clean delete", "cmd": "git clean -n"}
+{"q": "dry run git clean including folders", "cmd": "git clean -nd"}
+{"q": "which ignored files would git clean remove", "cmd": "git clean -ndX"}
+{"q": "commits by alice", "cmd": "git log --author='alice' --oneline"}
+{"q": "commits since last monday", "cmd": "git log --since='last monday' --oneline"}
+{"q": "commits from the last 2 weeks", "cmd": "git log --since='2 weeks ago' --oneline"}
+{"q": "commits between jan 1 and feb 1 2024", "cmd": "git log --since='2024-01-01' --until='2024-02-01' --oneline"}
+{"q": "history of src/db.ts", "cmd": "git log --oneline -- src/db.ts"}
+{"q": "history of utils.py including renames", "cmd": "git log --follow --oneline -- utils.py"}
+{"q": "commits by bob that touched docs", "cmd": "git log --author='bob' --oneline -- docs"}
+{"q": "my commits today", "cmd": "git log --author=\"$(git config user.name)\" --since='midnight' --oneline"}
+{"q": "search commit messages for hotfix", "cmd": "git log --grep='hotfix' --oneline"}
+{"q": "when was parseConfig added or removed", "cmd": "git log -S 'parseConfig' --oneline"}
+{"q": "undo last commit but keep the changes", "cmd": "git reset --soft HEAD~1"}
+{"q": "change the last commit message to 'fix typo'", "cmd": "git commit --amend -m 'fix typo'"}
+{"q": "branches sorted by most recent commit", "cmd": "git branch --sort=-committerdate"}
+{"q": "fetch and prune deleted remote branches", "cmd": "git fetch --prune"}
+{"q": "commits on my branch that arent in main", "cmd": "git log --oneline main..HEAD"}
+{"q": "graph of all branches", "cmd": "git log --oneline --graph --all"}
+{"q": "whats running in docker", "cmd": "docker ps"}
+{"q": "all containers incl stopped ones", "cmd": "docker ps -a"}
+{"q": "tail logs of container web", "cmd": "docker logs -f web"}
+{"q": "last 100 lines of api container logs", "cmd": "docker logs --tail 100 api"}
+{"q": "logs from the last 10 minutes for worker", "cmd": "docker logs --since 10m worker"}
+{"q": "shell into container api", "cmd": "docker exec -it api sh"}
+{"q": "bash into the postgres container", "cmd": "docker exec -it postgres bash"}
+{"q": "run nginx on port 8080", "cmd": "docker run -d -p 8080:80 nginx"}
+{"q": "throwaway ubuntu container", "cmd": "docker run -it --rm ubuntu bash"}
+{"q": "run node 20 with current dir mounted at /app", "cmd": "docker run -it --rm -v ${PWD}:/app -w /app node:20 bash"}
+{"q": "start redis named cache on 6379", "cmd": "docker run -d --name cache -p 6379:6379 redis"}
+{"q": "build image myapp from this dir", "cmd": "docker build -t myapp ."}
+{"q": "docker build without cache", "cmd": "docker build --no-cache -t myapp ."}
+{"q": "build with Dockerfile.dev", "cmd": "docker build -f Dockerfile.dev -t myapp:dev ."}
+{"q": "stop container web", "cmd": "docker stop web"}
+{"q": "restart the redis container", "cmd": "docker restart redis"}
+{"q": "remove container old", "cmd": "docker rm old"}
+{"q": "delete image myapp:old", "cmd": "docker rmi myapp:old"}
+{"q": "container cpu and memory usage", "cmd": "docker stats --no-stream"}
+{"q": "list docker volumes", "cmd": "docker volume ls"}
+{"q": "docker networks", "cmd": "docker network ls"}
+{"q": "ip address of container web", "cmd": "docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' web"}
+{"q": "copy /app/log.txt out of container web", "cmd": "docker cp web:/app/log.txt ."}
+{"q": "copy config.json into container api at /app", "cmd": "docker cp config.json api:/app/"}
+{"q": "tag myapp as registry.example.com/myapp:1.0 and push", "cmd": "docker tag myapp registry.example.com/myapp:1.0; docker push registry.example.com/myapp:1.0"}
+{"q": "pull postgres 16", "cmd": "docker pull postgres:16"}
+{"q": "remove dangling images", "cmd": "docker image prune"}
+{"q": "nuke all unused docker stuff including volumes", "cmd": "docker system prune -a --volumes"}
+{"q": "stop every running docker container", "cmd": "docker stop (docker ps -q)"}
+{"q": "which port is container web mapped to", "cmd": "docker port web"}
+{"q": "env vars inside container api", "cmd": "docker exec api env"}
+{"q": "dokcer ps -a", "cmd": "docker ps -a"}
+{"q": "list running container names only", "cmd": "docker ps --format '{{.Names}}'"}
+{"q": "compose logs -f api", "cmd": "docker compose logs -f api"}
+{"q": "follow logs for the worker service", "cmd": "docker compose logs -f worker"}
+{"q": "last 50 lines of db logs in compose", "cmd": "docker compose logs --tail 50 db"}
+{"q": "compose logs with timestamps for the last 10m", "cmd": "docker compose logs -t --since 10m"}
+{"q": "exec into web service", "cmd": "docker compose exec web sh"}
+{"q": "run migrations in the api service", "cmd": "docker compose exec api python manage.py migrate"}
+{"q": "psql into the db service", "cmd": "docker compose exec db psql -U postgres"}
+{"q": "rebuild just the api service", "cmd": "docker compose build api"}
+{"q": "compose build no cache", "cmd": "docker compose build --no-cache"}
+{"q": "compose down -v", "cmd": "docker compose down -v"}
+{"q": "tear down the stack", "cmd": "docker compose down"}
+{"q": "whats running in compose", "cmd": "docker compose ps"}
+{"q": "compose ps including stopped", "cmd": "docker compose ps -a"}
+{"q": "restart only nginx service", "cmd": "docker compose restart nginx"}
+{"q": "compose up and rebuild", "cmd": "docker compose up -d --build"}
+{"q": "start only db and redis", "cmd": "docker compose up -d db redis"}
+{"q": "stop the web service", "cmd": "docker compose stop web"}
+{"q": "pull latest images for the stack", "cmd": "docker compose pull"}
+{"q": "bring up docker-compose.prod.yml", "cmd": "docker compose -f docker-compose.prod.yml up -d"}
+{"q": "validate the compose file", "cmd": "docker compose config"}
+{"q": "scale worker to 3", "cmd": "docker compose up -d --scale worker=3"}
+{"q": "recreate the api container", "cmd": "docker compose up -d --force-recreate api"}
+{"q": "one-off bash in the api service", "cmd": "docker compose run --rm api bash"}
+{"q": "list services in the compose file", "cmd": "docker compose config --services"}
+{"q": "processes in compose containers", "cmd": "docker compose top"}
+{"q": "docker-compose logs -f", "cmd": "docker compose logs -f"}
+{"q": "show pods", "cmd": "kubectl get pods"}
+{"q": "pods in all namespaces", "cmd": "kubectl get pods -A"}
+{"q": "pods with node and ip", "cmd": "kubectl get pods -o wide"}
+{"q": "watch pods", "cmd": "kubectl get pods -w"}
+{"q": "pods in namespace staging", "cmd": "kubectl get pods -n staging"}
+{"q": "pods with label app=api", "cmd": "kubectl get pods -l app=api"}
+{"q": "pods that arent running", "cmd": "kubectl get pods -A --field-selector=status.phase!=Running"}
+{"q": "k get po", "cmd": "kubectl get pods"}
+{"q": "logs of pod api-7d9f", "cmd": "kubectl logs api-7d9f"}
+{"q": "follow logs of deployment api", "cmd": "kubectl logs -f deployment/api"}
+{"q": "logs from the crashed previous container of api-7d9f", "cmd": "kubectl logs --previous api-7d9f"}
+{"q": "last 200 lines from the last hour for pod web-0", "cmd": "kubectl logs web-0 --tail 200 --since 1h"}
+{"q": "logs for container sidecar in pod web-0", "cmd": "kubectl logs web-0 -c sidecar"}
+{"q": "logs of all pods with app=worker", "cmd": "kubectl logs -l app=worker --all-containers --prefix"}
+{"q": "describe pod web-0", "cmd": "kubectl describe pod web-0"}
+{"q": "why is my pod web-0 pending", "cmd": "kubectl describe pod web-0"}
+{"q": "describe deployment api", "cmd": "kubectl describe deployment api"}
+{"q": "shell into pod web-0", "cmd": "kubectl exec -it web-0 -- sh"}
+{"q": "run env in pod api-7d9f", "cmd": "kubectl exec api-7d9f -- env"}
+{"q": "port forward svc api 8080 to 80", "cmd": "kubectl port-forward svc/api 8080:80"}
+{"q": "forward localhost 5432 to pod postgres-0", "cmd": "kubectl port-forward pod/postgres-0 5432:5432"}
+{"q": "apply deploy.yaml", "cmd": "kubectl apply -f deploy.yaml"}
+{"q": "apply everything in the k8s folder", "cmd": "kubectl apply -f k8s/"}
+{"q": "apply kustomize overlay overlays/prod", "cmd": "kubectl apply -k overlays/prod"}
+{"q": "kubectl delete -f deploy.yaml", "cmd": "kubectl delete -f deploy.yaml"}
+{"q": "restart deployment api", "cmd": "kubectl rollout restart deployment/api"}
+{"q": "rollout status of web", "cmd": "kubectl rollout status deployment/web"}
+{"q": "roll back the web deployment", "cmd": "kubectl rollout undo deployment/web"}
+{"q": "rollout history for api", "cmd": "kubectl rollout history deployment/api"}
+{"q": "which k8s cluster am i on", "cmd": "kubectl config current-context"}
+{"q": "list kube contexts", "cmd": "kubectl config get-contexts"}
+{"q": "switch context to prod", "cmd": "kubectl config use-context prod"}
+{"q": "set default namespace to dev", "cmd": "kubectl config set-context --current --namespace=dev"}
+{"q": "list namespaces", "cmd": "kubectl get namespaces"}
+{"q": "create namespace demo", "cmd": "kubectl create namespace demo"}
+{"q": "scale api to 5 replicas", "cmd": "kubectl scale deployment/api --replicas=5"}
+{"q": "pod cpu and memory", "cmd": "kubectl top pods"}
+{"q": "node resource usage", "cmd": "kubectl top nodes"}
+{"q": "recent k8s events sorted by time", "cmd": "kubectl get events --sort-by=.metadata.creationTimestamp"}
+{"q": "list k8s services", "cmd": "kubectl get svc"}
+{"q": "everything in namespace staging", "cmd": "kubectl get all -n staging"}
+{"q": "delete pod stuck-pod", "cmd": "kubectl delete pod stuck-pod"}
+{"q": "update the api deployment image to myapp:2.0", "cmd": "kubectl set image deployment/api api=myapp:2.0"}
+{"q": "secret db-creds as yaml", "cmd": "kubectl get secret db-creds -o yaml"}
+{"q": "copy /tmp/dump.sql from pod web-0", "cmd": "kubectl cp web-0:/tmp/dump.sql dump.sql"}
+{"q": "kubectl get deploy", "cmd": "kubectl get deployments"}
+{"q": "pods with their labels", "cmd": "kubectl get pods --show-labels"}
+{"q": "list nodes", "cmd": "kubectl get nodes"}
+{"q": "ingresses in every namespace", "cmd": "kubectl get ingress -A"}
+{"q": "ollama list", "cmd": "ollama list"}
+{"q": "what local models do i have", "cmd": "ollama list"}
+{"q": "which models are loaded right now", "cmd": "ollama ps"}
+{"q": "pull llama3.2", "cmd": "ollama pull llama3.2"}
+{"q": "download qwen2.5-coder 7b", "cmd": "ollama pull qwen2.5-coder:7b"}
+{"q": "run mistral", "cmd": "ollama run mistral"}
+{"q": "chat with llama3.1 8b", "cmd": "ollama run llama3.1:8b"}
+{"q": "ask llama3.2 why the sky is blue", "cmd": "ollama run llama3.2 'why is the sky blue'"}
+{"q": "delete the codellama model", "cmd": "ollama rm codellama"}
+{"q": "info about gemma2", "cmd": "ollama show gemma2"}
+{"q": "show the modelfile of llama3.2", "cmd": "ollama show --modelfile llama3.2"}
+{"q": "parameters of mistral", "cmd": "ollama show --parameters mistral"}
+{"q": "system prompt of mybot", "cmd": "ollama show --system mybot"}
+{"q": "create model mybot from Modelfile", "cmd": "ollama create mybot -f Modelfile"}
+{"q": "create a q4_K_M quantized model from Modelfile called tiny", "cmd": "ollama create tiny -f Modelfile -q q4_K_M"}
+{"q": "unload mistral from memory", "cmd": "ollama stop mistral"}
+{"q": "copy llama3.2 to my-llama", "cmd": "ollama cp llama3.2 my-llama"}
+{"q": "start the ollama server", "cmd": "ollama serve"}
+{"q": "run llama3.2 and show token speed", "cmd": "ollama run llama3.2 --verbose"}
+{"q": "summarize notes.txt with llama3.2", "cmd": "Get-Content notes.txt -Raw | ollama run llama3.2 'summarize this'"}
+{"q": "ollama version", "cmd": "ollama -v"}
+{"q": "list models via the ollama api", "cmd": "curl.exe http://localhost:11434/api/tags"}
+{"q": "keep llama3.2 loaded for an hour", "cmd": "ollama run llama3.2 --keepalive 1h"}
+{"q": "run deepseek-r1 without the thinking output", "cmd": "ollama run deepseek-r1 --hidethinking"}
+{"q": "is ollama up", "cmd": "curl.exe http://localhost:11434"}
+{"q": "olama pull phi3", "cmd": "ollama pull phi3"}
+{"q": "license of llama3.2", "cmd": "ollama show --license llama3.2"}
+{"q": "podman ps", "cmd": "podman ps"}
+{"q": "all podman containers", "cmd": "podman ps -a"}
+{"q": "podman images", "cmd": "podman images"}
+{"q": "run nginx with podman on 8080", "cmd": "podman run -d -p 8080:80 docker.io/library/nginx"}
+{"q": "podman logs -f web", "cmd": "podman logs -f web"}
+{"q": "exec into podman container db", "cmd": "podman exec -it db sh"}
+{"q": "build image app with podman", "cmd": "podman build -t app ."}
+{"q": "stop podman container web", "cmd": "podman stop web"}
+{"q": "start the podman machine", "cmd": "podman machine start"}
+{"q": "list podman machines", "cmd": "podman machine list"}
+{"q": "list podman pods", "cmd": "podman pod ps"}
+{"q": "prune dangling podman images", "cmd": "podman image prune"}
+{"q": "which gcp project am i using", "cmd": "gcloud config get-value project"}
+{"q": "switch gcp project to my-proj", "cmd": "gcloud config set project my-proj"}
+{"q": "list gcp projects", "cmd": "gcloud projects list"}
+{"q": "list my gce vms", "cmd": "gcloud compute instances list"}
+{"q": "ssh into vm dev-box", "cmd": "gcloud compute ssh dev-box"}
+{"q": "cloud run services", "cmd": "gcloud run services list"}
+{"q": "deploy this folder to cloud run as api", "cmd": "gcloud run deploy api --source ."}
+{"q": "gcloud accounts", "cmd": "gcloud auth list"}
+{"q": "get kube credentials for gke cluster prod in us-central1", "cmd": "gcloud container clusters get-credentials prod --region us-central1"}
+{"q": "last 20 error logs in gcp", "cmd": "gcloud logging read 'severity>=ERROR' --limit 20"}
+{"q": "list gcs buckets", "cmd": "gsutil ls"}
+{"q": "files in gs://my-bucket", "cmd": "gsutil ls gs://my-bucket"}
+{"q": "upload report.csv to my-bucket", "cmd": "gsutil cp report.csv gs://my-bucket/"}
+{"q": "download the data folder from my-bucket", "cmd": "gsutil -m cp -r gs://my-bucket/data ."}
+{"q": "total size of my-bucket", "cmd": "gsutil du -sh gs://my-bucket"}
+{"q": "sync dist up to gs://my-bucket/site", "cmd": "gsutil rsync -r dist gs://my-bucket/site"}
+{"q": "bigquery datasets", "cmd": "bq ls"}
+{"q": "tables in dataset analytics", "cmd": "bq ls analytics"}
+{"q": "schema of analytics.events", "cmd": "bq show --schema analytics.events"}
+{"q": "first 10 rows of analytics.events", "cmd": "bq head -n 10 analytics.events"}
+{"q": "count rows in analytics.events with bq", "cmd": "bq query --nouse_legacy_sql 'SELECT COUNT(*) FROM analytics.events'"}
+{"q": "fly deploy", "cmd": "fly deploy"}
+{"q": "deploy myapp to fly", "cmd": "fly deploy -a myapp"}
+{"q": "fly logs", "cmd": "fly logs"}
+{"q": "logs of fly app api without tailing", "cmd": "fly logs -a api --no-tail"}
+{"q": "fly status", "cmd": "fly status"}
+{"q": "list my fly apps", "cmd": "fly apps list"}
+{"q": "ssh into my fly machine", "cmd": "fly ssh console"}
+{"q": "run ls /app on fly", "cmd": "fly ssh console -C 'ls /app'"}
+{"q": "set API_KEY=abc123 on fly", "cmd": "fly secrets set API_KEY=abc123"}
+{"q": "list fly secrets", "cmd": "fly secrets list"}
+{"q": "scale fly app to 2 machines", "cmd": "fly scale count 2"}
+{"q": "fly releases", "cmd": "fly releases"}
+{"q": "open my fly app in the browser", "cmd": "fly apps open"}
+{"q": "launch a new fly app here", "cmd": "fly launch"}
+{"q": "firebase deploy", "cmd": "firebase deploy"}
+{"q": "deploy only hosting", "cmd": "firebase deploy --only hosting"}
+{"q": "deploy firebase functions only", "cmd": "firebase deploy --only functions"}
+{"q": "start firebase emulators", "cmd": "firebase emulators:start"}
+{"q": "start only firestore and auth emulators", "cmd": "firebase emulators:start --only firestore,auth"}
+{"q": "emulators with saved data in emu-data", "cmd": "firebase emulators:start --import ./emu-data --export-on-exit"}
+{"q": "list firebase projects", "cmd": "firebase projects:list"}
+{"q": "switch firebase project to prod", "cmd": "firebase use prod"}
+{"q": "firebase functions logs", "cmd": "firebase functions:log"}
+{"q": "list deployed cloud functions in firebase", "cmd": "firebase functions:list"}
+{"q": "set up firebase in this folder", "cmd": "firebase init"}
+{"q": "tailscale status", "cmd": "tailscale status"}
+{"q": "my tailscale ip", "cmd": "tailscale ip -4"}
+{"q": "ping laptop over tailscale", "cmd": "tailscale ping laptop"}
+{"q": "connect to my tailnet", "cmd": "tailscale up"}
+{"q": "disconnect tailscale", "cmd": "tailscale down"}
+{"q": "use home-server as exit node", "cmd": "tailscale set --exit-node=home-server"}
+{"q": "stop using the exit node", "cmd": "tailscale set --exit-node="}
+{"q": "share local port 3000 on my tailnet", "cmd": "tailscale serve 3000"}
+{"q": "expose port 3000 to the internet with funnel", "cmd": "tailscale funnel 3000"}
+{"q": "tailscale netcheck", "cmd": "tailscale netcheck"}
+{"q": "send photo.jpg to my phone over tailscale", "cmd": "tailscale file cp photo.jpg phone:"}
+{"q": "tailnet peers as json", "cmd": "tailscale status --json"}
+{"q": "who is 100.64.0.5", "cmd": "tailscale whois 100.64.0.5"}
+{"q": "winget search postgres", "cmd": "winget search postgres"}
+{"q": "install node lts", "cmd": "winget install OpenJS.NodeJS.LTS"}
+{"q": "install ripgrep by exact id", "cmd": "winget install --id BurntSushi.ripgrep.MSVC -e"}
+{"q": "details on the Git.Git package", "cmd": "winget show Git.Git"}
+{"q": "upgrade just powershell", "cmd": "winget upgrade Microsoft.PowerShell"}
+{"q": "export my installed apps to apps.json", "cmd": "winget export -o apps.json"}
+{"q": "reinstall everything from apps.json", "cmd": "winget import -i apps.json"}
+{"q": "install docker desktop", "cmd": "winget install Docker.DockerDesktop"}
+{"q": "brew install jq", "cmd": "winget install jqlang.jq"}
+{"q": "winget list | grep python", "cmd": "winget list python"}
+{"q": "wsl -l -v", "cmd": "wsl -l -v"}
+{"q": "which wsl version are my distros on", "cmd": "wsl -l -v"}
+{"q": "stop the ubuntu distro", "cmd": "wsl --terminate Ubuntu"}
+{"q": "make Debian the default wsl distro", "cmd": "wsl --set-default Debian"}
+{"q": "update wsl", "cmd": "wsl --update"}
+{"q": "wsl status", "cmd": "wsl --status"}
+{"q": "back up ubuntu to ubuntu.tar", "cmd": "wsl --export Ubuntu ubuntu.tar"}
+{"q": "import ubuntu.tar as a new distro called dev", "cmd": "wsl --import dev C:\\wsl\\dev ubuntu.tar"}
+{"q": "run uname -a in debian", "cmd": "wsl -d Debian uname -a"}
+{"q": "open wsl in my linux home", "cmd": "wsl ~"}
+{"q": "distros i can install", "cmd": "wsl -l -o"}
+{"q": "open wsl as root", "cmd": "wsl -u root"}
+{"q": "install the local dev CA", "cmd": "mkcert -install"}
+{"q": "cert for localhost", "cmd": "mkcert localhost"}
+{"q": "https cert for myapp.test and localhost", "cmd": "mkcert myapp.test localhost 127.0.0.1 ::1"}
+{"q": "wildcard cert for *.dev.test", "cmd": "mkcert '*.dev.test'"}
+{"q": "where is the mkcert ca stored", "cmd": "mkcert -CAROOT"}
+{"q": "localhost cert as cert.pem and key.pem", "cmd": "mkcert -cert-file cert.pem -key-file key.pem localhost"}
+{"q": "pfx cert for localhost", "cmd": "mkcert -pkcs12 localhost"}
+{"q": "self signed cert for local dev", "cmd": "mkcert localhost 127.0.0.1 ::1"}
+{"q": "remove the mkcert ca from the trust store", "cmd": "mkcert -uninstall"}
+{"q": "random 32 byte hex string", "cmd": "openssl rand -hex 32"}
+{"q": "random base64 secret with openssl", "cmd": "openssl rand -base64 48"}
+{"q": "view github.com cert with openssl", "cmd": "$null | openssl s_client -connect github.com:443 -servername github.com | openssl x509 -noout -text"}
+{"q": "when does example.com's cert expire", "cmd": "$null | openssl s_client -connect example.com:443 -servername example.com | openssl x509 -noout -dates"}
+{"q": "full cert chain of example.com", "cmd": "$null | openssl s_client -connect example.com:443 -servername example.com -showcerts"}
+{"q": "show cert.pem details", "cmd": "openssl x509 -in cert.pem -noout -text"}
+{"q": "subject and issuer of server.crt", "cmd": "openssl x509 -in server.crt -noout -subject -issuer"}
+{"q": "sha256 fingerprint of cert.pem", "cmd": "openssl x509 -in cert.pem -noout -fingerprint -sha256"}
+{"q": "openssl self signed cert for localhost valid a year", "cmd": "openssl req -x509 -newkey rsa:2048 -noenc -keyout key.pem -out cert.pem -days 365 -subj '/CN=localhost'"}
+{"q": "bundle cert.pem and key.pem into cert.pfx with openssl", "cmd": "openssl pkcs12 -export -out cert.pfx -inkey key.pem -in cert.pem"}
+{"q": "sha256 of setup.exe using openssl", "cmd": "openssl dgst -sha256 setup.exe"}
+{"q": "get json from localhost:3000/api/users", "cmd": "curl.exe http://localhost:3000/api/users"}
+{"q": "post json name bob to localhost:3000/api/users", "cmd": "curl.exe -X POST http://localhost:3000/api/users -H 'Content-Type: application/json' -d '{\\\"name\\\":\\\"bob\\\"}'"}
+{"q": "curl post {\"email\":\"a@b.com\"} to localhost:8080/subscribe", "cmd": "curl.exe -X POST http://localhost:8080/subscribe -H 'Content-Type: application/json' -d '{\\\"email\\\":\\\"a@b.com\\\"}'"}
+{"q": "put json name alice on user 5", "cmd": "curl.exe -X PUT http://localhost:3000/api/users/5 -H 'Content-Type: application/json' -d '{\\\"name\\\":\\\"alice\\\"}'"}
+{"q": "patch user 5 set active false", "cmd": "curl.exe -X PATCH http://localhost:3000/api/users/5 -H 'Content-Type: application/json' -d '{\\\"active\\\":false}'"}
+{"q": "curl delete user 5", "cmd": "curl.exe -X DELETE http://localhost:3000/api/users/5"}
+{"q": "post data.json to localhost:3000/api/import", "cmd": "curl.exe -X POST http://localhost:3000/api/import -H 'Content-Type: application/json' -d '@data.json'"}
+{"q": "headers only for google.com", "cmd": "curl.exe -I https://google.com"}
+{"q": "curl and follow redirects http://github.com", "cmd": "curl.exe -L http://github.com"}
+{"q": "download node zip to node.zip with curl", "cmd": "curl.exe -L -o node.zip https://nodejs.org/dist/v20.11.0/node-v20.11.0-win-x64.zip"}
+{"q": "call api.example.com/me with my API_TOKEN env var as bearer", "cmd": "curl.exe -H \"Authorization: Bearer $env:API_TOKEN\" https://api.example.com/me"}
+{"q": "curl -v https://example.com", "cmd": "curl.exe -v https://example.com"}
+{"q": "response headers plus body", "cmd": "curl.exe -i https://httpbin.org/get"}
+{"q": "just the http status code of example.com", "cmd": "curl.exe -s -o NUL -w '%{http_code}' https://example.com"}
+{"q": "health check localhost:8080 with 5s timeout", "cmd": "curl.exe -s --max-time 5 http://localhost:8080/health"}
+{"q": "whats my public ip", "cmd": "curl.exe ifconfig.me"}
+{"q": "curl local https ignoring cert errors", "cmd": "curl.exe -k https://localhost:8443"}
+{"q": "upload photo.jpg as multipart to localhost:3000/upload", "cmd": "curl.exe -F 'file=@photo.jpg' http://localhost:3000/upload"}
+{"q": "form post name=bob&age=30", "cmd": "curl.exe -X POST -d 'name=bob&age=30' http://localhost:3000/form"}
+{"q": "send header X-Api-Key abc to localhost:3000", "cmd": "curl.exe -H 'X-Api-Key: abc' http://localhost:3000"}
+{"q": "any prs assigned to me", "cmd": "gh pr list --assignee '@me'"}
+{"q": "mark pr 14 ready for review", "cmd": "gh pr ready 14"}
+{"q": "comment 'lgtm' on pr 8", "cmd": "gh pr comment 8 --body 'lgtm'"}
+{"q": "reopen issue 3", "cmd": "gh issue reopen 3"}
+{"q": "issues mentioning timeout", "cmd": "gh issue list --search 'timeout'"}
+{"q": "why did the last ci run fail", "cmd": "gh run view --log-failed"}
+{"q": "rerun failed jobs of run 987654", "cmd": "gh run rerun 987654 --failed"}
+{"q": "list workflows", "cmd": "gh workflow list"}
+{"q": "gh repo view --web", "cmd": "gh repo view --web"}
+{"q": "show stash list then pop the 2nd one", "cmd": "git stash list; git stash pop 'stash@{1}'"}
+{"q": "stash only staged changes", "cmd": "git stash push --staged"}
+{"q": "continue the cherry pick", "cmd": "git cherry-pick --continue"}
+{"q": "rename remote origin to old", "cmd": "git remote rename origin old"}
+{"q": "prune stale remote-tracking branches from origin", "cmd": "git remote prune origin"}
+{"q": "tags pointing at HEAD", "cmd": "git tag --points-at HEAD"}
+{"q": "tags matching v1.*", "cmd": "git tag -l 'v1.*'"}
+{"q": "commits on main since v1.0", "cmd": "git log --oneline v1.0..main"}
+{"q": "files changed by alice in the last month", "cmd": "git log --author='alice' --since='1 month ago' --name-only --format=''"}
+{"q": "logs for every service in compose but only errors", "cmd": "docker compose logs | rg -i 'error'"}
+{"q": "restart api and worker services", "cmd": "docker compose restart api worker"}
+{"q": "remove compose orphans while bringing it down", "cmd": "docker compose down --remove-orphans"}
+{"q": "show container sizes", "cmd": "docker ps -s"}
+{"q": "pods sorted by restart count", "cmd": "kubectl get pods --sort-by='.status.containerStatuses[0].restartCount'"}
+{"q": "watch the rollout of deployment worker", "cmd": "kubectl rollout status deployment/worker"}
+{"q": "kubectl get pods -o yaml for web-0", "cmd": "kubectl get pod web-0 -o yaml"}
+{"q": "pull nomic-embed-text", "cmd": "ollama pull nomic-embed-text"}
+{"q": "remove llama2 and mistral", "cmd": "ollama rm llama2 mistral"}
+{"q": "wsl shutdown then start ubuntu", "cmd": "wsl --shutdown; wsl -d Ubuntu"}

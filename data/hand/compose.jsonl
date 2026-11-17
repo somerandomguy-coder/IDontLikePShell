@@ -1,0 +1,335 @@
+{"q": "how many dirs have 'build' in the name, then search for that number in report.md", "cmd": "$n = (fd -t d 'build' | Measure-Object).Count; rg -F \"$n\" report.md"}
+{"q": "count the py files and look for that count in README.md", "cmd": "$n = (fd -e py | Measure-Object).Count; rg -F \"$n\" README.md"}
+{"q": "number of test folders, grep it inside docs", "cmd": "$n = (fd -t d 'test' | Measure-Object).Count; rg -F \"$n\" docs"}
+{"q": "find dirs matching migration, count em, then check if that number shows up anywhere in changelog", "cmd": "$n = (fd -t d 'migration' | Measure-Object).Count; rg -F \"$n\" changelog"}
+{"q": "count json files then grep the count in summary.txt", "cmd": "$n = (fd -e json | Measure-Object).Count; rg -F \"$n\" summary.txt"}
+{"q": "how many files have TODO in them, and is that number mentioned in STATUS.md", "cmd": "$n = (rg -l 'TODO' | Measure-Object).Count; rg -F \"$n\" STATUS.md"}
+{"q": "python files that import torch", "cmd": "fd -e py -X rg -l 'import torch'"}
+{"q": "search useState only in files changed in the last day", "cmd": "fd -t f --changed-within 1d -X rg 'useState'"}
+{"q": "grep TODO in stuff i touched in the last 2 hours", "cmd": "fd -t f --changed-within 2h -X rg 'TODO'"}
+{"q": "search api_key inside every folder called config", "cmd": "rg 'api_key' (fd -t d '^config$')"}
+{"q": "look for describe( in all the tests dirs", "cmd": "rg -F 'describe(' (fd -t d 'tests')"}
+{"q": "which files under folders named tests use assert, names only", "cmd": "rg -l 'assert' (fd -t d '^tests$')"}
+{"q": "grep for password in yaml files bigger than 1k", "cmd": "fd -e yaml -S +1k -X rg 'password'"}
+{"q": "search deprecated in markdown under docs, max depth 2, ignore case", "cmd": "fd -e md -d 2 . docs -X rg -i 'deprecated'"}
+{"q": "rg for main in files that have server in their name", "cmd": "fd -t f 'server' -X rg 'main'"}
+{"q": "FIXME in hidden files too, just the names", "cmd": "fd -t f -H -X rg -l 'FIXME'"}
+{"q": "search export default in jsx files changed this week", "cmd": "fd -e jsx --changed-within 7d -X rg 'export default'"}
+{"q": "find dockerfiles and show their FROM lines", "cmd": "fd -g 'Dockerfile*' -X rg '^FROM'"}
+{"q": "grep node: in every docker-compose file", "cmd": "fd -g 'docker-compose*.yml' -X rg 'node:'"}
+{"q": "which package.json files mention react", "cmd": "fd -g 'package.json' -X rg -l -w 'react'"}
+{"q": "which requirements files pin numpy", "cmd": "fd -g 'requirements*.txt' -X rg -l 'numpy=='"}
+{"q": "search select in sql files older than 30 days", "cmd": "fd -e sql --changed-before 30d -X rg -i 'select'"}
+{"q": "find localhost in config files (json yaml toml)", "cmd": "fd -e json -e yaml -e toml -X rg 'localhost'"}
+{"q": "grep 'TODO' only inside src folders named components", "cmd": "rg 'TODO' (fd -t d '^components$' src)"}
+{"q": "search 'Copyright' in the 5 most recently changed files", "cmd": "rg 'Copyright' (fd -t f | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 5).FullName"}
+{"q": "look for 'async def' in py files under any folder called api", "cmd": "fd -e py -p 'api' -X rg 'async def'"}
+{"q": "open every file containing TODO in vscode", "cmd": "code (rg -l 'TODO')"}
+{"q": "open files that use deprecatedApi in code", "cmd": "code (rg -l 'deprecatedApi')"}
+{"q": "grep for handleSubmit and open whatever hits", "cmd": "code (rg -l 'handleSubmit')"}
+{"q": "open all files with merge conflicts", "cmd": "code (rg -l '^<<<<<<<')"}
+{"q": "copy all files mentioning invoice into backup", "cmd": "rg -l 'invoice' | Copy-Item -Destination backup"}
+{"q": "delete every file that contains DO_NOT_SHIP", "cmd": "rg -l 'DO_NOT_SHIP' | Remove-Item"}
+{"q": "how many files mention axios", "cmd": "(rg -l 'axios' | Measure-Object).Count"}
+{"q": "files containing lorem sorted by size biggest first", "cmd": "rg -l 'lorem' | Get-Item | Sort-Object Length -Descending"}
+{"q": "files with console.log, most recently edited first", "cmd": "rg -l -F 'console.log' | Get-Item | Sort-Object LastWriteTime -Descending"}
+{"q": "save the list of files with TODO to todo.txt", "cmd": "rg -l 'TODO' | Set-Content todo.txt"}
+{"q": "copy names of files containing secret to clipboard", "cmd": "rg -l 'secret' | Set-Clipboard"}
+{"q": "zip up all files that mention report", "cmd": "Compress-Archive -Path (rg -l 'report') -DestinationPath report_files.zip"}
+{"q": "move files containing 'archived: true' into archive", "cmd": "rg -l 'archived: true' | Move-Item -Destination archive"}
+{"q": "show size of each file that has BEGIN RSA", "cmd": "rg -l 'BEGIN RSA' | Get-Item | Select-Object Name, Length"}
+{"q": "total bytes of files that contain cache", "cmd": "(rg -l 'cache' | Get-Item | Measure-Object Length -Sum).Sum"}
+{"q": "open the first file that matches class UserService", "cmd": "code (rg -l 'class UserService' | Select-Object -First 1)"}
+{"q": "3 most recently edited files that mention retry", "cmd": "rg -l 'retry' | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 3"}
+{"q": "files that import pandas AND numpy", "cmd": "rg -l 'import numpy' (rg -l 'import pandas')"}
+{"q": "files containing foo but not bar", "cmd": "rg --files-without-match 'bar' (rg -l 'foo')"}
+{"q": "line count of each file that uses useEffect", "cmd": "rg -l 'useEffect' | ForEach-Object { \"$_ $((Get-Content $_ | Measure-Object -Line).Lines)\" }"}
+{"q": "open each FIXME file in notepad", "cmd": "rg -l 'FIXME' | ForEach-Object { notepad $_ }"}
+{"q": "delete .orig files that still have conflict markers", "cmd": "fd -e orig -X rg -l '<<<<<<<' | Remove-Item"}
+{"q": "list files with password, with full paths", "cmd": "rg -l 'password' | Get-Item | Select-Object -ExpandProperty FullName"}
+{"q": "how many lines total mention error across all logs", "cmd": "(rg -i 'error' -g '*.log' | Measure-Object).Count"}
+{"q": "the folders that contain files mentioning 'kafka'", "cmd": "rg -l 'kafka' | ForEach-Object { Split-Path $_ } | Sort-Object -Unique"}
+{"q": "which extensions do the files mentioning 'jwt' have", "cmd": "rg -l 'jwt' | Get-Item | Group-Object Extension | Select-Object Count, Name"}
+{"q": "top 5 files with the most TODOs", "cmd": "rg -c 'TODO' | Sort-Object { [int]($_ -split ':')[-1] } -Descending | Select-Object -First 5"}
+{"q": "which file has the most console.log calls", "cmd": "rg -c -F 'console.log' | Sort-Object { [int]($_ -split ':')[-1] } -Descending | Select-Object -First 1"}
+{"q": "top 10 py files by number of import lines", "cmd": "rg -c '^import' -t py | Sort-Object { [int]($_ -split ':')[-1] } -Descending | Select-Object -First 10"}
+{"q": "ts files with more than 20 uses of any", "cmd": "rg -c -w 'any' -t ts | Where-Object { [int]($_ -split ':')[-1] -gt 20 }"}
+{"q": "total number of TODOs in the repo", "cmd": "(rg -o 'TODO' | Measure-Object).Count"}
+{"q": "grep -c error *.log | sort -t: -k2 -nr | head", "cmd": "rg -c 'error' -g '*.log' | Sort-Object { [int]($_ -split ':')[-1] } -Descending | Select-Object -First 10"}
+{"q": "files with only one match of 'deprecated'", "cmd": "rg -c 'deprecated' | Where-Object { [int]($_ -split ':')[-1] -eq 1 }"}
+{"q": "10 most common words in notes.txt", "cmd": "rg -o -w '\\w+' notes.txt | Group-Object | Sort-Object Count -Descending | Select-Object -First 10 Count, Name"}
+{"q": "most frequent error messages in app.log", "cmd": "rg -o 'ERROR .*' app.log | Group-Object | Sort-Object Count -Descending | Select-Object -First 10 Count, Name"}
+{"q": "most imported python modules", "cmd": "rg -o --no-filename '^import (\\w+)' -r '$1' -t py | Group-Object | Sort-Object Count -Descending | Select-Object -First 10 Count, Name"}
+{"q": "count each http status code in access.log", "cmd": "rg -o ' (\\d{3}) ' -r '$1' access.log | Group-Object | Sort-Object Count -Descending | Select-Object Count, Name"}
+{"q": "top ips in access.log", "cmd": "rg -o '^\\S+' access.log | Group-Object | Sort-Object Count -Descending | Select-Object -First 10 Count, Name"}
+{"q": "cat access.log | awk '{print $1}' | sort | uniq -c | sort -rn | head", "cmd": "Get-Content access.log | ForEach-Object { ($_ -split ' ')[0] } | Group-Object | Sort-Object Count -Descending | Select-Object -First 10 Count, Name"}
+{"q": "sum of TODO counts per file but only for ts", "cmd": "(rg -c 'TODO' -t ts | ForEach-Object { [int]($_ -split ':')[-1] } | Measure-Object -Sum).Sum"}
+{"q": "which test file has the most test functions", "cmd": "rg -c '^def test_' -t py | Sort-Object { [int]($_ -split ':')[-1] } -Descending | Select-Object -First 1"}
+{"q": "rank folders by how many TODOs they have", "cmd": "rg -l 'TODO' | ForEach-Object { Split-Path $_ } | Group-Object | Sort-Object Count -Descending | Select-Object Count, Name"}
+{"q": "count files by extension", "cmd": "fd -t f | Get-Item | Group-Object Extension | Sort-Object Count -Descending | Select-Object Count, Name"}
+{"q": "what file types are in src and how many of each", "cmd": "fd -t f . src | Get-Item | Group-Object Extension | Sort-Object Count -Descending | Select-Object Count, Name"}
+{"q": "disk usage per extension in mb", "cmd": "fd -t f | Get-Item | Group-Object Extension | ForEach-Object { [pscustomobject]@{ Ext = $_.Name; MB = [math]::Round(($_.Group | Measure-Object Length -Sum).Sum / 1MB, 2) } } | Sort-Object MB -Descending"}
+{"q": "group files by the year they were last modified", "cmd": "fd -t f | Get-Item | Group-Object { $_.LastWriteTime.Year } | Select-Object Count, Name"}
+{"q": "how many files in each top level folder", "cmd": "fd -t f | Group-Object { ($_ -split '[\\\\/]')[0] } | Sort-Object Count -Descending | Select-Object Count, Name"}
+{"q": "top 3 extensions in downloads", "cmd": "fd -t f . $HOME\\Downloads | Get-Item | Group-Object Extension | Sort-Object Count -Descending | Select-Object -First 3 Count, Name"}
+{"q": "total size of all log files in mb", "cmd": "[math]::Round((fd -e log | Get-Item | Measure-Object Length -Sum).Sum / 1MB, 2)"}
+{"q": "du -sh node_modules", "cmd": "[math]::Round((fd -t f -I . node_modules | Get-Item | Measure-Object Length -Sum).Sum / 1MB, 1)"}
+{"q": "how much space do my mp4s take in gb", "cmd": "(fd -e mp4 | Get-Item | Measure-Object Length -Sum).Sum / 1GB"}
+{"q": "du -sh * but sorted", "cmd": "Get-ChildItem -Directory | ForEach-Object { [pscustomobject]@{ Name = $_.Name; MB = [math]::Round((fd -t f -I . $_.Name | Get-Item | Measure-Object Length -Sum).Sum / 1MB, 1) } } | Sort-Object MB -Descending"}
+{"q": "average jpg size in kb", "cmd": "(fd -e jpg | Get-Item | Measure-Object Length -Average).Average / 1KB"}
+{"q": "10 biggest files in the repo with full paths", "cmd": "fd -t f | Get-Item | Sort-Object Length -Descending | Select-Object -First 10 FullName, Length"}
+{"q": "biggest file under assets", "cmd": "fd -t f . assets | Get-Item | Sort-Object Length -Descending | Select-Object -First 1 FullName, Length"}
+{"q": "total lines of python", "cmd": "(Get-Content (fd -e py) | Measure-Object -Line).Lines"}
+{"q": "wc -l *.js | sort -n | tail", "cmd": "fd -e js -d 1 | ForEach-Object { [pscustomobject]@{ File = $_; Lines = (Get-Content $_ | Measure-Object -Line).Lines } } | Sort-Object Lines | Select-Object -Last 10"}
+{"q": "longest py file by line count", "cmd": "fd -e py | ForEach-Object { [pscustomobject]@{ File = $_; Lines = (Get-Content $_ | Measure-Object -Line).Lines } } | Sort-Object Lines -Descending | Select-Object -First 1"}
+{"q": "how big is the stuff i changed today", "cmd": "(fd -t f --changed-within 1d | Get-Item | Measure-Object Length -Sum).Sum / 1MB"}
+{"q": "size of all files over 100mb combined", "cmd": "(fd -t f -S +100m | Get-Item | Measure-Object Length -Sum).Sum / 1GB"}
+{"q": "lines of code per language (py js ts)", "cmd": "'py','js','ts' | ForEach-Object { [pscustomobject]@{ Ext = $_; Lines = (Get-Content (fd -e $_) | Measure-Object -Line).Lines } }"}
+{"q": "run pytest in every folder named tests", "cmd": "fd -t d '^tests$' | ForEach-Object { pytest $_ }"}
+{"q": "git pull in every repo under code", "cmd": "Get-ChildItem $HOME\\code -Directory | ForEach-Object { git -C $_.FullName pull }"}
+{"q": "npm install in every folder that has a package.json", "cmd": "fd -g 'package.json' -E node_modules | ForEach-Object { Push-Location (Get-Item $_).DirectoryName; npm install; Pop-Location }"}
+{"q": "convert all wav to mp3 with ffmpeg", "cmd": "fd -e wav | ForEach-Object { ffmpeg -i $_ ($_ -replace '\\.wav$','.mp3') }"}
+{"q": "run black on each changed py file", "cmd": "git diff --name-only -- '*.py' | ForEach-Object { black $_ }"}
+{"q": "print the first line of every md file", "cmd": "fd -e md | ForEach-Object { \"$_ : $(Get-Content $_ -TotalCount 1)\" }"}
+{"q": "peek at the first 3 lines of each csv", "cmd": "fd -e csv | ForEach-Object { $_; Get-Content $_ -TotalCount 3 }"}
+{"q": "touch all py files", "cmd": "fd -e py | Get-Item | ForEach-Object { $_.LastWriteTime = Get-Date }"}
+{"q": "add a '-- generated' header to every sql file", "cmd": "fd -e sql | ForEach-Object { $c = Get-Content $_; Set-Content $_ (@('-- generated') + $c) }"}
+{"q": "strip trailing whitespace in all py files", "cmd": "fd -e py | ForEach-Object { (Get-Content $_) -replace '\\s+$','' | Set-Content $_ }"}
+{"q": "dos2unix every .sh file", "cmd": "fd -e sh | ForEach-Object { $p = (Resolve-Path $_).Path; [IO.File]::WriteAllText($p, ([IO.File]::ReadAllText($p) -replace \"`r`n\", \"`n\")) }"}
+{"q": "make a folder for each name in names.txt", "cmd": "Get-Content names.txt | ForEach-Object { New-Item -ItemType Directory $_ }"}
+{"q": "ping each host in hosts.txt once", "cmd": "Get-Content hosts.txt | ForEach-Object { Test-Connection $_ -Count 1 -Quiet }"}
+{"q": "check http status of every url in urls.txt", "cmd": "Get-Content urls.txt | ForEach-Object { \"$_ $((Invoke-WebRequest $_ -UseBasicParsing -Method Head).StatusCode)\" }"}
+{"q": "unzip every zip into its own folder", "cmd": "fd -e zip -d 1 | Get-Item | ForEach-Object { Expand-Archive $_.FullName -DestinationPath $_.BaseName }"}
+{"q": "build then if it works run tests", "cmd": "npm run build; if ($?) { npm test }"}
+{"q": "run the tests and push only if they pass", "cmd": "npm test; if ($?) { git push }"}
+{"q": "pull, then install requirements if the pull worked", "cmd": "git pull; if ($?) { uv pip install -r requirements.txt }"}
+{"q": "if config.json exists open it else create it", "cmd": "if (Test-Path config.json) { code config.json } else { New-Item config.json }"}
+{"q": "make build dir if missing then cd into it", "cmd": "if (-not (Test-Path build)) { New-Item -ItemType Directory build | Out-Null }; Set-Location build"}
+{"q": "go build && ./app", "cmd": "go build; if ($?) { .\\app.exe }"}
+{"q": "cargo fmt && cargo clippy", "cmd": "cargo fmt; if ($?) { cargo clippy }"}
+{"q": "make clean && make", "cmd": "make clean; if ($?) { make }"}
+{"q": "mkdir -p out && cp *.txt out", "cmd": "if (-not (Test-Path out)) { New-Item -ItemType Directory out | Out-Null }; Copy-Item *.txt out"}
+{"q": "warn me if theres any TODO left", "cmd": "rg -q 'TODO'; if ($?) { 'there are still TODOs' }"}
+{"q": "fail if there are print( calls in src", "cmd": "rg -q 'print\\(' src; if ($?) { Write-Error 'remove print statements from src' }"}
+{"q": "if something is on port 3000 kill it", "cmd": "$p = (Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue).OwningProcess; if ($p) { Stop-Process -Id $p }"}
+{"q": "commit everything as wip but only if there are changes", "cmd": "if (git status --porcelain) { git add -A; git commit -m 'wip' }"}
+{"q": "is node installed? show version or say its missing", "cmd": "if (Get-Command node -ErrorAction SilentlyContinue) { node --version } else { 'node not found' }"}
+{"q": "start the web container if its not running", "cmd": "if (-not (docker ps -q -f name=web)) { docker start web }"}
+{"q": "lint and if clean then format", "cmd": "npm run lint; if ($?) { npm run format }"}
+{"q": "python -m venv .venv && activate it", "cmd": "python -m venv .venv; if ($?) { .\\.venv\\Scripts\\Activate.ps1 }"}
+{"q": "compile main.c and run it if it compiled", "cmd": "gcc main.c -o main.exe; if ($?) { .\\main.exe }"}
+{"q": "run migrations, if ok start server", "cmd": "python manage.py migrate; if ($?) { python manage.py runserver }"}
+{"q": "if requirements.txt changed in the last commit reinstall", "cmd": "if (git diff --name-only HEAD~1 | Where-Object { $_ -eq 'requirements.txt' }) { uv pip install -r requirements.txt }"}
+{"q": "delete dist only if it exists", "cmd": "if (Test-Path dist) { Remove-Item dist -Recurse }"}
+{"q": "files modified today", "cmd": "fd -t f | Get-Item | Where-Object { $_.LastWriteTime -ge (Get-Date).Date }"}
+{"q": "find read-only files", "cmd": "fd -t f | Get-Item | Where-Object { $_.IsReadOnly }"}
+{"q": "processes using more than 1gb ram", "cmd": "Get-Process | Where-Object { $_.WorkingSet64 -gt 1GB } | Sort-Object WorkingSet64 -Descending | Select-Object Name, Id, @{n='MB';e={[int]($_.WorkingSet64 / 1MB)}}"}
+{"q": "services set to automatic that are stopped", "cmd": "Get-Service | Where-Object { $_.Status -eq 'Stopped' -and $_.StartType -eq 'Automatic' }"}
+{"q": "files with names longer than 50 chars", "cmd": "fd -t f | Where-Object { (Split-Path $_ -Leaf).Length -gt 50 }"}
+{"q": "py files in src that dont have a test_ file in tests", "cmd": "fd -e py . src | Where-Object { -not (fd -g ('test_' + (Split-Path $_ -Leaf)) tests) }"}
+{"q": "env vars with proxy in the name", "cmd": "Get-ChildItem env: | Where-Object { $_.Name -like '*proxy*' }"}
+{"q": "files bigger than 1mb that contain the word 'base64'", "cmd": "rg -l 'base64' | Get-Item | Where-Object { $_.Length -gt 1MB }"}
+{"q": "log files from last week with errors in them", "cmd": "fd -e log --changed-within 7d -X rg -l -i 'error'"}
+{"q": "images wider than... nah just pngs over 2mb sorted", "cmd": "fd -e png -S +2m | Get-Item | Sort-Object Length -Descending | Select-Object Name, Length"}
+{"q": "which folders are empty-ish (less than 2 files)", "cmd": "fd -t d | Where-Object { (Get-ChildItem $_ -File | Measure-Object).Count -lt 2 }"}
+{"q": "csv files with more than 1000 lines", "cmd": "fd -e csv | Where-Object { (Get-Content $_ | Measure-Object -Line).Lines -gt 1000 }"}
+{"q": "files changed in last commit that contain X", "cmd": "rg 'X' (git diff --name-only HEAD~1)"}
+{"q": "grep console.log in files i changed but havent committed", "cmd": "rg -F 'console.log' (git diff --name-only)"}
+{"q": "staged files that still have debugger in them", "cmd": "rg -l 'debugger' (git diff --cached --name-only)"}
+{"q": "how many files changed since main", "cmd": "(git diff --name-only main | Measure-Object).Count"}
+{"q": "ts files changed in the last 5 commits", "cmd": "git diff --name-only HEAD~5 | Where-Object { $_ -like '*.ts' }"}
+{"q": "open everything from the last commit in code", "cmd": "code (git diff --name-only HEAD~1)"}
+{"q": "authors sorted by number of commits", "cmd": "git log --format='%an' | Group-Object | Sort-Object Count -Descending | Select-Object Count, Name"}
+{"q": "git log --oneline | head -5", "cmd": "git log --oneline | Select-Object -First 5"}
+{"q": "count commits by alice in the last month", "cmd": "(git log --author='alice' --since='1 month ago' --oneline | Measure-Object).Count"}
+{"q": "delete local branches that are already merged", "cmd": "git branch --merged | Where-Object { $_ -notmatch '^\\*|main|master' } | ForEach-Object { git branch -d $_.Trim() }"}
+{"q": "untracked files that mention API_KEY", "cmd": "rg -l 'API_KEY' (git ls-files --others --exclude-standard)"}
+{"q": "run eslint only on the js files i changed", "cmd": "npx eslint (git diff --name-only -- '*.js')"}
+{"q": "which files churn the most (most commits)", "cmd": "git log --name-only --format='' | Where-Object { $_ } | Group-Object | Sort-Object Count -Descending | Select-Object -First 10 Count, Name"}
+{"q": "stash, pull, pop", "cmd": "git stash; git pull; if ($?) { git stash pop }"}
+{"q": "add commit push in one go msg 'update'", "cmd": "git add -A; git commit -m 'update'; if ($?) { git push }"}
+{"q": "sizes of files touched by the last commit", "cmd": "git diff --name-only HEAD~1 | Where-Object { Test-Path $_ } | Get-Item | Select-Object Name, Length"}
+{"q": "did the last commit add anything with password in it", "cmd": "git show HEAD | rg -i 'password'"}
+{"q": "push current branch and set upstream", "cmd": "$b = git branch --show-current; git push -u origin $b"}
+{"q": "todos only in files tracked by git", "cmd": "rg 'TODO' (git ls-files)"}
+{"q": "git ls-files | grep test | wc -l", "cmd": "(git ls-files | Where-Object { $_ -match 'test' } | Measure-Object).Count"}
+{"q": "how many commits ahead of main is my branch", "cmd": "$b = git branch --show-current; (git log --oneline \"main..$b\" | Measure-Object).Count"}
+{"q": "files i changed in the last commit that contain TODO, by hash", "cmd": "$h = git rev-parse HEAD; rg 'TODO' (git diff-tree --no-commit-id --name-only -r $h)"}
+{"q": "count distinct authors", "cmd": "(git log --format='%an' | Sort-Object -Unique | Measure-Object).Count"}
+{"q": "commits per day this week", "cmd": "git log --since='1 week ago' --format='%ad' --date=short | Group-Object | Select-Object Count, Name"}
+{"q": "show the diff only for py files changed vs main", "cmd": "git diff main -- (git diff --name-only main -- '*.py')"}
+{"q": "lines added per author", "cmd": "git log --numstat --format='author:%an' | ForEach-Object { if ($_ -match '^author:(.+)') { $a = $Matches[1] } elseif ($_ -match '^(\\d+)\\s') { [pscustomobject]@{ Author = $a; Added = [int]$Matches[1] } } } | Group-Object Author | ForEach-Object { [pscustomobject]@{ Author = $_.Name; Added = ($_.Group | Measure-Object Added -Sum).Sum } } | Sort-Object Added -Descending"}
+{"q": "discard changes to all json files", "cmd": "git checkout -- (git diff --name-only -- '*.json')"}
+{"q": "unstage everything in tests", "cmd": "git restore --staged (git diff --cached --name-only -- tests)"}
+{"q": "last 3 commit messages that mention fix", "cmd": "git log --oneline | Where-Object { $_ -match 'fix' } | Select-Object -First 3"}
+{"q": "cd to repo root", "cmd": "Set-Location (git rev-parse --show-toplevel)"}
+{"q": "rename all .jpeg to .jpg", "cmd": "fd -e jpeg | Get-Item | Rename-Item -NewName { $_.Name -replace '\\.jpeg$','.jpg' }"}
+{"q": "replace spaces with underscores in file names", "cmd": "fd -t f ' ' | Get-Item | Rename-Item -NewName { $_.Name -replace ' ','_' }"}
+{"q": "prefix all pngs in screenshots with 2024_", "cmd": "fd -e png . screenshots | Get-Item | Rename-Item -NewName { '2024_' + $_.Name }"}
+{"q": "number the jpgs here sequentially by date taken-ish", "cmd": "$i = 1; fd -e jpg -d 1 | Get-Item | Sort-Object LastWriteTime | ForEach-Object { Rename-Item $_.FullName ('photo_{0:D3}.jpg' -f $i); $i++ }"}
+{"q": "get rid of ' - Copy' in file names", "cmd": "fd -t f ' - Copy' | Get-Item | Rename-Item -NewName { $_.Name -replace ' - Copy','' }"}
+{"q": "change every .txt under notes to .md", "cmd": "fd -e txt . notes | Get-Item | Rename-Item -NewName { $_.BaseName + '.md' }"}
+{"q": "add todays date to every log file name", "cmd": "fd -e log | Get-Item | Rename-Item -NewName { $_.BaseName + '_' + (Get-Date -Format 'yyyyMMdd') + $_.Extension }"}
+{"q": "for f in *.htm; do mv $f ${f}l; done", "cmd": "Get-ChildItem *.htm | Rename-Item -NewName { $_.Name + 'l' }"}
+{"q": "strip the 'IMG_' prefix from photos", "cmd": "fd -g 'IMG_*' | Get-Item | Rename-Item -NewName { $_.Name -replace '^IMG_','' }"}
+{"q": "move all pdfs into a docs folder", "cmd": "if (-not (Test-Path docs)) { New-Item -ItemType Directory docs | Out-Null }; fd -e pdf -E docs | Move-Item -Destination docs"}
+{"q": "move screenshots older than a month into old", "cmd": "fd -g 'Screenshot*' -d 1 --changed-before 30d | Move-Item -Destination old"}
+{"q": "mv *.log logs/", "cmd": "Move-Item *.log logs"}
+{"q": "move files that mention deprecated into legacy", "cmd": "rg -l 'deprecated' | Move-Item -Destination legacy"}
+{"q": "sort my downloads into folders by extension", "cmd": "Get-ChildItem $HOME\\Downloads -File | Where-Object { $_.Extension } | ForEach-Object { $d = Join-Path $HOME\\Downloads $_.Extension.TrimStart('.'); if (-not (Test-Path $d)) { New-Item -ItemType Directory $d | Out-Null }; Move-Item $_.FullName $d }"}
+{"q": "copy all images into one flat folder", "cmd": "fd -e png -e jpg -E all_images | Copy-Item -Destination all_images"}
+{"q": "find . -name '*.bak' -exec mv {} /tmp \\;", "cmd": "fd -e bak | Move-Item -Destination $env:TEMP"}
+{"q": "copy every csv changed today to D:\\backup", "cmd": "fd -e csv --changed-within 1d | Copy-Item -Destination D:\\backup"}
+{"q": "move big videos (>1gb) to the external drive E:\\videos", "cmd": "fd -e mp4 -e mkv -S +1g | Move-Item -Destination E:\\videos"}
+{"q": "replace foo with bar in all files", "cmd": "rg -l 'foo' | ForEach-Object { (Get-Content $_) -replace 'foo','bar' | Set-Content $_ }"}
+{"q": "sed -i 's/http:/https:/g' on all html", "cmd": "rg -l 'http:' -g '*.html' | ForEach-Object { (Get-Content $_) -replace 'http:','https:' | Set-Content $_ }"}
+{"q": "rename function getUser to fetchUser across ts", "cmd": "rg -l -w 'getUser' -t ts | ForEach-Object { (Get-Content $_) -replace '\\bgetUser\\b','fetchUser' | Set-Content $_ }"}
+{"q": "bump version 1.2.3 to 1.2.4 everywhere", "cmd": "rg -l -F '1.2.3' | ForEach-Object { (Get-Content $_) -replace '1\\.2\\.3','1.2.4' | Set-Content $_ }"}
+{"q": "preview what it would look like replacing var with let in js", "cmd": "rg -w 'var' -t js -r 'let'"}
+{"q": "comment out console.log lines in src", "cmd": "rg -l -F 'console.log' src | ForEach-Object { (Get-Content $_) -replace '^(\\s*)console\\.log','$1// console.log' | Set-Content $_ }"}
+{"q": "remove all lines with debugger from js files", "cmd": "rg -l 'debugger' -t js | ForEach-Object { (Get-Content $_) | Where-Object { $_ -notmatch 'debugger' } | Set-Content $_ }"}
+{"q": "tabs to 4 spaces in every py file", "cmd": "fd -e py | ForEach-Object { (Get-Content $_) -replace \"`t\",'    ' | Set-Content $_ }"}
+{"q": "grep -rl 'console.log' src | xargs sed -i '/console.log/d'", "cmd": "rg -l -F 'console.log' src | ForEach-Object { (Get-Content $_) | Where-Object { $_ -notmatch 'console\\.log' } | Set-Content $_ }"}
+{"q": "swap localhost:8000 for localhost:9000 in configs", "cmd": "rg -l -F 'localhost:8000' | ForEach-Object { (Get-Content $_) -replace 'localhost:8000','localhost:9000' | Set-Content $_ }"}
+{"q": "change the copyright year 2023 to 2024 in all headers", "cmd": "rg -l 'Copyright 2023' | ForEach-Object { (Get-Content $_) -replace 'Copyright 2023','Copyright 2024' | Set-Content $_ }"}
+{"q": "are there more ts or js files", "cmd": "$ts = (fd -e ts | Measure-Object).Count; $js = (fd -e js | Measure-Object).Count; \"ts=$ts js=$js\""}
+{"q": "compare TODO vs FIXME counts", "cmd": "$t = (rg -o 'TODO' | Measure-Object).Count; $f = (rg -o 'FIXME' | Measure-Object).Count; \"TODO: $t, FIXME: $f\""}
+{"q": "ratio of test files to py files", "cmd": "$t = (fd -e py '^test_' | Measure-Object).Count; $s = (fd -e py | Measure-Object).Count; [math]::Round($t / $s, 2)"}
+{"q": "how many more lines does a.txt have than b.txt", "cmd": "$a = (Get-Content a.txt | Measure-Object -Line).Lines; $b = (Get-Content b.txt | Measure-Object -Line).Lines; $a - $b"}
+{"q": "does src have more files than lib", "cmd": "$s = (fd -t f . src | Measure-Object).Count; $l = (fd -t f . lib | Measure-Object).Count; $s -gt $l"}
+{"q": "diff the file lists of folders a and b", "cmd": "Compare-Object (fd -t f --base-directory a) (fd -t f --base-directory b)"}
+{"q": "compare a.txt and b.txt", "cmd": "Compare-Object (Get-Content a.txt) (Get-Content b.txt)"}
+{"q": "lines in new.txt that arent in old.txt", "cmd": "Compare-Object (Get-Content old.txt) (Get-Content new.txt) | Where-Object { $_.SideIndicator -eq '=>' } | Select-Object -ExpandProperty InputObject"}
+{"q": "comm -12 a.txt b.txt", "cmd": "Compare-Object (Get-Content a.txt) (Get-Content b.txt) -IncludeEqual -ExcludeDifferent | Select-Object -ExpandProperty InputObject"}
+{"q": "diff <(ls a) <(ls b)", "cmd": "Compare-Object (Get-ChildItem a -Name) (Get-ChildItem b -Name)"}
+{"q": "are these two zips identical", "cmd": "(Get-FileHash a.zip).Hash -eq (Get-FileHash b.zip).Hash"}
+{"q": "percent of py files that have type hints", "cmd": "$all = (fd -e py | Measure-Object).Count; $h = (fd -e py -X rg -l -e '->' | Measure-Object).Count; [math]::Round(100 * $h / $all, 1)"}
+{"q": "percentage of test files", "cmd": "$all = (fd -e py | Measure-Object).Count; $t = (fd -e py '^test_' | Measure-Object).Count; \"$t of $all ($([math]::Round(100 * $t / $all, 1))%)\""}
+{"q": "tail the newest log file", "cmd": "Get-Content (fd -e log | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName -Tail 50"}
+{"q": "follow the most recent log in logs", "cmd": "Get-Content (fd -e log . logs | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName -Wait -Tail 20"}
+{"q": "errors in the newest log", "cmd": "$f = (fd -e log | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName; rg -i 'error' $f"}
+{"q": "tail -f app.log | grep ERROR", "cmd": "Get-Content app.log -Wait -Tail 0 | Where-Object { $_ -match 'ERROR' }"}
+{"q": "last 100 lines of app.log but only warnings", "cmd": "Get-Content app.log -Tail 100 | Where-Object { $_ -match 'WARN' }"}
+{"q": "errors from today in app.log", "cmd": "$d = Get-Date -Format 'yyyy-MM-dd'; rg -F \"$d\" app.log | rg 'ERROR'"}
+{"q": "open the newest log in notepad", "cmd": "notepad (fd -e log | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName"}
+{"q": "delete logs older than 30 days", "cmd": "fd -e log --changed-before 30d | Remove-Item"}
+{"q": "most common error in the newest log", "cmd": "$f = (fd -e log | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName; rg -o 'ERROR.*' $f | Group-Object | Sort-Object Count -Descending | Select-Object -First 1 Count, Name"}
+{"q": "tail -n 20 $(ls -t *.log | head -1)", "cmd": "Get-Content (Get-ChildItem *.log | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName -Tail 20"}
+{"q": "count errors per hour in app.log", "cmd": "rg -o '^\\d{4}-\\d{2}-\\d{2} \\d{2}' app.log | Group-Object | Select-Object Count, Name"}
+{"q": "slowest request time in perf.log", "cmd": "rg -o '(\\d+)ms' -r '$1' perf.log | Sort-Object { [int]$_ } | Select-Object -Last 1"}
+{"q": "open the file i edited last", "cmd": "code (fd -t f | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName"}
+{"q": "most recently modified py file", "cmd": "fd -e py | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 1"}
+{"q": "ls -t | head -5", "cmd": "Get-ChildItem | Sort-Object LastWriteTime -Descending | Select-Object -First 5"}
+{"q": "open the newest download", "cmd": "Invoke-Item (Get-ChildItem $HOME\\Downloads -File | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName"}
+{"q": "cd into the newest folder", "cmd": "Set-Location (Get-ChildItem -Directory | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName"}
+{"q": "oldest file in archive", "cmd": "fd -t f . archive | Get-Item | Sort-Object LastWriteTime | Select-Object -First 1"}
+{"q": "copy the newest screenshot to clipboard path", "cmd": "(fd -g 'Screenshot*' . $HOME\\Pictures | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName | Set-Clipboard"}
+{"q": "newest csv, how many lines it has", "cmd": "$f = (fd -e csv | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName; $n = (Get-Content $f | Measure-Object -Line).Lines; \"$f has $n lines\""}
+{"q": "open the 3 latest md notes", "cmd": "code (fd -e md . notes | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 3).FullName"}
+{"q": "all unique urls in markdown", "cmd": "rg -o --no-filename 'https?://[^\\s)>]+' -t md | Sort-Object -Unique"}
+{"q": "unique emails in contacts.txt", "cmd": "rg -o '[\\w.+-]+@[\\w-]+\\.[\\w.]+' contacts.txt | Sort-Object -Unique"}
+{"q": "which process.env vars does the code use", "cmd": "rg -o --no-filename 'process\\.env\\.(\\w+)' -r '$1' | Sort-Object -Unique"}
+{"q": "all os.getenv keys in py", "cmd": "rg -o --no-filename \"os\\.getenv\\('(\\w+)'\" -r '$1' -t py | Sort-Object -Unique"}
+{"q": "unique packages imported in js", "cmd": "rg -o --no-filename \"from '([^']+)'\" -r '$1' -t js | Sort-Object -Unique"}
+{"q": "unique ips that hit /login", "cmd": "rg '/login' access.log | ForEach-Object { ($_ -split ' ')[0] } | Sort-Object -Unique"}
+{"q": "unique error codes like E1234 in the logs", "cmd": "rg -o --no-filename 'E\\d{4}' -g '*.log' | Sort-Object -Unique"}
+{"q": "grep -oh 'v[0-9.]*' CHANGELOG.md | sort -u", "cmd": "rg -o 'v[0-9.]+' CHANGELOG.md | Sort-Object -Unique"}
+{"q": "how many unique words in book.txt", "cmd": "(rg -o -w '\\w+' book.txt | ForEach-Object { $_.ToLower() } | Sort-Object -Unique | Measure-Object).Count"}
+{"q": "all hashtags used in md files", "cmd": "rg -o --no-filename '#\\w+' -t md | Sort-Object -Unique"}
+{"q": "html tag names used in the site", "cmd": "rg -o --no-filename '<(\\w+)' -r '$1' -g '*.html' | Sort-Object -Unique"}
+{"q": "unique values in column 3 of data.csv", "cmd": "Get-Content data.csv | Select-Object -Skip 1 | ForEach-Object { ($_ -split ',')[2] } | Sort-Object -Unique"}
+{"q": "distinct statuses in orders.csv", "cmd": "Import-Csv orders.csv | Select-Object -ExpandProperty status | Sort-Object -Unique"}
+{"q": "how many distinct customers in orders.csv", "cmd": "(Import-Csv orders.csv | Select-Object -ExpandProperty customer_id | Sort-Object -Unique | Measure-Object).Count"}
+{"q": "list the css classes used in jsx", "cmd": "rg -o --no-filename 'className=.([\\w -]+)' -r '$1' -t js | ForEach-Object { $_ -split ' ' } | Where-Object { $_ } | Sort-Object -Unique"}
+{"q": "unique TODO authors like TODO(bob)", "cmd": "rg -o --no-filename 'TODO\\((\\w+)\\)' -r '$1' | Sort-Object -Unique"}
+{"q": "all distinct log levels in app.log with counts", "cmd": "rg -o '\\b(DEBUG|INFO|WARN|ERROR|FATAL)\\b' app.log | Group-Object | Select-Object Count, Name"}
+{"q": "grep -rl foo . | xargs rm", "cmd": "rg -l 'foo' | Remove-Item"}
+{"q": "find . -name '*.pyc' | xargs rm", "cmd": "fd -I -e pyc | Remove-Item"}
+{"q": "find . -name node_modules -type d -prune -exec rm -rf {} +", "cmd": "fd -t d -I --prune '^node_modules$' | Remove-Item -Recurse -Force"}
+{"q": "find . -name '*.log' -mtime +7 -delete", "cmd": "fd -e log --changed-before 7d | Remove-Item"}
+{"q": "find . -type f | wc -l", "cmd": "(fd -t f | Measure-Object).Count"}
+{"q": "grep -r TODO | wc -l", "cmd": "(rg 'TODO' | Measure-Object).Count"}
+{"q": "grep -rc import --include=*.py | sort -t: -k2 -n | tail -3", "cmd": "rg -c 'import' -t py | Sort-Object { [int]($_ -split ':')[-1] } | Select-Object -Last 3"}
+{"q": "ls | wc -l", "cmd": "(Get-ChildItem | Measure-Object).Count"}
+{"q": "cat *.txt | sort | uniq > all.txt", "cmd": "Get-Content *.txt | Sort-Object -Unique | Set-Content all.txt"}
+{"q": "cat names.txt | sort | uniq -c | sort -rn | head", "cmd": "Get-Content names.txt | Group-Object | Sort-Object Count -Descending | Select-Object -First 10 Count, Name"}
+{"q": "history | grep docker", "cmd": "Get-Content (Get-PSReadLineOption).HistorySavePath | Where-Object { $_ -match 'docker' }"}
+{"q": "ps aux | grep python | awk '{print $2}' | xargs kill", "cmd": "Get-Process python | Stop-Process"}
+{"q": "ps aux --sort=-%mem | head", "cmd": "Get-Process | Sort-Object WS -Descending | Select-Object -First 10"}
+{"q": "du -a | sort -n -r | head -n 5", "cmd": "fd -t f | Get-Item | Sort-Object Length -Descending | Select-Object -First 5 FullName, Length"}
+{"q": "find . -size +100M -exec ls -lh {} \\;", "cmd": "fd -t f -S +100m | Get-Item | Select-Object FullName, @{n='MB';e={[math]::Round($_.Length / 1MB, 1)}}"}
+{"q": "find . -name '*.md' -exec grep -l draft {} +", "cmd": "fd -e md -X rg -l 'draft'"}
+{"q": "find src -name '*.ts' | xargs grep -n any", "cmd": "fd -e ts . src -X rg -w 'any'"}
+{"q": "cat list.txt | xargs -I{} cp {} backup/", "cmd": "Get-Content list.txt | Copy-Item -Destination backup"}
+{"q": "cat urls.txt | xargs -n1 curl -O", "cmd": "Get-Content urls.txt | ForEach-Object { curl.exe -O $_ }"}
+{"q": "for f in *.png; do convert $f ${f%.png}.jpg; done", "cmd": "Get-ChildItem *.png | ForEach-Object { magick $_.FullName ($_.BaseName + '.jpg') }"}
+{"q": "for d in */; do echo $d $(ls $d | wc -l); done", "cmd": "Get-ChildItem -Directory | ForEach-Object { \"$($_.Name): $((Get-ChildItem $_.FullName | Measure-Object).Count)\" }"}
+{"q": "head -n 1 *.csv", "cmd": "Get-ChildItem *.csv | ForEach-Object { \"$($_.Name): $(Get-Content $_.FullName -TotalCount 1)\" }"}
+{"q": "grep -v '^#' config.ini | grep -v '^$'", "cmd": "rg -v '^\\s*(#|$)' config.ini"}
+{"q": "wc -l $(git ls-files)", "cmd": "(Get-Content (git ls-files) | Measure-Object -Line).Lines"}
+{"q": "git log --format=%ae | sort | uniq -c | sort -rn", "cmd": "git log --format='%ae' | Group-Object | Sort-Object Count -Descending | Select-Object Count, Name"}
+{"q": "awk '{s+=$1} END {print s}' nums.txt", "cmd": "(Get-Content nums.txt | Measure-Object -Sum).Sum"}
+{"q": "sort -u emails.txt | wc -l", "cmd": "(Get-Content emails.txt | Sort-Object -Unique | Measure-Object).Count"}
+{"q": "which python && python --version", "cmd": "if (Get-Command python -ErrorAction SilentlyContinue) { (Get-Command python).Source; python --version }"}
+{"q": "export PATH=$PATH:~/bin && echo $PATH", "cmd": "$env:Path += \";$HOME\\bin\"; $env:Path -split ';'"}
+{"q": "grep -rn TODO --include='*.go' | cut -d: -f1 | sort -u", "cmd": "rg -l 'TODO' -t go"}
+{"q": "ls -la | grep '^d' | wc -l", "cmd": "(fd -t d -H -d 1 | Measure-Object).Count"}
+{"q": "find . -empty -type d -delete", "cmd": "fd -t e -t d | Remove-Item"}
+{"q": "md5sum * | sort | uniq -w32 -D", "cmd": "fd -t f | ForEach-Object { Get-FileHash $_ -Algorithm MD5 } | Group-Object Hash | Where-Object { $_.Count -gt 1 } | ForEach-Object { $_.Group.Path }"}
+{"q": "cat package.json | jq .scripts", "cmd": "(Get-Content package.json -Raw | ConvertFrom-Json).scripts"}
+{"q": "curl -s https://api.github.com/repos/x/y | jq .stargazers_count", "cmd": "(Invoke-RestMethod https://api.github.com/repos/x/y).stargazers_count"}
+{"q": "seq 1 10 | xargs -I{} mkdir dir{}", "cmd": "1..10 | ForEach-Object { New-Item -ItemType Directory \"dir$_\" }"}
+{"q": "watch -n 5 'ls | wc -l'", "cmd": "while ($true) { (Get-ChildItem | Measure-Object).Count; Start-Sleep 5 }"}
+{"q": "time npm run build", "cmd": "Measure-Command { npm run build } | Select-Object TotalSeconds"}
+{"q": "kill $(lsof -t -i:8080)", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 8080).OwningProcess"}
+{"q": "docker ps -q | xargs docker stop", "cmd": "docker stop (docker ps -q)"}
+{"q": "docker images -f dangling=true -q | xargs docker rmi", "cmd": "docker rmi (docker images -f dangling=true -q)"}
+{"q": "git branch | grep feature | xargs git branch -D", "cmd": "git branch --list 'feature*' | ForEach-Object { git branch -D $_.Trim() }"}
+{"q": "pip freeze | grep -i django", "cmd": "pip freeze | rg -i 'django'"}
+{"q": "env | grep -i aws", "cmd": "Get-ChildItem env: | Where-Object { $_.Name -match 'aws' }"}
+{"q": "cat .env | grep -v '^#' | wc -l", "cmd": "(rg -v '^#' .env | Measure-Object).Count"}
+{"q": "npm ls | grep -c deduped", "cmd": "(npm ls | rg -F 'deduped' | Measure-Object).Count"}
+{"q": "ls *.mp3 | shuf -n 1", "cmd": "Get-ChildItem *.mp3 | Get-Random"}
+{"q": "tar czf backup.tgz $(git ls-files)", "cmd": "tar -czf backup.tgz (git ls-files)"}
+{"q": "grep -rh '^import' --include=*.py | sort | uniq -c | sort -nr | head", "cmd": "rg -o --no-filename '^import \\S+' -t py | Group-Object | Sort-Object Count -Descending | Select-Object -First 10 Count, Name"}
+{"q": "find . -name '*.js' -not -path './node_modules/*' | xargs wc -l | tail -1", "cmd": "(Get-Content (fd -e js -E node_modules) | Measure-Object -Line).Lines"}
+{"q": "grep -l TODO $(find . -name '*.rs' -newer Cargo.toml)", "cmd": "$t = (Get-Item Cargo.toml).LastWriteTime; rg -l 'TODO' (fd -e rs | Get-Item | Where-Object { $_.LastWriteTime -gt $t }).FullName"}
+{"q": "cut -d, -f1 users.csv | sort | uniq -d", "cmd": "Get-Content users.csv | ForEach-Object { ($_ -split ',')[0] } | Group-Object | Where-Object { $_.Count -gt 1 } | Select-Object -ExpandProperty Name"}
+{"q": "ls -S | head -3", "cmd": "Get-ChildItem -File | Sort-Object Length -Descending | Select-Object -First 3"}
+{"q": "find . -mmin -10 -type f", "cmd": "fd -t f --changed-within 10min"}
+{"q": "nuke all the __pycache__ folders", "cmd": "fd -t d -I '^__pycache__$' | Remove-Item -Recurse"}
+{"q": "clean up .DS_Store files everywhere", "cmd": "fd -H -I '^\\.DS_Store$' | Remove-Item"}
+{"q": "save the version from package.json and search docs for it", "cmd": "$v = (Get-Content package.json -Raw | ConvertFrom-Json).version; rg -F \"$v\" docs"}
+{"q": "read the port from config.json and see whats using it", "cmd": "$c = fd -1 '^config\\.json$'; $p = (Get-Content $c -Raw | ConvertFrom-Json).port; Get-NetTCPConnection -LocalPort $p"}
+{"q": "complain if there are more than 100 TODOs", "cmd": "$n = (rg -o 'TODO' | Measure-Object).Count; if ($n -gt 100) { \"too many TODOs: $n\" }"}
+{"q": "find schema.sql and grep create table in it", "cmd": "$f = fd -1 '^schema\\.sql$'; rg -i 'create table' $f"}
+{"q": "biggest file and its line count", "cmd": "$f = (fd -t f | Get-Item | Sort-Object Length -Descending | Select-Object -First 1).FullName; (Get-Content $f | Measure-Object -Line).Lines"}
+{"q": "which top level folder has the most files", "cmd": "fd -t d -d 1 | ForEach-Object { [pscustomobject]@{ Dir = $_; Files = (fd -t f . $_ | Measure-Object).Count } } | Sort-Object Files -Descending | Select-Object -First 1"}
+{"q": "functions in utils.py and how many times each is used", "cmd": "rg -o 'def (\\w+)' -r '$1' utils.py | ForEach-Object { [pscustomobject]@{ Name = $_; Uses = (rg -w $_ -t py | Measure-Object).Count } } | Sort-Object Uses"}
+{"q": "functions in helpers.py that look unused", "cmd": "rg -o 'def (\\w+)' -r '$1' helpers.py | Where-Object { (rg -w $_ -t py | Measure-Object).Count -le 1 }"}
+{"q": "files per folder named X", "cmd": "fd -t d 'X' | ForEach-Object { \"$_ $((fd -t f . $_ | Measure-Object).Count)\" }"}
+{"q": "find the latest backup zip and unzip it to restore", "cmd": "$z = (fd -e zip . backups | Get-Item | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName; Expand-Archive $z -DestinationPath restore"}
+{"q": "get the newest tag then list commits since then", "cmd": "$t = git describe --tags --abbrev=0; git log --oneline \"$t..HEAD\""}
+{"q": "count commits since last tag", "cmd": "$t = git describe --tags --abbrev=0; (git log --oneline \"$t..HEAD\" | Measure-Object).Count"}
+{"q": "duplicate files by hash", "cmd": "fd -t f | ForEach-Object { Get-FileHash $_ } | Group-Object Hash | Where-Object { $_.Count -gt 1 } | ForEach-Object { $_.Group.Path }"}
+{"q": "which of my py files are not tracked by git", "cmd": "fd -e py | Where-Object { -not (git ls-files $_) }"}
+{"q": "find the folder called fixtures and count json files in it", "cmd": "$d = fd -t d -1 '^fixtures$'; (fd -e json . $d | Measure-Object).Count"}
+{"q": "the 5 longest lines in main.py", "cmd": "Get-Content main.py | Sort-Object Length -Descending | Select-Object -First 5"}
+{"q": "lines over 120 chars per py file, worst first", "cmd": "rg -c '^.{121,}' -t py | Sort-Object { [int]($_ -split ':')[-1] } -Descending"}
+{"q": "backup every .env file with a .bak copy next to it", "cmd": "fd -H -g '.env*' -E '*.bak' | ForEach-Object { Copy-Item $_ \"$_.bak\" }"}
+{"q": "put a list of all py files with their sizes into files.csv", "cmd": "fd -e py | Get-Item | Select-Object FullName, Length | Export-Csv files.csv -NoTypeInformation"}
+{"q": "count lines per file in src and write to a csv", "cmd": "fd -t f . src | ForEach-Object { [pscustomobject]@{ File = $_; Lines = (Get-Content $_ | Measure-Object -Line).Lines } } | Export-Csv lines.csv -NoTypeInformation"}
+{"q": "kill all node processes then restart the dev server", "cmd": "Get-Process node -ErrorAction SilentlyContinue | Stop-Process; npm run dev"}
+{"q": "memory used by all chrome processes in mb", "cmd": "[math]::Round((Get-Process chrome | Measure-Object WorkingSet64 -Sum).Sum / 1MB)"}
+{"q": "top 5 cpu hogs", "cmd": "Get-Process | Sort-Object CPU -Descending | Select-Object -First 5 Name, Id, CPU"}
+{"q": "what ports are listening and which process", "cmd": "Get-NetTCPConnection -State Listen | Select-Object LocalPort, OwningProcess, @{n='Name';e={(Get-Process -Id $_.OwningProcess).ProcessName}} | Sort-Object LocalPort"}
+{"q": "is anything in PATH a dead folder", "cmd": "$env:Path -split ';' | Where-Object { $_ -and -not (Test-Path $_) }"}
+{"q": "python dirs in my path", "cmd": "$env:Path -split ';' | Where-Object { $_ -match 'python' }"}
+{"q": "download each url in urls.txt to its own file", "cmd": "Get-Content urls.txt | ForEach-Object { Invoke-WebRequest $_ -OutFile (Split-Path $_ -Leaf) }"}
+{"q": "open every todo file i touched today", "cmd": "code (fd -t f --changed-within 1d -X rg -l 'TODO')"}
+{"q": "how many py files import requests vs httpx", "cmd": "$r = (rg -l 'import requests' -t py | Measure-Object).Count; $h = (rg -l 'import httpx' -t py | Measure-Object).Count; \"requests=$r httpx=$h\""}
+{"q": "list folders with a Makefile and run make in each", "cmd": "fd -g 'Makefile' | ForEach-Object { make -C (Get-Item $_).DirectoryName }"}
+{"q": "run every .sql file in migrations in order with psql", "cmd": "fd -e sql . migrations | Sort-Object | ForEach-Object { psql -f $_ }"}
+{"q": "concat all md files in docs into one big file", "cmd": "Get-Content (fd -e md . docs | Sort-Object) | Set-Content all_docs.md"}
+{"q": "hash every exe in bin", "cmd": "fd -e exe . bin | ForEach-Object { Get-FileHash $_ } | Select-Object Hash, Path"}
+{"q": "find the biggest folder in node_modules", "cmd": "Get-ChildItem node_modules -Directory | ForEach-Object { [pscustomobject]@{ Name = $_.Name; MB = [math]::Round((fd -t f -I . $_.FullName | Get-Item | Measure-Object Length -Sum).Sum / 1MB, 1) } } | Sort-Object MB -Descending | Select-Object -First 1"}

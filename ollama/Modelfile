@@ -1,0 +1,10 @@
+FROM ../train/out/nlsh-q8_0.gguf
+TEMPLATE """<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+"""
+PARAMETER stop <|im_end|>
+PARAMETER stop <|endoftext|>
+PARAMETER temperature 0
+PARAMETER num_ctx 512
+PARAMETER num_predict 160

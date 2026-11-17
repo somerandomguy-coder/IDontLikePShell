@@ -1,0 +1,16 @@
+{"q": "find all pdf files", "accept": ["fd -t f -e pdf", "fd -e pdf"]}
+{"q": "find a folder called config", "accept": ["fd -t d '^config$'", "fd -t d config", "fd -t d '^config$' ."]}
+{"q": "search for 'useEffect' in tsx files", "accept": ["rg 'useEffect' -g '*.tsx'", "rg useEffect -g '*.tsx'", "rg 'useEffect' -t tsx", "rg -g '*.tsx' 'useEffect'"]}
+{"q": "which files contain password, just names", "accept": ["rg -l 'password'", "rg -l password", "rg -il 'password'"]}
+{"q": "show the 10 biggest files in this folder", "accept": ["Get-ChildItem -File | Sort-Object Length -Descending | Select-Object -First 10", "Get-ChildItem -File | Sort-Object Length -Descending | Select-Object -First 10 Name, Length"]}
+{"q": "files changed in the last 2 hours", "accept": ["fd -t f --changed-within 2h"]}
+{"q": "count lines containing error in app.log", "accept": ["rg -c 'error' app.log", "rg -ic 'error' app.log", "rg -c error app.log"]}
+{"q": "list running processes sorted by memory", "accept": ["Get-Process | Sort-Object WorkingSet -Descending", "Get-Process | Sort-Object WS -Descending"]}
+{"q": "what is my ip address", "accept": ["Get-NetIPAddress -AddressFamily IPv4", "(Get-NetIPAddress -AddressFamily IPv4).IPAddress"]}
+{"q": "show the PATH variable one per line", "accept": ["$env:Path -split ';'"]}
+{"q": "count folders with 'cache' in the name then grep that count in notes.txt", "accept": ["$n = (fd -t d 'cache' | Measure-Object).Count; rg -F \"$n\" notes.txt"]}
+{"q": "find files bigger than 100mb", "accept": ["fd -t f -S +100m", "fd -S +100m"]}
+{"q": "copy current directory path to clipboard", "accept": ["(Get-Location).Path | Set-Clipboard", "$PWD.Path | Set-Clipboard", "Set-Clipboard $PWD.Path"]}
+{"q": "find function definitions named parse in rust files", "accept": ["rg 'fn parse' -t rust", "rg 'fn parse' -g '*.rs'", "rg -t rust 'fn parse'", "rg -g '*.rs' 'fn parse'"]}
+{"q": "how many lines of python code are in src", "accept": ["(Get-Content (fd -t f -e py . src) | Measure-Object -Line).Lines"]}
+{"q": "find empty folders", "accept": ["fd -t d -t e", "fd -t e -t d"]}

@@ -1,0 +1,274 @@
+{"q": "files starting with gelato", "cmd": "fd -t f '^gelato'"}
+{"q": "starts with gelato in current folder", "cmd": "fd -t f -d 1 '^gelato'"}
+{"q": "gelato files in this folder only, not subfolders", "cmd": "fd -t f -d 1 '^gelato'"}
+{"q": "anything that starts with gelato, any case", "cmd": "fd -i '^gelato'"}
+{"q": "find stuff that starts with invoice_", "cmd": "fd '^invoice_'"}
+{"q": "invoice_ pdfs", "cmd": "fd -e pdf '^invoice_'"}
+{"q": "files starting with invoice_ in downloads, top level only", "cmd": "fd -t f -d 1 '^invoice_' $HOME\\Downloads"}
+{"q": "photos starting with IMG_", "cmd": "fd -t f '^IMG_'"}
+{"q": "jpgs that start with IMG_", "cmd": "fd -e jpg '^IMG_'"}
+{"q": "IMG_ files whether png or jpg", "cmd": "fd -e png -e jpg '^IMG_'"}
+{"q": "img_ or IMG_ files, case insensitive", "cmd": "fd -i '^IMG_'"}
+{"q": "folders starting with test_", "cmd": "fd -t d '^test_'"}
+{"q": "test files that begin with test_ inside tests", "cmd": "fd -t f '^test_' tests"}
+{"q": "py files beginning with test_", "cmd": "fd -e py '^test_'"}
+{"q": "test_*.py but only up to 3 levels deep", "cmd": "fd -e py -d 3 '^test_'"}
+{"q": "files that begin with report-2024", "cmd": "fd '^report-2024'"}
+{"q": "xlsx starting with report-2024", "cmd": "fd -e xlsx '^report-2024'"}
+{"q": "names starting with draft, only here not in subfolders", "cmd": "fd -d 1 '^draft'"}
+{"q": "md files starting with draft in docs, max 2 levels", "cmd": "fd -e md -d 2 '^draft' docs"}
+{"q": "backup_ files at the top of D:\\backups", "cmd": "fd -t f -d 1 '^backup_' D:\\backups"}
+{"q": "folders whose name starts with a dot", "cmd": "fd -t d -H '^\\.'"}
+{"q": "dotfiles in this folder only", "cmd": "fd -t f -H -d 1 '^\\.'"}
+{"q": "anything begining with tmp", "cmd": "fd '^tmp'"}
+{"q": "files starting with 2024- in photos", "cmd": "fd -t f '^2024-' photos"}
+{"q": "screenshots, names start with Screenshot, case insensitive", "cmd": "fd -i '^Screenshot'"}
+{"q": "ls gelato*", "cmd": "fd -d 1 '^gelato'"}
+{"q": "ls -d test_*/", "cmd": "fd -t d -d 1 '^test_'"}
+{"q": "how many files start with invoice_", "cmd": "(fd -t f '^invoice_' | Measure-Object).Count"}
+{"q": "delete files starting with tmp_ in this folder", "cmd": "fd -t f -d 1 '^tmp_' | Remove-Item"}
+{"q": "move the IMG_ files from here into photos", "cmd": "fd -t f -d 1 '^IMG_' | Move-Item -Destination photos"}
+{"q": "filenames starting with a digit", "cmd": "fd '^\\d'"}
+{"q": "files that start with capital A, case sensitive", "cmd": "fd -s '^A'"}
+{"q": "starting with either invoice or receipt", "cmd": "fd '^(invoice|receipt)'"}
+{"q": "csvs starting with export_ changed today", "cmd": "fd -e csv --changed-within 1d '^export_'"}
+{"q": "backup_ files over 100mb", "cmd": "fd -t f -S +100m '^backup_'"}
+{"q": "first thing that starts with config", "cmd": "fd -1 '^config'"}
+{"q": "full paths of everything starting with gelato", "cmd": "fd -a '^gelato'"}
+{"q": "starts with old_ incl hidden and gitignored stuff", "cmd": "fd -H -I '^old_'"}
+{"q": "release folders starting with v1, directly under releases", "cmd": "fd -t d -d 1 '^v1' releases"}
+{"q": "find .env.local .env.production etc", "cmd": "fd -H '^\\.env\\.'"}
+{"q": "files starting with Dockerfile", "cmd": "fd '^Dockerfile'"}
+{"q": "dirs starting with feature in the top level", "cmd": "fd -t d -d 1 '^feature'"}
+{"q": "find files starting w/ invoice_ older than 90 days", "cmd": "fd -t f --changed-before 90d '^invoice_'"}
+{"q": "open every file starting with notes_ in code", "cmd": "fd -t f '^notes_' -X code"}
+{"q": "5 files starting with log_", "cmd": "fd --max-results 5 '^log_'"}
+{"q": "starts with gelato but not inside archive", "cmd": "fd '^gelato' -E archive"}
+{"q": "find -name 'backup_*' -maxdepth 1", "cmd": "fd -d 1 '^backup_'"}
+{"q": "yaml files starting with docker-compose", "cmd": "fd -e yml -e yaml '^docker-compose'"}
+{"q": "copy files starting with report-2024 here to D:\\reports", "cmd": "fd -t f -d 1 '^report-2024' | Copy-Item -Destination D:\\reports"}
+{"q": "files ending in _test.go", "cmd": "fd -t f '_test\\.go$'"}
+{"q": "go test files (the _test.go ones)", "cmd": "fd -t f '_test\\.go$'"}
+{"q": "_test.go files but skip vendor", "cmd": "fd -t f '_test\\.go$' -E vendor"}
+{"q": "count the _test.go files", "cmd": "(fd -t f '_test\\.go$' | Measure-Object).Count"}
+{"q": "files ending with .spec.ts", "cmd": "fd -t f '\\.spec\\.ts$'"}
+{"q": "spec.ts files in src", "cmd": "fd -t f '\\.spec\\.ts$' src"}
+{"q": "minified js, ending in .min.js", "cmd": "fd -t f '\\.min\\.js$'"}
+{"q": "find all the .d.ts files", "cmd": "fd -t f '\\.d\\.ts$'"}
+{"q": "names that end in _old", "cmd": "fd '_old$'"}
+{"q": "folders ending with _bak", "cmd": "fd -t d '_bak$'"}
+{"q": "docs that end with _final.docx", "cmd": "fd -t f '_final\\.docx$'"}
+{"q": "everything ending in .tar.gz", "cmd": "fd -t f '\\.tar\\.gz$'"}
+{"q": "files ending with .bak.json", "cmd": "fd -t f '\\.bak\\.json$'"}
+{"q": "C# files ending with Controller.cs", "cmd": "fd -t f 'Controller\\.cs$'"}
+{"q": ".test.js files in this folder, no subfolders", "cmd": "fd -t f -d 1 '\\.test\\.js$'"}
+{"q": "stories files (.stories.tsx) under components", "cmd": "fd -t f '\\.stories\\.tsx$' components"}
+{"q": "generated protobuf python files, _pb2.py", "cmd": "fd -t f '_pb2\\.py$'"}
+{"q": "psds ending in _v2", "cmd": "fd -t f '_v2\\.psd$'"}
+{"q": "ends with readme.md, any case", "cmd": "fd -i 'readme\\.md$'"}
+{"q": "css modules (.module.css)", "cmd": "fd -t f '\\.module\\.css$'"}
+{"q": "java test classes ending in Test.java", "cmd": "fd -t f 'Test\\.java$'"}
+{"q": "remove everything ending in .orig", "cmd": "fd -t f '\\.orig$' | Remove-Item"}
+{"q": "rotated logs like app.log.1 app.log.2", "cmd": "fd -t f '\\.log\\.\\d+$'"}
+{"q": "egg-info dirs", "cmd": "fd -t d -I '\\.egg-info$'"}
+{"q": "sql dumps ending with _backup.sql, top level only", "cmd": "fd -t f -d 1 '_backup\\.sql$'"}
+{"q": "duplicate downloads like file (1).pdf", "cmd": "fd -t f '\\(1\\)\\.pdf$' $HOME\\Downloads"}
+{"q": "files ending in .test.tsx changed in the last day", "cmd": "fd -t f --changed-within 1d '\\.test\\.tsx$'"}
+{"q": "find . -name '*_test.py'", "cmd": "fd -t f '_test\\.py$'"}
+{"q": "find -name '*.spec.js' -not -path '*/node_modules/*'", "cmd": "fd -t f '\\.spec\\.js$' -E node_modules"}
+{"q": "ends with .config.js", "cmd": "fd -t f '\\.config\\.js$'"}
+{"q": "dirs that end in _api", "cmd": "fd -t d '_api$'"}
+{"q": "files ending in _2024.csv in data", "cmd": "fd -t f '_2024\\.csv$' data"}
+{"q": "starts with invoice_ and ends in .pdf", "cmd": "fd -t f '^invoice_.*\\.pdf$'"}
+{"q": "begins with report-2024 and ends with .xlsx", "cmd": "fd -t f '^report-2024.*\\.xlsx$'"}
+{"q": "starts IMG_ ends _edit.jpg", "cmd": "fd -t f '^IMG_.*_edit\\.jpg$'"}
+{"q": "starts with test_ ends with .py, in this folder only", "cmd": "fd -t f -d 1 '^test_.*\\.py$'"}
+{"q": "starts with backup_ and ends with .zip, case insensitive", "cmd": "fd -t f -i '^backup_.*\\.zip$'"}
+{"q": "file named exactly gelato.txt", "cmd": "fd '^gelato\\.txt$'"}
+{"q": "folder named exactly build", "cmd": "fd -t d '^build$'"}
+{"q": "just .env exactly, not .env.local", "cmd": "fd -H '^\\.env$'"}
+{"q": "only index.ts, not index.tsx or index.test.ts", "cmd": "fd '^index\\.ts$'"}
+{"q": "file called exactly Makefile in this dir only", "cmd": "fd -d 1 '^Makefile$'"}
+{"q": "main.go exact name, ignore case", "cmd": "fd -i '^main\\.go$'"}
+{"q": "folder called src exactly, at most 2 deep", "cmd": "fd -t d -d 2 '^src$'"}
+{"q": "exactly backup_2024.zip somewhere in D:\\archive", "cmd": "fd '^backup_2024\\.zip$' D:\\archive"}
+{"q": "a file literally called draft with no extension", "cmd": "fd -t f '^draft$'"}
+{"q": "where is .gitlab-ci.yml", "cmd": "fd -H '^\\.gitlab-ci\\.yml$'"}
+{"q": "requirements.txt exact match, top 3 levels", "cmd": "fd -d 3 '^requirements\\.txt$'"}
+{"q": "tsconfig.json exactly, not tsconfig.build.json", "cmd": "fd '^tsconfig\\.json$'"}
+{"q": "find -name invoice_0042.pdf", "cmd": "fd '^invoice_0042\\.pdf$'"}
+{"q": "files with gelato in the name but not vanilla", "cmd": "fd 'gelato' -E '*vanilla*'"}
+{"q": "invoice files but not the drafts", "cmd": "fd 'invoice' -E '*draft*'"}
+{"q": "names containing report but not 2023", "cmd": "fd 'report' -E '*2023*'"}
+{"q": "py files with test in the name except conftest", "cmd": "fd -e py 'test' -E '*conftest*'"}
+{"q": "logs that have error in the filename but not archived ones", "cmd": "fd -e log 'error' -E '*archive*'"}
+{"q": "pngs with icon in the name but not 16", "cmd": "fd -e png 'icon' -E '*16*'"}
+{"q": "anything with backup in the name, not old", "cmd": "fd 'backup' -E '*old*'"}
+{"q": "IMG_ files but not the _thumb ones", "cmd": "fd '^IMG_' -E '*_thumb*'"}
+{"q": "folders with api in the name excluding test ones", "cmd": "fd -t d 'api' -E '*test*'"}
+{"q": "files containing gelato, skip anything with copy in the name", "cmd": "fd -t f 'gelato' -E '*copy*'"}
+{"q": "csvs with sales in name minus the backup_ ones", "cmd": "fd -e csv 'sales' -E 'backup_*'"}
+{"q": "find gelato up to 3 folders deep", "cmd": "fd -d 3 'gelato'"}
+{"q": "csv files in data, 2 levels down max", "cmd": "fd -e csv -d 2 . data"}
+{"q": "dirs exactly 2 levels down", "cmd": "fd -t d --min-depth 2 -d 2"}
+{"q": "files at least 3 folders deep", "cmd": "fd -t f --min-depth 3"}
+{"q": "logs in this folder, not subfolders", "cmd": "fd -t f -d 1 -e log"}
+{"q": "pdfs sitting directly in downloads", "cmd": "fd -e pdf -d 1 . $HOME\\Downloads"}
+{"q": "empty folders at the top level", "cmd": "fd -t d -t e -d 1"}
+{"q": "files changed in the last hour, only here", "cmd": "fd -t f -d 1 --changed-within 1h"}
+{"q": "files over 50mb in the current dir, no recursion", "cmd": "fd -t f -d 1 -S +50m"}
+{"q": "txt files here and one level down", "cmd": "fd -e txt -d 2"}
+{"q": "grep TODO only in this folder not subfolders", "cmd": "rg -d 1 'TODO'"}
+{"q": "search for gelato only in top-level files", "cmd": "rg -d 1 'gelato'"}
+{"q": "grep -i password in current dir, no recursion", "cmd": "rg -d 1 -i 'password'"}
+{"q": "files right here that mention invoice, names only", "cmd": "rg -d 1 -l 'invoice'"}
+{"q": "grep foo *.txt", "cmd": "rg -d 1 -g '*.txt' 'foo'"}
+{"q": "count FIXME in top-level py files", "cmd": "rg -d 1 -c -t py 'FIXME'"}
+{"q": "search api_key in src but only 2 levels deep", "cmd": "rg -d 2 'api_key' src"}
+{"q": "grep error in the logs folder, not nested ones", "cmd": "rg -d 1 'error' logs"}
+{"q": "search import pandas in this directory only (not recursively)", "cmd": "rg -d 1 'import pandas'"}
+{"q": "rg TODO max depth 3", "cmd": "rg -d 3 'TODO'"}
+{"q": "grep -r gelato but only in files starting with menu", "cmd": "rg -g 'menu*' 'gelato'"}
+{"q": "console.log in files ending with .test.js", "cmd": "rg -F -g '*.test.js' 'console.log'"}
+{"q": "find deadline in files starting with draft", "cmd": "rg -g 'draft*' 'deadline'"}
+{"q": "TODOs in _test.go files only, top level", "cmd": "rg -d 1 -g '*_test.go' 'TODO'"}
+{"q": "SELECT statements in files starting with migration_", "cmd": "rg -g 'migration_*' 'SELECT'"}
+{"q": "search password in files ending with .env.local", "cmd": "rg --hidden -g '*.env.local' 'password'"}
+{"q": "grep -l total in invoice_ files", "cmd": "rg -l -g 'invoice_*' 'total'"}
+{"q": "case insensitive search for gelato, current folder only", "cmd": "rg -d 1 -i 'gelato'"}
+{"q": "grep hello *", "cmd": "rg -d 1 'hello'"}
+{"q": "pretty print data.json with jq", "cmd": "jq '.' data.json"}
+{"q": "jq the name field out of user.json", "cmd": "jq '.name' user.json"}
+{"q": "get .config.db.host with jq from settings.json", "cmd": "jq '.config.db.host' settings.json"}
+{"q": "jq: list every user's email from users.json", "cmd": "jq '.[].email' users.json"}
+{"q": "names of people older than 30 in people.json using jq", "cmd": "jq '.[] | select(.age > 30) | .name' people.json"}
+{"q": "jq find the entry where name is bob in people.json", "cmd": "jq --arg n bob '.[] | select(.name == $n)' people.json"}
+{"q": "top level keys of package.json via jq", "cmd": "jq 'keys' package.json"}
+{"q": "how many items in items.json, use jq", "cmd": "jq 'length' items.json"}
+{"q": "jq raw output of version from package.json", "cmd": "jq -r '.version' package.json"}
+{"q": "compact data.json to one line with jq", "cmd": "jq -c '.' data.json"}
+{"q": "curl the github api for cli/cli and jq the star count", "cmd": "curl.exe -s https://api.github.com/repos/cli/cli | jq '.stargazers_count'"}
+{"q": "curl -s https://api.github.com/users/torvalds | jq -r .name", "cmd": "curl.exe -s https://api.github.com/users/torvalds | jq -r '.name'"}
+{"q": "pr titles from gh piped thru jq", "cmd": "gh pr list --json number,title | jq -r '.[].title'"}
+{"q": "pod names via kubectl json and jq", "cmd": "kubectl get pods -o json | jq -r '.items[].metadata.name'"}
+{"q": "jq map ids from orders.json into a list", "cmd": "jq 'map(.id)' orders.json"}
+{"q": "sort users.json keys with jq", "cmd": "jq -S '.' users.json"}
+{"q": "jq: dependencies names in package.json", "cmd": "jq -r '.dependencies | keys[]' package.json"}
+{"q": "with jq, active users only from users.json", "cmd": "jq '.[] | select(.active)' users.json"}
+{"q": "one compact line per element of events.json, jq", "cmd": "jq -c '.[]' events.json"}
+{"q": "jq count of items whose status is failed in jobs.json", "cmd": "jq --arg s failed '[.[] | select(.status == $s)] | length' jobs.json"}
+{"q": "jq first element of results.json", "cmd": "jq '.[0]' results.json"}
+{"q": "pull id and name of each record into new objects w/ jq", "cmd": "jq '.[] | {id, name}' records.json"}
+{"q": "jq sum the price field in cart.json", "cmd": "jq 'map(.price) | add' cart.json"}
+{"q": "container images running in the cluster with jq", "cmd": "kubectl get pods -A -o json | jq -r '.items[].spec.containers[].image'"}
+{"q": "check if config.json is valid json using jq", "cmd": "jq empty config.json"}
+{"q": "jq merge a.json and b.json", "cmd": "jq -s '.[0] * .[1]' a.json b.json"}
+{"q": "gh issue list json, jq out the urls", "cmd": "gh issue list --json url | jq -r '.[].url'"}
+{"q": "download this youtube video https://youtu.be/dQw4w9WgXcQ", "cmd": "yt-dlp https://youtu.be/dQw4w9WgXcQ"}
+{"q": "grab just the audio as mp3 from https://youtu.be/dQw4w9WgXcQ", "cmd": "yt-dlp -x --audio-format mp3 https://youtu.be/dQw4w9WgXcQ"}
+{"q": "what formats are available for https://www.youtube.com/watch?v=jNQXAC9IVRw", "cmd": "yt-dlp -F https://www.youtube.com/watch?v=jNQXAC9IVRw"}
+{"q": "download https://youtu.be/jNQXAC9IVRw at 720p max", "cmd": "yt-dlp -S 'res:720' https://youtu.be/jNQXAC9IVRw"}
+{"q": "save the video with english subs https://youtu.be/dQw4w9WgXcQ", "cmd": "yt-dlp --write-subs --sub-langs en https://youtu.be/dQw4w9WgXcQ"}
+{"q": "dl https://youtu.be/dQw4w9WgXcQ named by title into videos folder", "cmd": "yt-dlp -o 'videos/%(title)s.%(ext)s' https://youtu.be/dQw4w9WgXcQ"}
+{"q": "download the whole playlist https://www.youtube.com/playlist?list=PL590L5WQmH8fJ54F369BLDSqIwcs-TCfs", "cmd": "yt-dlp --yes-playlist https://www.youtube.com/playlist?list=PL590L5WQmH8fJ54F369BLDSqIwcs-TCfs"}
+{"q": "only the first 5 videos of playlist https://www.youtube.com/playlist?list=PL590L5WQmH8fJ54F369BLDSqIwcs-TCfs", "cmd": "yt-dlp -I 1:5 https://www.youtube.com/playlist?list=PL590L5WQmH8fJ54F369BLDSqIwcs-TCfs"}
+{"q": "download every url in links.txt", "cmd": "yt-dlp -a links.txt"}
+{"q": "yt video as mp4 https://youtu.be/jNQXAC9IVRw", "cmd": "yt-dlp -t mp4 https://youtu.be/jNQXAC9IVRw"}
+{"q": "just the thumbnail of https://youtu.be/dQw4w9WgXcQ", "cmd": "yt-dlp --write-thumbnail --skip-download https://youtu.be/dQw4w9WgXcQ"}
+{"q": "mp3 with cover art embedded from https://youtu.be/dQw4w9WgXcQ", "cmd": "yt-dlp -x --audio-format mp3 --embed-thumbnail https://youtu.be/dQw4w9WgXcQ"}
+{"q": "list titles in playlist https://www.youtube.com/playlist?list=PL590L5WQmH8fJ54F369BLDSqIwcs-TCfs without downloading", "cmd": "yt-dlp --flat-playlist --print title https://www.youtube.com/playlist?list=PL590L5WQmH8fJ54F369BLDSqIwcs-TCfs"}
+{"q": "download https://youtu.be/dQw4w9WgXcQ using my firefox cookies", "cmd": "yt-dlp --cookies-from-browser firefox https://youtu.be/dQw4w9WgXcQ"}
+{"q": "youtube-dl https://youtu.be/jNQXAC9IVRw but skip the sponsor segments", "cmd": "yt-dlp --sponsorblock-remove sponsor https://youtu.be/jNQXAC9IVRw"}
+{"q": "split https://youtu.be/dQw4w9WgXcQ into chapters", "cmd": "yt-dlp --split-chapters https://youtu.be/dQw4w9WgXcQ"}
+{"q": "turn README.md into a pdf", "cmd": "pandoc README.md -o README.pdf"}
+{"q": "convert notes.md to word", "cmd": "pandoc notes.md -o notes.docx"}
+{"q": "report.docx to markdown", "cmd": "pandoc report.docx -o report.md"}
+{"q": "make a standalone html page from index.md", "cmd": "pandoc -s index.md -o index.html"}
+{"q": "md to pdf with a table of contents, thesis.md", "cmd": "pandoc thesis.md --toc -o thesis.pdf"}
+{"q": "pandoc with xelatex, paper.md -> paper.pdf", "cmd": "pandoc paper.md --pdf-engine=xelatex -o paper.pdf"}
+{"q": "html page saved as page.html into github markdown", "cmd": "pandoc page.html -t gfm -o page.md"}
+{"q": "notes.md to docx using template.docx for styling", "cmd": "pandoc notes.md --reference-doc template.docx -o notes.docx"}
+{"q": "build paper.pdf from paper.md with citations from refs.bib", "cmd": "pandoc paper.md --citeproc --bibliography refs.bib -o paper.pdf"}
+{"q": "reveal.js slides from slides.md", "cmd": "pandoc -s slides.md -t revealjs -o slides.html"}
+{"q": "beamer pdf from talk.md", "cmd": "pandoc talk.md -t beamer -o talk.pdf"}
+{"q": "latex to word, thesis.tex", "cmd": "pandoc thesis.tex -o thesis.docx"}
+{"q": "make an epub out of book.md", "cmd": "pandoc book.md -o book.epub"}
+{"q": "pdf from essay.md with 1 inch margins", "cmd": "pandoc essay.md -V geometry:margin=1in -o essay.pdf"}
+{"q": "convert every md here to docx", "cmd": "fd -e md -d 1 | ForEach-Object { pandoc $_ -o ($_ -replace '\\.md$','.docx') }"}
+{"q": "what output formats does pandoc support", "cmd": "pandoc --list-output-formats"}
+{"q": "pdftotext report.pdf", "cmd": "pdftotext report.pdf"}
+{"q": "dump invoice.pdf text to the terminal keeping layout", "cmd": "pdftotext -layout invoice.pdf -"}
+{"q": "text of pages 3-5 of book.pdf into ch2.txt", "cmd": "pdftotext -f 3 -l 5 book.pdf ch2.txt"}
+{"q": "how many pages is thesis.pdf", "cmd": "pdfinfo thesis.pdf | rg '^Pages'"}
+{"q": "pdf metadata for contract.pdf", "cmd": "pdfinfo contract.pdf"}
+{"q": "merge a.pdf and b.pdf into merged.pdf", "cmd": "pdfunite a.pdf b.pdf merged.pdf"}
+{"q": "combine all the pdfs here into one", "cmd": "pdfunite (fd -e pdf -d 1 -E all.pdf | Sort-Object) all.pdf"}
+{"q": "split book.pdf into one pdf per page", "cmd": "pdfseparate book.pdf page-%d.pdf"}
+{"q": "pull page 2 out of contract.pdf", "cmd": "pdfseparate -f 2 -l 2 contract.pdf page2.pdf"}
+{"q": "slides.pdf to png images", "cmd": "pdftoppm -png slides.pdf slide"}
+{"q": "first page of poster.pdf as a 300 dpi png", "cmd": "pdftoppm -png -r 300 -f 1 -l 1 -singlefile poster.pdf cover"}
+{"q": "pdf pages to jpg, scan.pdf", "cmd": "pdftoppm -jpeg scan.pdf scan"}
+{"q": "list the images in brochure.pdf", "cmd": "pdfimages -list brochure.pdf"}
+{"q": "extract images from brochure.pdf as png", "cmd": "pdfimages -png brochure.pdf img"}
+{"q": "grep a pdf for transformer, paper.pdf", "cmd": "pdftotext paper.pdf - | rg -i 'transformer'"}
+{"q": "build main.tex", "cmd": "latexmk -pdf main.tex"}
+{"q": "compile thesis.tex with xelatex", "cmd": "latexmk -xelatex thesis.tex"}
+{"q": "lualatex build of cv.tex", "cmd": "latexmk -lualatex cv.tex"}
+{"q": "clean latex aux files but keep the pdf", "cmd": "latexmk -c"}
+{"q": "clean everything latex made incl the pdf", "cmd": "latexmk -C"}
+{"q": "watch main.tex and rebuild on save", "cmd": "latexmk -pdf -pvc main.tex"}
+{"q": "build main.tex into a build folder", "cmd": "latexmk -pdf -outdir=build main.tex"}
+{"q": "compile paper.tex and dont stop on errors", "cmd": "latexmk -pdf -f -interaction=nonstopmode paper.tex"}
+{"q": "force a full rebuild of main.tex", "cmd": "latexmk -g -pdf main.tex"}
+{"q": "just run pdflatex once on letter.tex", "cmd": "pdflatex letter.tex"}
+{"q": "xelatex resume.tex", "cmd": "xelatex resume.tex"}
+{"q": "latex with minted needs shell escape, main.tex", "cmd": "latexmk -pdf -shell-escape main.tex"}
+{"q": "list tables in app.db", "cmd": "sqlite-utils tables app.db"}
+{"q": "tables in app.db with row counts", "cmd": "sqlite-utils tables app.db --counts"}
+{"q": "first 10 rows of users in app.db", "cmd": "sqlite-utils rows app.db users --limit 10"}
+{"q": "run select * from orders where total > 100 on shop.db", "cmd": "sqlite-utils query shop.db 'select * from orders where total > 100'"}
+{"q": "query shop.db for order counts per customer as a table", "cmd": "sqlite-utils query shop.db 'select customer_id, count(*) from orders group by customer_id' -t"}
+{"q": "load users.json into app.db table users with id as primary key", "cmd": "sqlite-utils insert app.db users users.json --pk id"}
+{"q": "import sales.csv into data.db as sales", "cmd": "sqlite-utils insert data.db sales sales.csv --csv"}
+{"q": "csv to sqlite with proper column types, prices.csv into shop.db", "cmd": "sqlite-utils insert shop.db prices prices.csv --csv -d"}
+{"q": "schema of app.db", "cmd": "sqlite-utils schema app.db"}
+{"q": "show the create statement for the users table in app.db", "cmd": "sqlite-utils schema app.db users"}
+{"q": "upsert users.json into app.db keyed on id", "cmd": "sqlite-utils upsert app.db users users.json --pk id"}
+{"q": "newline json events.jsonl into logs.db events", "cmd": "sqlite-utils insert logs.db events events.jsonl --nl"}
+{"q": "users table in app.db as csv", "cmd": "sqlite-utils rows app.db users --csv"}
+{"q": "jump to my projects folder", "cmd": "z projects"}
+{"q": "cd into the api dir wherever it is", "cmd": "z api"}
+{"q": "z into work/backend", "cmd": "z work backend"}
+{"q": "pick a dir interactively from zoxide", "cmd": "zi"}
+{"q": "where would z gelato take me", "cmd": "zoxide query gelato"}
+{"q": "list all dirs zoxide knows", "cmd": "zoxide query -l"}
+{"q": "zoxide dirs with scores", "cmd": "zoxide query -l -s"}
+{"q": "add D:\\repos\\billing to zoxide", "cmd": "zoxide add D:\\repos\\billing"}
+{"q": "forget C:\\old\\stuff in zoxide", "cmd": "zoxide remove C:\\old\\stuff"}
+{"q": "open the dotfiles dir in vscode via zoxide", "cmd": "code (zoxide query dotfiles)"}
+{"q": "z back to the previous directory", "cmd": "z -"}
+{"q": "which zoxide dir under D:\\sites matches blog", "cmd": "zoxide query --base-dir D:\\sites blog"}
+{"q": "open this folder in vscode in a new window", "cmd": "code -n ."}
+{"q": "open app.py at line 42", "cmd": "code -g app.py:42"}
+{"q": "open src/main.ts line 10 col 5 in code", "cmd": "code -g src/main.ts:10:5"}
+{"q": "diff old.json and new.json in vscode", "cmd": "code -d old.json new.json"}
+{"q": "open README.md in the current vscode window", "cmd": "code -r README.md"}
+{"q": "add the shared folder to the current vscode workspace", "cmd": "code -a ..\\shared"}
+{"q": "installed vscode extensions", "cmd": "code --list-extensions"}
+{"q": "open this project in zed", "cmd": "zed ."}
+{"q": "open main.rs at line 120 in zed", "cmd": "zed src\\main.rs:120"}
+{"q": "zed new window for my notes", "cmd": "zed -n $HOME\\notes"}
+{"q": "diff a.txt b.txt in zed", "cmd": "zed --diff a.txt b.txt"}
+{"q": "add lib.rs to the open zed workspace", "cmd": "zed -a lib.rs"}
+{"q": "make a tar.xz of logs", "cmd": "tar -cJf logs.tar.xz logs"}
+{"q": "extract data.tar.xz", "cmd": "tar -xJf data.tar.xz"}
+{"q": "untar src.tar.bz2", "cmd": "tar -xjf src.tar.bz2"}
+{"q": "bzip2 tarball of docs", "cmd": "tar -cjf docs.tar.bz2 docs"}
+{"q": "extract release.tar.xz into the out folder", "cmd": "tar -xf release.tar.xz -C out"}
+{"q": "whats in release.tar.bz2", "cmd": "tar -tf release.tar.bz2"}
+{"q": "tar.gz the site folder without node_modules", "cmd": "tar -czf site.tar.gz --exclude node_modules site"}
+{"q": "decompress dump.sql.xz", "cmd": "xz -d dump.sql.xz"}
+{"q": "xz compress big.csv but keep the original", "cmd": "xz -k big.csv"}
+{"q": "bunzip2 data.bz2", "cmd": "bzip2 -d data.bz2"}
+{"q": "bzip2 notes.txt keeping the original", "cmd": "bzip2 -k notes.txt"}
+{"q": "info about backup.tar.xz compression ratio", "cmd": "xz -l backup.tar.xz"}

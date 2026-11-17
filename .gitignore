@@ -1,0 +1,15 @@
+# training environment and outputs (large; publish weights via Hugging Face / GitHub Releases instead)
+train/.venv/
+train/out/
+train/llama.cpp/
+*.gguf
+*.safetensors
+
+# generated from data/hand + data/gen by scripts/build_dataset.py
+data/train.jsonl
+data/dev.jsonl
+data/tool_probe_*.txt
+
+__pycache__/
+*.pyc
+.claude/

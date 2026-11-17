@@ -1,0 +1,309 @@
+{"q": "find all python files", "cmd": "fd -e py"}
+{"q": "find . -name '*.go'", "cmd": "fd -e go"}
+{"q": "find . -name \"*.ts\" -o -name \"*.tsx\"", "cmd": "fd -e ts -e tsx"}
+{"q": "where did i put that config.yaml", "cmd": "fd '^config\\.yaml$'"}
+{"q": "wheres appsettings.json", "cmd": "fd '^appsettings\\.json$'"}
+{"q": "all the appsettings files, dev prod whatever", "cmd": "fd -g 'appsettings*.json'"}
+{"q": "find every Dockerfile in the repo", "cmd": "fd '^Dockerfile$'"}
+{"q": "dockerfiles incl Dockerfile.dev and Dockerfile.prod", "cmd": "fd -g 'Dockerfile*'"}
+{"q": "list csproj files", "cmd": "fd -e csproj"}
+{"q": "fnd all csproj and sln files", "cmd": "fd -e csproj -e sln"}
+{"q": "find the components folder", "cmd": "fd -t d '^components$'"}
+{"q": "find -type d -name migrations", "cmd": "fd -t d '^migrations$'"}
+{"q": "find logs/ -type f -name '*.log'", "cmd": "fd -t f -e log . logs"}
+{"q": "log files in logs", "cmd": "fd -e log . logs"}
+{"q": "find -mtime -1", "cmd": "fd --changed-within 1d"}
+{"q": "files changed in the last 2 hours", "cmd": "fd -t f --changed-within 2h"}
+{"q": "what did i touch in the last 30 min", "cmd": "fd -t f --changed-within 30min"}
+{"q": "find . -mtime +30 -name '*.log'", "cmd": "fd -e log --changed-before 30d"}
+{"q": "old log files not modified in 90 days", "cmd": "fd -e log --changed-before 90d"}
+{"q": "find -size +50M", "cmd": "fd -S +50m"}
+{"q": "files bigger than 100mb", "cmd": "fd -S +100m"}
+{"q": "find huge files over 1gb on D:", "cmd": "fd -S +1g . D:\\"}
+{"q": "tiny files under 1k", "cmd": "fd -S -1k"}
+{"q": "find -empty", "cmd": "fd -t e"}
+{"q": "empty folders", "cmd": "fd -t d -t e"}
+{"q": "emtpy files in src", "cmd": "fd -t f -t e . src"}
+{"q": "show hidden files too", "cmd": "fd -H"}
+{"q": "find .env files", "cmd": "fd -H '^\\.env'"}
+{"q": ".env files even the gitignored ones", "cmd": "fd -H -I '^\\.env'"}
+{"q": "whats in .github", "cmd": "fd . .github"}
+{"q": "workflow yamls in .github/workflows", "cmd": "fd -e yml -e yaml . .github\\workflows"}
+{"q": "find node_modules folders", "cmd": "fd -t d -I '^node_modules$'"}
+{"q": "only top-level folders", "cmd": "fd -t d -d 1"}
+{"q": "find -maxdepth 2 -name '*.json'", "cmd": "fd -d 2 -e json"}
+{"q": "lsit json files max 2 levels deep", "cmd": "fd -e json -d 2"}
+{"q": "readme anywhere, any case", "cmd": "fd -i '^readme'"}
+{"q": "find -iname 'readme*'", "cmd": "fd -i -g 'readme*'"}
+{"q": "Makefile exactly, case sensitive", "cmd": "fd -s '^Makefile$'"}
+{"q": "py files but not in venv", "cmd": "fd -e py -E venv"}
+{"q": "ts files excluding node_modules and dist", "cmd": "fd -e ts -E node_modules -E dist"}
+{"q": "find . -name '*.test.ts'", "cmd": "fd -g '*.test.ts'"}
+{"q": "spec files", "cmd": "fd -g '*.spec.ts'"}
+{"q": "find -path '*/tests/*.py'", "cmd": "fd -e py -p 'tests[\\\\/]'"}
+{"q": "tsx files somewhere under a components dir", "cmd": "fd -e tsx -p 'components[\\\\/]'"}
+{"q": "open the todo.md in vscode", "cmd": "fd '^todo\\.md$' -X code"}
+{"q": "format all py files with black", "cmd": "fd -e py -X black"}
+{"q": "run gofmt on every go file", "cmd": "fd -e go -X gofmt -w"}
+{"q": "convert every png to webp", "cmd": "fd -e png -x magick '{}' '{.}.webp'"}
+{"q": "full paths of csproj files", "cmd": "fd -e csproj -a"}
+{"q": "absolute path of every package.json", "cmd": "fd -a '^package\\.json$'"}
+{"q": "just the first match for appsettings", "cmd": "fd -1 'appsettings'"}
+{"q": "first 5 log files", "cmd": "fd -e log --max-results 5"}
+{"q": "delete all .tmp files", "cmd": "fd -t f -e tmp | Remove-Item"}
+{"q": "rm all .DS_Store", "cmd": "fd -H '^\\.DS_Store$' | Remove-Item"}
+{"q": "find . -name '*.pyc' -delete", "cmd": "fd -I -e pyc | Remove-Item"}
+{"q": "how many cs files", "cmd": "(fd -e cs | Measure-Object).Count"}
+{"q": "count the folders in src", "cmd": "(fd -t d . src | Measure-Object).Count"}
+{"q": "find all images", "cmd": "fd -e png -e jpg -e jpeg -e gif -e svg"}
+{"q": "pdfs in my downloads", "cmd": "fd -e pdf . $HOME\\Downloads"}
+{"q": "pdfs in documents from this week", "cmd": "fd -e pdf --changed-within 7d . $HOME\\Documents"}
+{"q": "find quarterly report in 'D:\\Work Docs'", "cmd": "fd -i 'quarterly report' 'D:\\Work Docs'"}
+{"q": "sql files in migrations", "cmd": "fd -e sql . migrations"}
+{"q": "which migrations were added in the last day", "cmd": "fd --changed-within 1d . migrations"}
+{"q": "find dotfiles in my home dir", "cmd": "fd -H -d 1 '^\\.' $HOME"}
+{"q": "all .gitignore files", "cmd": "fd -H '^\\.gitignore$'"}
+{"q": "find every git repo under projects", "cmd": "fd -t d -H '^\\.git$' projects"}
+{"q": "hidden files but not the .git junk", "cmd": "fd -H -E .git"}
+{"q": "literally everything incl ignored and hidden", "cmd": "fd -H -I"}
+{"q": "find -name '*.dll' including bin and obj", "cmd": "fd -I -e dll"}
+{"q": "find bin and obj folders", "cmd": "fd -t d -I '^(bin|obj)$'"}
+{"q": "find launchSettings.json", "cmd": "fd '^launchSettings\\.json$'"}
+{"q": "eslint config wherever it is", "cmd": "fd -H -g '.eslintrc*'"}
+{"q": "where's my .npmrc", "cmd": "fd -H '^\\.npmrc$'"}
+{"q": "docker compose files yml or yaml", "cmd": "fd '^docker-compose.*\\.ya?ml$'"}
+{"q": "find ps1 scripts", "cmd": "fd -e ps1"}
+{"q": "powershell scripts and modules", "cmd": "fd -e ps1 -e psm1"}
+{"q": "find all shell scripts", "cmd": "fd -e sh"}
+{"q": "java files in src/main", "cmd": "fd -e java . src\\main"}
+{"q": "fnd jsx files", "cmd": "fd -e jsx"}
+{"q": "vue components in src/components", "cmd": "fd -e vue . src\\components"}
+{"q": "scss files, skip node_modules", "cmd": "fd -e scss -E node_modules"}
+{"q": "files named index.ts", "cmd": "fd '^index\\.ts$'"}
+{"q": "anything with auth in the name", "cmd": "fd 'auth'"}
+{"q": "files with user in the name under src", "cmd": "fd -t f 'user' src"}
+{"q": "find all __pycache__", "cmd": "fd -t d -I '^__pycache__$'"}
+{"q": "nuke the __pycache__ folders", "cmd": "fd -t d -I '^__pycache__$' | Remove-Item -Recurse"}
+{"q": "requirements files", "cmd": "fd -g 'requirements*.txt'"}
+{"q": "csv files bigger than 10mb", "cmd": "fd -e csv -S +10m"}
+{"q": "zips over 500 megs in downloads", "cmd": "fd -e zip -S +500m . $HOME\\Downloads"}
+{"q": "files between 1mb and 10mb", "cmd": "fd -S +1m -S -10m"}
+{"q": "cs files edited this week", "cmd": "fd -e cs --changed-within 7d"}
+{"q": "find -mmin -10", "cmd": "fd --changed-within 10min"}
+{"q": "find -newermt 2024-01-01", "cmd": "fd --changed-within 2024-01-01"}
+{"q": "config files in this folder only", "cmd": "fd -d 1 -e json -e yaml -e yml -e toml"}
+{"q": "ls *.md recursively", "cmd": "fd -e md"}
+{"q": "find . -type f | wc -l", "cmd": "(fd -t f | Measure-Object).Count"}
+{"q": "find . -maxdepth 1 -type f -name 'foo*'", "cmd": "fd -t f -d 1 -g 'foo*'"}
+{"q": "find chrome.exe in program files", "cmd": "fd -i '^chrome\\.exe$' 'C:\\Program Files'"}
+{"q": "wheres node.exe under 'C:\\Program Files'", "cmd": "fd '^node\\.exe$' 'C:\\Program Files'"}
+{"q": "saves in 'D:\\Game Saves' from the last 3 days", "cmd": "fd --changed-within 3d . 'D:\\Game Saves'"}
+{"q": "photos in 'C:\\Photos 2023'", "cmd": "fd -e jpg -e heic . 'C:\\Photos 2023'"}
+{"q": "py files in src and tests", "cmd": "fd -e py . src tests"}
+{"q": "readmes in docs and examples", "cmd": "fd -i '^readme' docs examples"}
+{"q": "absolute paths of all mp3s in Music", "cmd": "fd -e mp3 -a . $HOME\\Music"}
+{"q": "first dockerfile you find", "cmd": "fd -1 '^Dockerfile$'"}
+{"q": "10 files over 100mb, dont need all", "cmd": "fd -S +100m --max-results 10"}
+{"q": "log files named with a date like 2024-01-05.log", "cmd": "fd '\\d{4}-\\d{2}-\\d{2}\\.log$'"}
+{"q": "test_*.py", "cmd": "fd -g 'test_*.py'"}
+{"q": "files with a space in the name", "cmd": "fd ' '"}
+{"q": "backup files ending in ~ or .bak", "cmd": "fd '(~|\\.bak)$'"}
+{"q": "delete the .orig leftovers", "cmd": "fd -e orig | Remove-Item"}
+{"q": "open appsettings.json in code", "cmd": "fd '^appsettings\\.json$' -X code"}
+{"q": "stage all csproj files", "cmd": "fd -e csproj -X git add"}
+{"q": "dotnet build each csproj one by one", "cmd": "fd -e csproj -x dotnet build '{}'"}
+{"q": "run prettier on all ts in src", "cmd": "fd -e ts . src -X npx prettier --write"}
+{"q": "dos2unix every sh file", "cmd": "fd -e sh -X dos2unix"}
+{"q": "mp4 to mp3 with ffmpeg for each one", "cmd": "fd -e mp4 -x ffmpeg -i '{}' '{.}.mp3'"}
+{"q": "unzip every zip into its own folder", "cmd": "fd -e zip -x 7z x '{}' '-o{.}'"}
+{"q": "find -name '*.log' | xargs rm", "cmd": "fd -e log | Remove-Item"}
+{"q": "find . -type f -name '*.bak' -exec rm {} \\;", "cmd": "fd -t f -e bak | Remove-Item"}
+{"q": "find . -type d -empty -delete", "cmd": "fd -t d -t e | Remove-Item"}
+{"q": "invoice files in documents, any case", "cmd": "fd -i 'invoice' $HOME\\Documents"}
+{"q": "find the .terraform dirs", "cmd": "fd -t d -H -I '^\\.terraform$'"}
+{"q": "find dist folders, theyre gitignored", "cmd": "fd -t d -I '^dist$'"}
+{"q": "package-lock.json files not in node_modules", "cmd": "fd -E node_modules '^package-lock\\.json$'"}
+{"q": "yarn.lock up to 3 levels deep", "cmd": "fd -d 3 '^yarn\\.lock$'"}
+{"q": "locate Program.cs", "cmd": "fd '^Program\\.cs$'"}
+{"q": "find all the controllers", "cmd": "fd -g '*Controller.cs'"}
+{"q": "find the .sln", "cmd": "fd -e sln"}
+{"q": "Migrations folder inside Data", "cmd": "fd -t d '^Migrations$' Data"}
+{"q": "test or tests dirs, top 2 levels", "cmd": "fd -t d -d 2 '^tests?$'"}
+{"q": "which folders are called build", "cmd": "fd -t d -I '^build$'"}
+{"q": "files with no extension", "cmd": "fd -t f '^[^.]+$'"}
+{"q": "log or txt in logs changed in the last hour", "cmd": "fd -e log -e txt --changed-within 1h . logs"}
+{"q": "everything changed in last 15 mins except node_modules and .git", "cmd": "fd -H --changed-within 15min -E node_modules -E .git"}
+{"q": "whats in my .ssh folder", "cmd": "fd . $HOME\\.ssh"}
+{"q": "list all files in src", "cmd": "fd -t f . src"}
+{"q": "files in the current folder only", "cmd": "fd -t f -d 1"}
+{"q": "look for invoice_2023 anywhere, just show one", "cmd": "fd -1 'invoice_2023'"}
+{"q": "find . -name \"*.log\" -not -path \"./node_modules/*\"", "cmd": "fd -e log -E node_modules"}
+{"q": "find . -type f -not -path '*/.git/*'", "cmd": "fd -t f -H -E .git"}
+{"q": "find . -name '*.js' ! -name '*.min.js'", "cmd": "fd -e js -E '*.min.js'"}
+{"q": "ts files but not tests or specs", "cmd": "fd -e ts -E '*.test.ts' -E '*.spec.ts'"}
+{"q": "find src -name '*.tsx' -path '*components*'", "cmd": "fd -e tsx -p 'components' src"}
+{"q": "files whose full path has legacy in it", "cmd": "fd -p 'legacy'"}
+{"q": "anything under a fixtures dir", "cmd": "fd -t f -p 'fixtures[\\\\/]'"}
+{"q": "find -regex '.*_v[0-9]+\\.sql'", "cmd": "fd '_v\\d+\\.sql$'"}
+{"q": "find -iregex '.*\\.(jpe?g|png)'", "cmd": "fd -i '\\.(jpe?g|png)$'"}
+{"q": "were is my dockerfile", "cmd": "fd '^Dockerfile$'"}
+{"q": "fd but case insensitive for 'Settings' in config", "cmd": "fd -i 'settings' config"}
+{"q": "markdown in docs changed in last 2 weeks", "cmd": "fd -e md --changed-within 14d . docs"}
+{"q": "files over 50mb inside .git", "cmd": "fd -H -I -S +50m . .git"}
+{"q": "yaml files only at the root", "cmd": "fd -d 1 -e yaml -e yml"}
+{"q": "find the nearest .editorconfig", "cmd": "fd -H -1 '^\\.editorconfig$'"}
+{"q": "list every folder in 'C:\\Users\\Public\\Shared Stuff'", "cmd": "fd -t d . 'C:\\Users\\Public\\Shared Stuff'"}
+{"q": "log files in 'C:\\ProgramData\\My Service\\logs' older than a week", "cmd": "fd -e log --changed-before 7d . 'C:\\ProgramData\\My Service\\logs'"}
+{"q": "grep -rn TODO --include=*.py", "cmd": "rg -g '*.py' 'TODO'"}
+{"q": "py files with todo", "cmd": "rg -t py 'TODO'"}
+{"q": "grep -r TODO .", "cmd": "rg 'TODO'"}
+{"q": "FIXME in src", "cmd": "rg 'FIXME' src"}
+{"q": "todo or fixme", "cmd": "rg 'TODO|FIXME'"}
+{"q": "grep -ri 'connection string'", "cmd": "rg -i 'connection string'"}
+{"q": "ConnectionStrings in appsettings.json", "cmd": "rg 'ConnectionStrings' appsettings.json"}
+{"q": "grep -w id", "cmd": "rg -w 'id'"}
+{"q": "whole word user in ts", "cmd": "rg -w -t ts 'user'"}
+{"q": "literal $scope.apply(", "cmd": "rg -F '$scope.apply('"}
+{"q": "search foo[0] exactly no regex", "cmd": "rg -F 'foo[0]'"}
+{"q": "grep -F '*.*'", "cmd": "rg -F '*.*'"}
+{"q": "grep -rl useEffect src", "cmd": "rg -l 'useEffect' src"}
+{"q": "which files mention lodash", "cmd": "rg -l 'lodash'"}
+{"q": "which files use ILogger", "cmd": "rg -l 'ILogger'"}
+{"q": "grep -L 'use strict' *.js", "cmd": "rg --files-without-match -g '*.js' 'use strict'"}
+{"q": "files missing the copyright header", "cmd": "rg --files-without-match 'Copyright'"}
+{"q": "grep -c error app.log", "cmd": "rg -c 'error' app.log"}
+{"q": "count TODOs per file", "cmd": "rg -c 'TODO'"}
+{"q": "total number of TODOs", "cmd": "(rg -o 'TODO' | Measure-Object).Count"}
+{"q": "how many console.log per file", "cmd": "rg --count-matches 'console\\.log'"}
+{"q": "how many files have console.log", "cmd": "(rg -l 'console\\.log' | Measure-Object).Count"}
+{"q": "grep -v '^#' .env", "cmd": "rg -v '^#' .env"}
+{"q": "config.ini without comments or blank lines", "cmd": "rg -v '^\\s*(#|;|$)' config.ini"}
+{"q": "lines in app.log without DEBUG", "cmd": "rg -v 'DEBUG' app.log"}
+{"q": "grep -C 3 NullReferenceException logs", "cmd": "rg -C 3 'NullReferenceException' logs"}
+{"q": "5 lines after each Traceback", "cmd": "rg -A 5 'Traceback'"}
+{"q": "grep -B 2 Exception", "cmd": "rg -B 2 'Exception'"}
+{"q": "grep -A3 -B1 panic", "cmd": "rg -A 3 -B 1 'panic'"}
+{"q": "fetch( calls but not in minified files", "cmd": "rg -g '!*.min.js' 'fetch\\('"}
+{"q": "grep -r --exclude-dir=node_modules 'require('", "cmd": "rg -g '!node_modules' 'require\\('"}
+{"q": "grep -r version --exclude=*.lock", "cmd": "rg -g '!*.lock' 'version'"}
+{"q": "runs-on in .github yml files", "cmd": "rg -g '*.yml' 'runs-on' .github"}
+{"q": "secrets. usage in workflows without giving a path", "cmd": "rg -g '*.yml' --hidden 'secrets\\.'"}
+{"q": "TODO in everything except js", "cmd": "rg -T js 'TODO'"}
+{"q": "async void in cs", "cmd": "rg -t cs 'async void'"}
+{"q": "Invoke-Expression in powershell scripts", "cmd": "rg -t ps 'Invoke-Expression'"}
+{"q": "API_KEY including hidden files", "cmd": "rg --hidden 'API_KEY'"}
+{"q": "API_KEY even in ignored stuff", "cmd": "rg -uu 'API_KEY'"}
+{"q": "search node_modules too for createElement", "cmd": "rg -uu 'createElement' node_modules"}
+{"q": "pull all urls out", "cmd": "rg -o 'https?://\\S+'"}
+{"q": "grep -o email addresses", "cmd": "rg -o '[\\w.+-]+@[\\w-]+\\.[\\w.]+'"}
+{"q": "preview renaming getUser to fetchUser", "cmd": "rg -r 'fetchUser' 'getUser'"}
+{"q": "show var x lines as let x", "cmd": "rg -r 'let $1' 'var (\\w+)'"}
+{"q": "TargetFramework values from csproj files", "cmd": "rg -g '*.csproj' -o -r '$1' '<TargetFramework>(.+)</TargetFramework>'"}
+{"q": "image names from docker-compose.yml", "cmd": "rg -o -r '$1' 'image:\\s*(\\S+)' docker-compose.yml"}
+{"q": "rg --files", "cmd": "rg --files"}
+{"q": "list md files rg would search", "cmd": "rg -g '*.md' --files"}
+{"q": "python files rg sees in src", "cmd": "rg -t py --files src"}
+{"q": "list non-ignored files incl hidden", "cmd": "rg --hidden --files"}
+{"q": "how many files would rg search", "cmd": "(rg --files | Measure-Object).Count"}
+{"q": "first match per file for namespace", "cmd": "rg -m 1 'namespace'"}
+{"q": "empty catch blocks", "cmd": "rg -U 'catch\\s*(\\([^)]*\\))?\\s*\\{\\s*\\}'"}
+{"q": "TODO sorted by file name", "cmd": "rg --sort path 'TODO'"}
+{"q": "files with TODO newest first", "cmd": "rg -l --sortr modified 'TODO'"}
+{"q": "files mentioning deprecated, oldest first", "cmd": "rg -l --sort modified 'deprecated'"}
+{"q": "def main in python with 2 lines around", "cmd": "rg -C 2 -t py 'def main'"}
+{"q": "grep -rnw src -e getUser", "cmd": "rg -w 'getUser' src"}
+{"q": "grep -E 'error|warn' app.log", "cmd": "rg 'error|warn' app.log"}
+{"q": "egrep -i 'fail(ed|ure)'", "cmd": "rg -i 'fail(ed|ure)'"}
+{"q": "fgrep 'a+b'", "cmd": "rg -F 'a+b'"}
+{"q": "grep -m1 version package.json", "cmd": "rg -m 1 'version' package.json"}
+{"q": "cat nginx.conf | grep listen", "cmd": "rg 'listen' nginx.conf"}
+{"q": "cat app.log | grep -i error | wc -l", "cmd": "(rg -i 'error' app.log | Measure-Object).Count"}
+{"q": "where is AddDbContext called", "cmd": "rg 'AddDbContext'"}
+{"q": "IConfiguration usages in c#", "cmd": "rg -w -t cs 'IConfiguration'"}
+{"q": "Serilog in appsettings*.json", "cmd": "rg -g 'appsettings*.json' 'Serilog'"}
+{"q": "FROM lines in all dockerfiles", "cmd": "rg -t docker '^FROM'"}
+{"q": "which dockerfiles use alpine", "cmd": "rg -l -t docker 'alpine'"}
+{"q": "TargetFramework in csproj", "cmd": "rg -g '*.csproj' 'TargetFramework'"}
+{"q": "which projects still target net6", "cmd": "rg -l -g '*.csproj' 'net6\\.0'"}
+{"q": "migrations that drop tables", "cmd": "rg -i 'drop table' migrations"}
+{"q": "create index in sql files", "cmd": "rg -i -t sql 'create index'"}
+{"q": "leftover print( in python", "cmd": "rg -t py '^\\s*print\\('"}
+{"q": "console.log in src but not tests", "cmd": "rg -g '!*.test.*' 'console\\.log' src"}
+{"q": "debugger statements in js and ts", "cmd": "rg -w -t js -t ts 'debugger'"}
+{"q": "hardcoded passwords", "cmd": "rg -i 'password\\s*='"}
+{"q": "api keys, hidden files too", "cmd": "rg -i --hidden 'api[_-]?key'"}
+{"q": "AWS access keys", "cmd": "rg 'AKIA[0-9A-Z]{16}'"}
+{"q": "grep for ip addresses", "cmd": "rg -o '\\b\\d{1,3}(\\.\\d{1,3}){3}\\b'"}
+{"q": "emails in csv files", "cmd": "rg -g '*.csv' -o '[\\w.+-]+@[\\w-]+\\.[\\w.]+'"}
+{"q": "links in markdown", "cmd": "rg -t md -o 'https?://[^\\s)]+'"}
+{"q": "TODO(someone) style todos", "cmd": "rg 'TODO\\(\\w+\\)'"}
+{"q": "lines longer than 120 chars", "cmd": "rg '.{121,}'"}
+{"q": "trailing whitespace", "cmd": "rg '[ \\t]+$'"}
+{"q": "which files have windows line endings", "cmd": "rg -l '\\r$'"}
+{"q": "merge conflict markers", "cmd": "rg '^(<<<<<<<|>>>>>>>|=======)'"}
+{"q": "func main in go", "cmd": "rg -t go 'func main'"}
+{"q": "unwrap() calls in rust", "cmd": "rg -t rust '\\.unwrap\\(\\)'"}
+{"q": "who imports requests", "cmd": "rg -t py '^(import|from) requests'"}
+{"q": "useState count per file in src", "cmd": "rg -c 'useState' src"}
+{"q": "runs-on in the workflows", "cmd": "rg 'runs-on' .github\\workflows"}
+{"q": "which workflows use secrets", "cmd": "rg -l 'secrets\\.' .github\\workflows"}
+{"q": "all process.env vars used", "cmd": "rg -o 'process\\.env\\.\\w+'"}
+{"q": "grep -i timeout in 'C:\\Logs\\My App'", "cmd": "rg -i 'timeout' 'C:\\Logs\\My App'"}
+{"q": "which files in 'C:\\Program Files\\Some App' mention telemetry", "cmd": "rg -l -i 'telemetry' 'C:\\Program Files\\Some App'"}
+{"q": "notes in 'D:\\Work Docs' about budget", "cmd": "rg -i 'budget' 'D:\\Work Docs'"}
+{"q": "TODO in src and tests", "cmd": "rg 'TODO' src tests"}
+{"q": "search bin and obj too for AssemblyName", "cmd": "rg -uu 'AssemblyName'"}
+{"q": "DATABASE_URL in gitignored env files", "cmd": "rg -g '.env*' -uu 'DATABASE_URL'"}
+{"q": "list all files except tests", "cmd": "rg -g '!*test*' --files"}
+{"q": "files rg would search in src", "cmd": "rg --files src"}
+{"q": "except: pass blocks in python", "cmd": "rg -t py -U 'except:\\s*\\n\\s*pass'"}
+{"q": "import blocks that pull in useState", "cmd": "rg -U 'import \\{[^}]*useState[^}]*\\}'"}
+{"q": "first import in each py file", "cmd": "rg -t py -m 1 '^import'"}
+{"q": "grep -iw todo", "cmd": "rg -i -w 'todo'"}
+{"q": "c++ case insensitive literal", "cmd": "rg -i -F 'c++'"}
+{"q": "which files have http://localhost:5000", "cmd": "rg -F -l 'http://localhost:5000'"}
+{"q": "count lines without INFO in app.log", "cmd": "rg -c -v 'INFO' app.log"}
+{"q": "deadlock in logs with 2 lines context, any case", "cmd": "rg -i -C 2 'deadlock' logs"}
+{"q": "10 lines after Unhandled exception in app.log", "cmd": "rg -F -A 10 'Unhandled exception' app.log"}
+{"q": "FATAL in .log files with 3 lines before", "cmd": "rg -B 3 -g '*.log' 'FATAL'"}
+{"q": "color in everything but js and css", "cmd": "rg -T js -T css 'color'"}
+{"q": "serach for todo in pyhton files", "cmd": "rg -t py 'TODO'"}
+{"q": "grpe -i error logs", "cmd": "rg -i 'error' logs"}
+{"q": "grep -rn \"password\" .", "cmd": "rg 'password'"}
+{"q": "grep -rni 'select \\*' --include=*.cs", "cmd": "rg -i -g '*.cs' 'select \\*'"}
+{"q": "grep -r \"Authorization\" --include=*.ts --include=*.tsx", "cmd": "rg -g '*.ts' -g '*.tsx' 'Authorization'"}
+{"q": "grep -rl 'jquery' public", "cmd": "rg -l 'jquery' public"}
+{"q": "count lines with 200 in access.log", "cmd": "rg -c ' 200 ' access.log"}
+{"q": "grep -o 'v[0-9]\\+\\.[0-9]\\+' CHANGELOG.md", "cmd": "rg -o 'v\\d+\\.\\d+' CHANGELOG.md"}
+{"q": "grep -v node_modules", "cmd": "rg -v 'node_modules'"}
+{"q": "lines in requirements.txt that arent pinned", "cmd": "rg -v '==' requirements.txt"}
+{"q": "grep -A 20 'def handler' lambda.py", "cmd": "rg -A 20 'def handler' lambda.py"}
+{"q": "grep --color 'ERROR' logs/*.log", "cmd": "rg -g '*.log' 'ERROR' logs"}
+{"q": "grep -rn 'interface I' --include=*.cs src", "cmd": "rg -g '*.cs' 'interface I' src"}
+{"q": "grep -rn 'class .*Controller'", "cmd": "rg 'class .*Controller'"}
+{"q": "grep -r --include=Dockerfile FROM", "cmd": "rg -g 'Dockerfile' 'FROM'"}
+{"q": "grep -ri 'cors' appsettings.Development.json", "cmd": "rg -i 'cors' appsettings.Development.json"}
+{"q": "search scripts for the literal --force flag", "cmd": "rg -F -e '--force' scripts"}
+{"q": "grep -P '\\d{3}-\\d{4}'", "cmd": "rg '\\d{3}-\\d{4}'"}
+{"q": "grep -x 'done'", "cmd": "rg '^done$'"}
+{"q": "look for 'TODO' but only the first 3 per file", "cmd": "rg -m 3 'TODO'"}
+{"q": "find where the port 8080 is set", "cmd": "rg -F '8080'"}
+{"q": "any references to the old api.example.com host", "cmd": "rg -F 'api.example.com'"}
+{"q": "which files use HttpClient directly", "cmd": "rg -l -w 'HttpClient'"}
+{"q": "count HttpClient uses per file", "cmd": "rg -c -w 'HttpClient'"}
+{"q": "total matches of 'any' in ts, whole word", "cmd": "(rg -w -t ts -o 'any' | Measure-Object).Count"}
+{"q": "ts-ignore comments", "cmd": "rg -F '@ts-ignore'"}
+{"q": "[Obsolete] attributes", "cmd": "rg -F '[Obsolete'"}
+{"q": "sql SELECT * anywhere, any case", "cmd": "rg -i 'select \\*'"}
+{"q": "TODO in yaml but skip the charts dir", "cmd": "rg -t yaml -g '!charts' 'TODO'"}
+{"q": "node-version in .github", "cmd": "rg 'node-version' .github"}
+{"q": "only the matching part for semver strings", "cmd": "rg -o '\\d+\\.\\d+\\.\\d+'"}
+{"q": "replace http with https in output, just preview", "cmd": "rg -r 'https://' 'http://'"}
+{"q": "show image tags only, strip 'image:'", "cmd": "rg -o -r '$1' '^\\s*image:\\s*(.+)$'"}
+{"q": "multiline: a using block followed by a return on the next line", "cmd": "rg -U 'using \\(.*\\)\\s*\\n\\s*return'"}
+{"q": "lines with async and then await on the same line", "cmd": "rg 'async.*await'"}
+{"q": "show files with TODO sorted by path", "cmd": "rg -l --sort path 'TODO'"}
+{"q": "recent log hits first, ERROR in logs", "cmd": "rg --sortr modified 'ERROR' logs"}
+{"q": "count Exception matches in each .log file", "cmd": "rg --count-matches -g '*.log' 'Exception'"}
+{"q": "how many lines in app.log have WARN", "cmd": "(rg 'WARN' app.log | Measure-Object).Count"}
+{"q": "does any file still say 'lorem ipsum'", "cmd": "rg -i -l 'lorem ipsum'"}

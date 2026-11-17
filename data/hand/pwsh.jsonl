@@ -1,0 +1,396 @@
+{"q": "ls -la", "cmd": "Get-ChildItem -Force"}
+{"q": "ls -lah but sorted biggest first", "cmd": "Get-ChildItem -Force -File | Sort-Object Length -Descending"}
+{"q": "ls -lt", "cmd": "Get-ChildItem | Sort-Object LastWriteTime -Descending"}
+{"q": "ls -ltr", "cmd": "Get-ChildItem | Sort-Object LastWriteTime"}
+{"q": "show hidden files here", "cmd": "Get-ChildItem -Hidden"}
+{"q": "list only the hidden folders", "cmd": "Get-ChildItem -Directory -Hidden"}
+{"q": "list only folders", "cmd": "Get-ChildItem -Directory"}
+{"q": "just the file names in this dir", "cmd": "Get-ChildItem -File -Name"}
+{"q": "ls src", "cmd": "Get-ChildItem src"}
+{"q": "whats in my downloads folder", "cmd": "Get-ChildItem $HOME\\Downloads"}
+{"q": "newest 5 files in downloads", "cmd": "Get-ChildItem $HOME\\Downloads -File | Sort-Object LastWriteTime -Descending | Select-Object -First 5"}
+{"q": "5 largest files in this folder with size in mb", "cmd": "Get-ChildItem -File | Sort-Object Length -Descending | Select-Object -First 5 Name, @{n='MB';e={[math]::Round($_.Length / 1MB, 2)}}"}
+{"q": "oldest file here", "cmd": "Get-ChildItem -File | Sort-Object LastWriteTime | Select-Object -First 1"}
+{"q": "show folder tree", "cmd": "tree /f"}
+{"q": "tree but only folders", "cmd": "tree"}
+{"q": "tree of src with files", "cmd": "tree src /f"}
+{"q": "pwd", "cmd": "Get-Location"}
+{"q": "cd ..", "cmd": "Set-Location .."}
+{"q": "go to my home dir", "cmd": "Set-Location $HOME"}
+{"q": "cd to desktop", "cmd": "Set-Location $HOME\\Desktop"}
+{"q": "cd -", "cmd": "Set-Location -"}
+{"q": "go back to previous folder", "cmd": "Pop-Location"}
+{"q": "pushd into C:\\temp", "cmd": "Push-Location C:\\temp"}
+{"q": "how many files are in this folder", "cmd": "(Get-ChildItem -File | Measure-Object).Count"}
+{"q": "count subfolders here", "cmd": "(Get-ChildItem -Directory | Measure-Object).Count"}
+{"q": "ls | wc -l", "cmd": "(Get-ChildItem | Measure-Object).Count"}
+{"q": "touch index.html", "cmd": "New-Item index.html -ItemType File"}
+{"q": "create an empty file called notes.txt", "cmd": "New-Item notes.txt -ItemType File"}
+{"q": "make a file .env", "cmd": "New-Item .env -ItemType File"}
+{"q": "update timestamp of build.log without changing it", "cmd": "(Get-Item build.log).LastWriteTime = Get-Date"}
+{"q": "mkdir -p src/components/ui", "cmd": "New-Item -ItemType Directory -Path src\\components\\ui"}
+{"q": "make a folder called backups", "cmd": "New-Item -ItemType Directory -Path backups"}
+{"q": "create folders logs and tmp", "cmd": "New-Item -ItemType Directory -Path logs, tmp"}
+{"q": "mkdir build && cd build", "cmd": "New-Item -ItemType Directory -Path build; Set-Location build"}
+{"q": "write hello world into hello.txt", "cmd": "Set-Content hello.txt 'hello world'"}
+{"q": "echo \"done\" >> log.txt", "cmd": "Add-Content log.txt 'done'"}
+{"q": "append the date to log.txt", "cmd": "Add-Content log.txt (Get-Date)"}
+{"q": "cp config.json config.bak.json", "cmd": "Copy-Item config.json config.bak.json"}
+{"q": "copy the whole src folder to src_backup", "cmd": "Copy-Item src src_backup -Recurse"}
+{"q": "cp -r assets dist/", "cmd": "Copy-Item assets dist\\ -Recurse"}
+{"q": "copy report.pdf to my desktop", "cmd": "Copy-Item report.pdf $HOME\\Desktop"}
+{"q": "mv old.txt new.txt", "cmd": "Move-Item old.txt new.txt"}
+{"q": "rename readme.txt to README.md", "cmd": "Rename-Item readme.txt README.md"}
+{"q": "move all the jpgs into a photos folder", "cmd": "Move-Item *.jpg photos"}
+{"q": "move build folder to C:\\deploy", "cmd": "Move-Item build C:\\deploy"}
+{"q": "rename every .jpeg here to .jpg", "cmd": "Get-ChildItem *.jpeg | Rename-Item -NewName { $_.Name -replace '\\.jpeg$', '.jpg' }"}
+{"q": "add prefix old_ to every txt file in this folder", "cmd": "Get-ChildItem *.txt | Rename-Item -NewName { 'old_' + $_.Name }"}
+{"q": "rm temp.txt", "cmd": "Remove-Item temp.txt"}
+{"q": "delete the dist folder", "cmd": "Remove-Item dist -Recurse"}
+{"q": "rm -rf node_modules", "cmd": "Remove-Item node_modules -Recurse -Force"}
+{"q": "delete all .log files in this folder only", "cmd": "Remove-Item *.log"}
+{"q": "empty the recycle bin", "cmd": "Clear-RecycleBin"}
+{"q": "clear out the temp folder contents", "cmd": "Remove-Item $env:TEMP\\* -Recurse -Force"}
+{"q": "cat package.json", "cmd": "Get-Content package.json"}
+{"q": "show me whats in .gitignore", "cmd": "Get-Content .gitignore"}
+{"q": "head -n 20 data.csv", "cmd": "Get-Content data.csv -TotalCount 20"}
+{"q": "first line of data.csv", "cmd": "Get-Content data.csv -TotalCount 1"}
+{"q": "tail -n 50 server.log", "cmd": "Get-Content server.log -Tail 50"}
+{"q": "last 10 lines of error.log", "cmd": "Get-Content error.log -Tail 10"}
+{"q": "tail -f app.log", "cmd": "Get-Content app.log -Wait -Tail 10"}
+{"q": "follow the log file logs\\api.log live", "cmd": "Get-Content logs\\api.log -Wait -Tail 10"}
+{"q": "watch output.txt as it grows", "cmd": "Get-Content output.txt -Wait"}
+{"q": "wc -l main.py", "cmd": "(Get-Content main.py | Measure-Object -Line).Lines"}
+{"q": "how many lines in README.md", "cmd": "(Get-Content README.md | Measure-Object -Line).Lines"}
+{"q": "word count of essay.txt", "cmd": "(Get-Content essay.txt | Measure-Object -Word).Words"}
+{"q": "how big is video.mp4", "cmd": "(Get-Item video.mp4).Length / 1MB"}
+{"q": "file size of backup.zip in gb", "cmd": "(Get-Item backup.zip).Length / 1GB"}
+{"q": "du -sh node_modules", "cmd": "(Get-ChildItem node_modules -Recurse -File -Force | Measure-Object Length -Sum).Sum / 1MB"}
+{"q": "how big is this folder", "cmd": "(Get-ChildItem -Recurse -File -Force | Measure-Object Length -Sum).Sum / 1MB"}
+{"q": "du -sh *", "cmd": "Get-ChildItem -Directory | ForEach-Object { [pscustomobject]@{Name = $_.Name; MB = [math]::Round((Get-ChildItem $_.FullName -Recurse -File -Force | Measure-Object Length -Sum).Sum / 1MB, 1)} } | Sort-Object MB -Descending"}
+{"q": "which subfolder is eating my disk space", "cmd": "Get-ChildItem -Directory | ForEach-Object { [pscustomobject]@{Name = $_.Name; MB = [math]::Round((Get-ChildItem $_.FullName -Recurse -File -Force | Measure-Object Length -Sum).Sum / 1MB, 1)} } | Sort-Object MB -Descending"}
+{"q": "df -h", "cmd": "Get-PSDrive -PSProvider FileSystem"}
+{"q": "how much space is left on c", "cmd": "[math]::Round((Get-PSDrive C).Free / 1GB, 1)"}
+{"q": "free disk space all drives", "cmd": "Get-Volume | Select-Object DriveLetter, FileSystemLabel, @{n='FreeGB';e={[math]::Round($_.SizeRemaining / 1GB, 1)}}, @{n='SizeGB';e={[math]::Round($_.Size / 1GB, 1)}}"}
+{"q": "diff file1.txt file2.txt", "cmd": "Compare-Object (Get-Content file1.txt) (Get-Content file2.txt)"}
+{"q": "are a.txt and b.txt identical", "cmd": "(Get-FileHash a.txt).Hash -eq (Get-FileHash b.txt).Hash"}
+{"q": "sort names.txt", "cmd": "Get-Content names.txt | Sort-Object"}
+{"q": "sort -u list.txt", "cmd": "Get-Content list.txt | Sort-Object -Unique"}
+{"q": "remove duplicate lines from emails.txt and save to emails_clean.txt", "cmd": "Get-Content emails.txt | Sort-Object -Unique | Set-Content emails_clean.txt"}
+{"q": "when was main.go last modified", "cmd": "(Get-Item main.go).LastWriteTime"}
+{"q": "file properties of setup.exe", "cmd": "Get-Item setup.exe | Format-List *"}
+{"q": "make config.ini read only", "cmd": "Set-ItemProperty config.ini -Name IsReadOnly -Value $true"}
+{"q": "chmod +x deploy.ps1", "cmd": "Unblock-File deploy.ps1"}
+{"q": "unblock the script i downloaded install.ps1", "cmd": "Unblock-File install.ps1"}
+{"q": "create a symlink called latest pointing to v2", "cmd": "New-Item -ItemType SymbolicLink -Path latest -Target v2"}
+{"q": "ln -s C:\\data\\big data", "cmd": "New-Item -ItemType SymbolicLink -Path data -Target C:\\data\\big"}
+{"q": "ps aux", "cmd": "Get-Process"}
+{"q": "ps aux | grep node", "cmd": "Get-Process node"}
+{"q": "is chrome running", "cmd": "Get-Process chrome"}
+{"q": "show all python processes with their pids", "cmd": "Get-Process python | Select-Object Id, ProcessName, CPU"}
+{"q": "top", "cmd": "Get-Process | Sort-Object CPU -Descending | Select-Object -First 10"}
+{"q": "what is using all my ram", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 10 Name, Id, @{n='MB';e={[math]::Round($_.WorkingSet64 / 1MB)}}"}
+{"q": "top 5 cpu hogs", "cmd": "Get-Process | Sort-Object CPU -Descending | Select-Object -First 5"}
+{"q": "processes using more than 500mb", "cmd": "Get-Process | Where-Object { $_.WorkingSet64 -gt 500MB }"}
+{"q": "how much memory is code using in total", "cmd": "(Get-Process Code | Measure-Object WorkingSet64 -Sum).Sum / 1MB"}
+{"q": "path of the running notepad exe", "cmd": "(Get-Process notepad).Path"}
+{"q": "kill 4321", "cmd": "Stop-Process -Id 4321"}
+{"q": "kill -9 1234", "cmd": "Stop-Process -Id 1234 -Force"}
+{"q": "killall node", "cmd": "Stop-Process -Name node"}
+{"q": "pkill -f python", "cmd": "Stop-Process -Name python"}
+{"q": "force kill chrome", "cmd": "Stop-Process -Name chrome -Force"}
+{"q": "kill whatever is on port 3000", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 3000 -State Listen).OwningProcess"}
+{"q": "what program is using port 8080", "cmd": "Get-Process -Id (Get-NetTCPConnection -LocalPort 8080 -State Listen).OwningProcess"}
+{"q": "lsof -i :5432", "cmd": "Get-Process -Id (Get-NetTCPConnection -LocalPort 5432).OwningProcess"}
+{"q": "is anything listening on 5000", "cmd": "Get-NetTCPConnection -LocalPort 5000 -State Listen"}
+{"q": "show open listening ports", "cmd": "Get-NetTCPConnection -State Listen | Sort-Object LocalPort"}
+{"q": "netstat -tulpn", "cmd": "Get-NetTCPConnection -State Listen | Select-Object LocalAddress, LocalPort, OwningProcess, @{n='Process';e={(Get-Process -Id $_.OwningProcess).ProcessName}}"}
+{"q": "start notepad", "cmd": "Start-Process notepad"}
+{"q": "open calc", "cmd": "Start-Process calc"}
+{"q": "run server.exe in the background", "cmd": "Start-Process server.exe -WindowStyle Hidden"}
+{"q": "sudo !!", "cmd": "Start-Process powershell -Verb RunAs"}
+{"q": "open an admin powershell", "cmd": "Start-Process powershell -Verb RunAs"}
+{"q": "am i running as admin", "cmd": "([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)"}
+{"q": "list services", "cmd": "Get-Service"}
+{"q": "show running services", "cmd": "Get-Service | Where-Object { $_.Status -eq 'Running' }"}
+{"q": "stopped services that are set to auto", "cmd": "Get-Service | Where-Object { $_.Status -eq 'Stopped' -and $_.StartType -eq 'Automatic' }"}
+{"q": "is the docker service running", "cmd": "Get-Service com.docker.service"}
+{"q": "status of postgres service", "cmd": "Get-Service postgresql*"}
+{"q": "restart the spooler service", "cmd": "Restart-Service Spooler"}
+{"q": "start mysql service", "cmd": "Start-Service MySQL80"}
+{"q": "stop the wsearch service", "cmd": "Stop-Service WSearch"}
+{"q": "systemctl status sshd", "cmd": "Get-Service sshd"}
+{"q": "set sshd to start automatically", "cmd": "Set-Service sshd -StartupType Automatic"}
+{"q": "whats my ip", "cmd": "Get-NetIPAddress -AddressFamily IPv4 | Select-Object InterfaceAlias, IPAddress"}
+{"q": "ifconfig", "cmd": "Get-NetIPConfiguration"}
+{"q": "ip a", "cmd": "Get-NetIPAddress"}
+{"q": "ipconfig /all", "cmd": "ipconfig /all"}
+{"q": "my public ip", "cmd": "Invoke-RestMethod https://api.ipify.org"}
+{"q": "whats my default gateway", "cmd": "(Get-NetIPConfiguration | Where-Object { $_.IPv4DefaultGateway }).IPv4DefaultGateway.NextHop"}
+{"q": "ping google.com", "cmd": "Test-Connection google.com"}
+{"q": "ping 8.8.8.8 4 times", "cmd": "Test-Connection 8.8.8.8 -Count 4"}
+{"q": "ping -c 1 192.168.1.1", "cmd": "Test-Connection 192.168.1.1 -Count 1"}
+{"q": "is port 443 open on github.com", "cmd": "Test-NetConnection github.com -Port 443"}
+{"q": "can i reach db.local on 5432", "cmd": "Test-NetConnection db.local -Port 5432"}
+{"q": "nc -zv myserver 22", "cmd": "Test-NetConnection myserver -Port 22"}
+{"q": "traceroute 1.1.1.1", "cmd": "Test-NetConnection 1.1.1.1 -TraceRoute"}
+{"q": "nslookup example.com", "cmd": "Resolve-DnsName example.com"}
+{"q": "dig mx gmail.com", "cmd": "Resolve-DnsName gmail.com -Type MX"}
+{"q": "dns txt records for mydomain.com", "cmd": "Resolve-DnsName mydomain.com -Type TXT"}
+{"q": "flush dns", "cmd": "Clear-DnsClientCache"}
+{"q": "show my dns servers", "cmd": "Get-DnsClientServerAddress -AddressFamily IPv4"}
+{"q": "curl https://example.com", "cmd": "curl.exe https://example.com"}
+{"q": "curl -I https://example.com", "cmd": "curl.exe -I https://example.com"}
+{"q": "wget https://example.com/file.zip", "cmd": "curl.exe -L -O https://example.com/file.zip"}
+{"q": "download https://nodejs.org/dist/index.json to index.json", "cmd": "Invoke-WebRequest https://nodejs.org/dist/index.json -OutFile index.json"}
+{"q": "dowload this file https://example.com/setup.exe", "cmd": "Invoke-WebRequest https://example.com/setup.exe -OutFile setup.exe"}
+{"q": "http status code of https://mysite.com", "cmd": "(Invoke-WebRequest https://mysite.com -UseBasicParsing).StatusCode"}
+{"q": "post json {\"name\":\"bob\"} to localhost:3000/users", "cmd": "Invoke-RestMethod http://localhost:3000/users -Method Post -ContentType 'application/json' -Body '{\"name\":\"bob\"}'"}
+{"q": "curl -X POST localhost:8000/api/reset", "cmd": "curl.exe -X POST http://localhost:8000/api/reset"}
+{"q": "get https://api.github.com/users/torvalds and show public_repos", "cmd": "(Invoke-RestMethod https://api.github.com/users/torvalds).public_repos"}
+{"q": "call https://api.github.com/repos/microsoft/vscode and show the star count", "cmd": "(Invoke-RestMethod https://api.github.com/repos/microsoft/vscode).stargazers_count"}
+{"q": "hit localhost:8080/health", "cmd": "Invoke-RestMethod http://localhost:8080/health"}
+{"q": "show wifi password for HomeNet", "cmd": "netsh wlan show profile name='HomeNet' key=clear"}
+{"q": "list saved wifi networks", "cmd": "netsh wlan show profiles"}
+{"q": "what wifi am i connected to", "cmd": "netsh wlan show interfaces"}
+{"q": "network adapters", "cmd": "Get-NetAdapter"}
+{"q": "env", "cmd": "Get-ChildItem Env:"}
+{"q": "printenv | grep java", "cmd": "Get-ChildItem Env: | Where-Object { $_.Name -match 'java' }"}
+{"q": "echo $HOME", "cmd": "$HOME"}
+{"q": "echo $JAVA_HOME", "cmd": "$env:JAVA_HOME"}
+{"q": "export NODE_ENV=production", "cmd": "$env:NODE_ENV = 'production'"}
+{"q": "set API_KEY to abc123 for this session", "cmd": "$env:API_KEY = 'abc123'"}
+{"q": "unset DEBUG", "cmd": "Remove-Item Env:DEBUG"}
+{"q": "set GOPATH permanently to C:\\go", "cmd": "[Environment]::SetEnvironmentVariable('GOPATH', 'C:\\go', 'User')"}
+{"q": "permanently set EDITOR=code", "cmd": "[Environment]::SetEnvironmentVariable('EDITOR', 'code', 'User')"}
+{"q": "set a system wide env var JAVA_HOME to C:\\jdk17", "cmd": "[Environment]::SetEnvironmentVariable('JAVA_HOME', 'C:\\jdk17', 'Machine')"}
+{"q": "remove the persistent env var OLD_TOKEN", "cmd": "[Environment]::SetEnvironmentVariable('OLD_TOKEN', $null, 'User')"}
+{"q": "get the user level value of PATH", "cmd": "[Environment]::GetEnvironmentVariable('Path', 'User')"}
+{"q": "echo $PATH", "cmd": "$env:Path"}
+{"q": "print path entries each on own line", "cmd": "$env:Path -split ';'"}
+{"q": "add C:\\tools\\bin to path for now", "cmd": "$env:Path += ';C:\\tools\\bin'"}
+{"q": "export PATH=$PATH:~/bin", "cmd": "$env:Path += \";$HOME\\bin\""}
+{"q": "add C:\\flutter\\bin to my PATH permanently", "cmd": "[Environment]::SetEnvironmentVariable('Path', [Environment]::GetEnvironmentVariable('Path', 'User') + ';C:\\flutter\\bin', 'User')"}
+{"q": "is python on the path", "cmd": "Get-Command python"}
+{"q": "which node", "cmd": "(Get-Command node).Source"}
+{"q": "whereis git", "cmd": "Get-Command git -All"}
+{"q": "where is pip installed", "cmd": "(Get-Command pip).Source"}
+{"q": "what version of node do i have", "cmd": "node --version"}
+{"q": "type ls", "cmd": "Get-Command ls"}
+{"q": "what does gci alias to", "cmd": "Get-Alias gci"}
+{"q": "alias", "cmd": "Get-Alias"}
+{"q": "alias ll='ls -la'", "cmd": "function ll { Get-ChildItem -Force @args }"}
+{"q": "make k an alias for kubectl", "cmd": "Set-Alias k kubectl"}
+{"q": "open my powershell profile", "cmd": "code $PROFILE"}
+{"q": "reload profile", "cmd": ". $PROFILE"}
+{"q": "history", "cmd": "Get-History"}
+{"q": "history | grep docker", "cmd": "rg 'docker' (Get-PSReadLineOption).HistorySavePath"}
+{"q": "last 20 commands i ran", "cmd": "Get-History -Count 20"}
+{"q": "where is my powershell history saved", "cmd": "(Get-PSReadLineOption).HistorySavePath"}
+{"q": "clear", "cmd": "Clear-Host"}
+{"q": "pwd | clip", "cmd": "(Get-Location).Path | Set-Clipboard"}
+{"q": "whats on my clipboard", "cmd": "Get-Clipboard"}
+{"q": "copy contents of id_rsa.pub to clipboard", "cmd": "Get-Content $HOME\\.ssh\\id_rsa.pub | Set-Clipboard"}
+{"q": "cat error.txt | pbcopy", "cmd": "Get-Content error.txt | Set-Clipboard"}
+{"q": "paste clipboard into notes.md", "cmd": "Get-Clipboard | Set-Content notes.md"}
+{"q": "copy the file list to clipboard", "cmd": "Get-ChildItem -Name | Set-Clipboard"}
+{"q": "zip the dist folder", "cmd": "Compress-Archive -Path dist -DestinationPath dist.zip"}
+{"q": "zip -r site.zip public", "cmd": "Compress-Archive -Path public -DestinationPath site.zip"}
+{"q": "add notes.txt to existing archive.zip", "cmd": "Compress-Archive -Path notes.txt -DestinationPath archive.zip -Update"}
+{"q": "unzip release.zip", "cmd": "Expand-Archive release.zip -DestinationPath release"}
+{"q": "unzip data.zip here", "cmd": "Expand-Archive data.zip -DestinationPath ."}
+{"q": "extract foo.zip to C:\\tools\\foo", "cmd": "Expand-Archive foo.zip -DestinationPath C:\\tools\\foo"}
+{"q": "tar -xzf node.tar.gz", "cmd": "tar -xzf node.tar.gz"}
+{"q": "make a tar.gz of the logs folder", "cmd": "tar -czf logs.tar.gz logs"}
+{"q": "whats inside archive.tar.gz", "cmd": "tar -tzf archive.tar.gz"}
+{"q": "list contents of a zip without extracting bundle.zip", "cmd": "Add-Type -AssemblyName System.IO.Compression.FileSystem; [IO.Compression.ZipFile]::OpenRead(\"$PWD\\bundle.zip\").Entries | Select-Object FullName, Length"}
+{"q": "sha256 of installer.exe", "cmd": "Get-FileHash installer.exe"}
+{"q": "sha256sum ubuntu.iso", "cmd": "Get-FileHash ubuntu.iso -Algorithm SHA256"}
+{"q": "md5 of package.tgz", "cmd": "Get-FileHash package.tgz -Algorithm MD5"}
+{"q": "md5sum *.zip", "cmd": "Get-FileHash *.zip -Algorithm MD5"}
+{"q": "check if setup.exe hash matches 3A7BD3E2360A3D29EEA436FCFB7E44C735D117C42D1C1835420B6B9942DD4F1B", "cmd": "(Get-FileHash setup.exe).Hash -eq '3A7BD3E2360A3D29EEA436FCFB7E44C735D117C42D1C1835420B6B9942DD4F1B'"}
+{"q": "date", "cmd": "Get-Date"}
+{"q": "todays date as yyyy-mm-dd", "cmd": "Get-Date -Format 'yyyy-MM-dd'"}
+{"q": "current unix timestamp", "cmd": "[DateTimeOffset]::UtcNow.ToUnixTimeSeconds()"}
+{"q": "convert unix time 1700000000 to a date", "cmd": "[DateTimeOffset]::FromUnixTimeSeconds(1700000000).LocalDateTime"}
+{"q": "date -u", "cmd": "(Get-Date).ToUniversalTime()"}
+{"q": "what day is 100 days from now", "cmd": "(Get-Date).AddDays(100)"}
+{"q": "how many days until 2027-01-01", "cmd": "((Get-Date '2027-01-01') - (Get-Date)).Days"}
+{"q": "uptime", "cmd": "(Get-Date) - (Get-CimInstance Win32_OperatingSystem).LastBootUpTime"}
+{"q": "when did this pc last boot", "cmd": "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"}
+{"q": "uname -a", "cmd": "Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, BuildNumber, OSArchitecture"}
+{"q": "what windows version is this", "cmd": "[Environment]::OSVersion.Version"}
+{"q": "hostname", "cmd": "hostname"}
+{"q": "whoami", "cmd": "whoami"}
+{"q": "system info", "cmd": "Get-ComputerInfo"}
+{"q": "free -h", "cmd": "Get-CimInstance Win32_OperatingSystem | Select-Object @{n='FreeGB';e={[math]::Round($_.FreePhysicalMemory / 1MB, 1)}}, @{n='TotalGB';e={[math]::Round($_.TotalVisibleMemorySize / 1MB, 1)}}"}
+{"q": "how much ram do i have", "cmd": "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB, 1)"}
+{"q": "what cpu is in this machine", "cmd": "(Get-CimInstance Win32_Processor).Name"}
+{"q": "nproc", "cmd": "[Environment]::ProcessorCount"}
+{"q": "graphics card info", "cmd": "Get-CimInstance Win32_VideoController | Select-Object Name, DriverVersion"}
+{"q": "battery level", "cmd": "(Get-CimInstance Win32_Battery).EstimatedChargeRemaining"}
+{"q": "powershell version", "cmd": "$PSVersionTable.PSVersion"}
+{"q": "list installed programs", "cmd": "winget list"}
+{"q": "is 7zip installed", "cmd": "winget list 7zip"}
+{"q": "installed software from the registry with versions", "cmd": "Get-ItemProperty HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Select-Object DisplayName, DisplayVersion | Sort-Object DisplayName"}
+{"q": "winget search vlc", "cmd": "winget search vlc"}
+{"q": "install vscode with winget", "cmd": "winget install Microsoft.VisualStudioCode"}
+{"q": "apt install git", "cmd": "winget install Git.Git"}
+{"q": "instal python 3.12", "cmd": "winget install Python.Python.3.12"}
+{"q": "upgrade everything with winget", "cmd": "winget upgrade --all"}
+{"q": "sudo apt update && sudo apt upgrade", "cmd": "winget upgrade --all"}
+{"q": "what apps have updates available", "cmd": "winget upgrade"}
+{"q": "uninstall zoom", "cmd": "winget uninstall Zoom.Zoom"}
+{"q": "open explorer here", "cmd": "explorer ."}
+{"q": "open this folder in file explorer", "cmd": "explorer ."}
+{"q": "open the downloads folder", "cmd": "explorer $HOME\\Downloads"}
+{"q": "open current dir in vscode", "cmd": "code ."}
+{"q": "open server.js in vs code", "cmd": "code server.js"}
+{"q": "open readme.md with its default app", "cmd": "Invoke-Item readme.md"}
+{"q": "xdg-open report.pdf", "cmd": "Invoke-Item report.pdf"}
+{"q": "open google.com in browser", "cmd": "Start-Process https://google.com"}
+{"q": "activate venv", "cmd": ".\\.venv\\Scripts\\Activate.ps1"}
+{"q": "source venv/bin/activate", "cmd": ".\\venv\\Scripts\\Activate.ps1"}
+{"q": "create a python virtual env", "cmd": "uv venv"}
+{"q": "make a venv and activate it", "cmd": "uv venv; .\\.venv\\Scripts\\Activate.ps1"}
+{"q": "deactivate the venv", "cmd": "deactivate"}
+{"q": "scripts are disabled on this system fix it just for this window", "cmd": "Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass"}
+{"q": "show execution policy", "cmd": "Get-ExecutionPolicy -List"}
+{"q": "crontab -l", "cmd": "Get-ScheduledTask | Where-Object { $_.State -ne 'Disabled' }"}
+{"q": "list scheduled tasks", "cmd": "Get-ScheduledTask"}
+{"q": "show my scheduled tasks not from microsoft", "cmd": "Get-ScheduledTask | Where-Object { $_.TaskPath -notlike '\\Microsoft\\*' }"}
+{"q": "when does the Backup task run next", "cmd": "Get-ScheduledTaskInfo -TaskName Backup"}
+{"q": "run the scheduled task Backup now", "cmd": "Start-ScheduledTask -TaskName Backup"}
+{"q": "recent system errors in event log", "cmd": "Get-WinEvent -FilterHashtable @{LogName = 'System'; Level = 2} -MaxEvents 20"}
+{"q": "last 50 application errors", "cmd": "Get-WinEvent -FilterHashtable @{LogName = 'Application'; Level = 2} -MaxEvents 50"}
+{"q": "dmesg", "cmd": "Get-WinEvent -LogName System -MaxEvents 50"}
+{"q": "errors and warnings from the last 24 hours", "cmd": "Get-WinEvent -FilterHashtable @{LogName = 'System'; Level = 2, 3; StartTime = (Get-Date).AddDays(-1)}"}
+{"q": "why did my pc restart", "cmd": "Get-WinEvent -FilterHashtable @{LogName = 'System'; Id = 41, 1074, 6008} -MaxEvents 10"}
+{"q": "list wsl distros", "cmd": "wsl -l -v"}
+{"q": "shut down wsl", "cmd": "wsl --shutdown"}
+{"q": "open ubuntu in wsl", "cmd": "wsl -d Ubuntu"}
+{"q": "run ls -la inside wsl", "cmd": "wsl ls -la"}
+{"q": "install wsl", "cmd": "wsl --install"}
+{"q": "generate an ssh key for me@example.com", "cmd": "ssh-keygen -t ed25519 -C 'me@example.com'"}
+{"q": "ssh-keygen -t rsa -b 4096", "cmd": "ssh-keygen -t rsa -b 4096"}
+{"q": "copy my public ssh key", "cmd": "Get-Content $HOME\\.ssh\\id_ed25519.pub | Set-Clipboard"}
+{"q": "ssh into pi@192.168.1.50", "cmd": "ssh pi@192.168.1.50"}
+{"q": "scp report.csv to user@server:/tmp", "cmd": "scp report.csv user@server:/tmp"}
+{"q": "start ssh agent and add my key", "cmd": "Start-Service ssh-agent; ssh-add $HOME\\.ssh\\id_ed25519"}
+{"q": "git status", "cmd": "git status"}
+{"q": "undo last commit but keep changes", "cmd": "git reset --soft HEAD~1"}
+{"q": "uncommit the last commit", "cmd": "git reset --soft HEAD~1"}
+{"q": "throw away all local changes", "cmd": "git checkout -- ."}
+{"q": "discard changes to app.js", "cmd": "git checkout -- app.js"}
+{"q": "unstage everything", "cmd": "git reset"}
+{"q": "delete local branches that are already merged", "cmd": "git branch --merged | Where-Object { $_ -notmatch '^\\*|\\bmain\\b|\\bmaster\\b' } | ForEach-Object { git branch -d $_.Trim() }"}
+{"q": "pretty git log graph", "cmd": "git log --oneline --graph --all"}
+{"q": "git log oneline last 10", "cmd": "git log --oneline -10"}
+{"q": "who changed line 42 of src/app.ts", "cmd": "git blame -L 42,42 src/app.ts"}
+{"q": "git blame utils.py", "cmd": "git blame utils.py"}
+{"q": "show what changed in the last commit", "cmd": "git show --stat HEAD"}
+{"q": "change last commit message to fix typo", "cmd": "git commit --amend -m 'fix typo'"}
+{"q": "create and switch to branch feature/login", "cmd": "git checkout -b feature/login"}
+{"q": "what branch am i on", "cmd": "git branch --show-current"}
+{"q": "list all branches including remote", "cmd": "git branch -a"}
+{"q": "stash my changes", "cmd": "git stash"}
+{"q": "get my stash back", "cmd": "git stash pop"}
+{"q": "commit everything with message wip", "cmd": "git add -A; git commit -m 'wip'"}
+{"q": "push new branch to origin", "cmd": "git push -u origin HEAD"}
+{"q": "pull with rebase", "cmd": "git pull --rebase"}
+{"q": "remote url of this repo", "cmd": "git remote -v"}
+{"q": "files changed between main and my branch", "cmd": "git diff --name-only main...HEAD"}
+{"q": "docker ps", "cmd": "docker ps"}
+{"q": "show all containers including stopped", "cmd": "docker ps -a"}
+{"q": "stop all running containers", "cmd": "docker stop (docker ps -q)"}
+{"q": "remove all stopped containers", "cmd": "docker container prune"}
+{"q": "clean up docker everything unused", "cmd": "docker system prune -a"}
+{"q": "docker images", "cmd": "docker images"}
+{"q": "follow logs of the api container", "cmd": "docker logs -f api"}
+{"q": "get a shell in container web", "cmd": "docker exec -it web sh"}
+{"q": "compose up in background", "cmd": "docker compose up -d"}
+{"q": "docker compose down and remove volumes", "cmd": "docker compose down -v"}
+{"q": "rebuild compose services", "cmd": "docker compose up -d --build"}
+{"q": "how much disk is docker using", "cmd": "docker system df"}
+{"q": "npm install", "cmd": "npm install"}
+{"q": "clean install from lockfile", "cmd": "npm ci"}
+{"q": "nuke node_modules and reinstall", "cmd": "Remove-Item node_modules -Recurse -Force; npm install"}
+{"q": "which npm packages are outdated", "cmd": "npm outdated"}
+{"q": "globally installed npm packages", "cmd": "npm ls -g --depth=0"}
+{"q": "run the dev script", "cmd": "npm run dev"}
+{"q": "what scripts are in package.json", "cmd": "(Get-Content package.json -Raw | ConvertFrom-Json).scripts"}
+{"q": "clear npm cache", "cmd": "npm cache clean --force"}
+{"q": "pip install -r requirements.txt", "cmd": "pip install -r requirements.txt"}
+{"q": "pip freeze > requirements.txt", "cmd": "pip freeze | Set-Content requirements.txt"}
+{"q": "outdated pip packages", "cmd": "pip list --outdated"}
+{"q": "upgrade pip", "cmd": "python -m pip install --upgrade pip"}
+{"q": "uninstall requests with pip", "cmd": "pip uninstall requests"}
+{"q": "version field from package.json", "cmd": "(Get-Content package.json -Raw | ConvertFrom-Json).version"}
+{"q": "cat data.json | jq .users", "cmd": "(Get-Content data.json -Raw | ConvertFrom-Json).users"}
+{"q": "pretty print config.json", "cmd": "Get-Content config.json -Raw | ConvertFrom-Json | ConvertTo-Json -Depth 10"}
+{"q": "names of all users in users.json", "cmd": "(Get-Content users.json -Raw | ConvertFrom-Json) | ForEach-Object { $_.name }"}
+{"q": "dependencies listed in package.json", "cmd": "(Get-Content package.json -Raw | ConvertFrom-Json).dependencies"}
+{"q": "set version to 2.0.0 in package.json", "cmd": "$j = Get-Content package.json -Raw | ConvertFrom-Json; $j.version = '2.0.0'; $j | ConvertTo-Json -Depth 10 | Set-Content package.json"}
+{"q": "show sales.csv as a table", "cmd": "Import-Csv sales.csv | Format-Table"}
+{"q": "how many rows in sales.csv", "cmd": "(Import-Csv sales.csv | Measure-Object).Count"}
+{"q": "rows in people.csv where age is over 30", "cmd": "Import-Csv people.csv | Where-Object { [int]$_.Age -gt 30 }"}
+{"q": "column names of data.csv", "cmd": "(Import-Csv data.csv | Select-Object -First 1).PSObject.Properties.Name"}
+{"q": "sum the amount column in orders.csv", "cmd": "(Import-Csv orders.csv | Measure-Object Amount -Sum).Sum"}
+{"q": "convert data.csv to json", "cmd": "Import-Csv data.csv | ConvertTo-Json | Set-Content data.json"}
+{"q": "export process list to procs.csv", "cmd": "Get-Process | Select-Object Name, Id, CPU | Export-Csv procs.csv -NoTypeInformation"}
+{"q": "base64 encode hello world", "cmd": "[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes('hello world'))"}
+{"q": "echo aGVsbG8= | base64 -d", "cmd": "[Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('aGVsbG8='))"}
+{"q": "base64 of logo.png", "cmd": "[Convert]::ToBase64String([IO.File]::ReadAllBytes(\"$PWD\\logo.png\"))"}
+{"q": "url encode a b&c", "cmd": "[uri]::EscapeDataString('a b&c')"}
+{"q": "generate a guid", "cmd": "New-Guid"}
+{"q": "uuidgen", "cmd": "[guid]::NewGuid().ToString()"}
+{"q": "generate a random 16 char password", "cmd": "-join ((48..57) + (65..90) + (97..122) | Get-Random -Count 16 | ForEach-Object { [char]$_ })"}
+{"q": "random number between 1 and 100", "cmd": "Get-Random -Minimum 1 -Maximum 101"}
+{"q": "sleep 10", "cmd": "Start-Sleep -Seconds 10"}
+{"q": "wait half a second", "cmd": "Start-Sleep -Milliseconds 500"}
+{"q": "time npm run build", "cmd": "Measure-Command { npm run build }"}
+{"q": "how long does pytest take", "cmd": "Measure-Command { pytest }"}
+{"q": "run tests and show their output and the time it took", "cmd": "Measure-Command { npm test | Out-Default }"}
+{"q": "watch -n 5 docker ps", "cmd": "while ($true) { Clear-Host; docker ps; Start-Sleep -Seconds 5 }"}
+{"q": "repeat ping until ctrl c", "cmd": "Test-Connection google.com -Continuous"}
+{"q": "shutdown now", "cmd": "Stop-Computer"}
+{"q": "restart the computer", "cmd": "Restart-Computer"}
+{"q": "lock my screen", "cmd": "rundll32.exe user32.dll,LockWorkStation"}
+{"q": "calculate 1234 * 5678", "cmd": "1234 * 5678"}
+{"q": "how many bytes is 3.5 gb", "cmd": "3.5GB"}
+{"q": "seq 1 10", "cmd": "1..10"}
+{"q": "echo hello > out.txt", "cmd": "Set-Content out.txt 'hello'"}
+{"q": "save the output of ipconfig to net.txt", "cmd": "ipconfig | Set-Content net.txt"}
+{"q": "show ipconfig output and also write it to net.txt", "cmd": "ipconfig | Tee-Object net.txt"}
+{"q": "get-process chrome* then kill them all", "cmd": "Get-Process chrome* | Stop-Process"}
+{"q": "run build.ps1", "cmd": ".\\build.ps1"}
+{"q": "run a command as another user", "cmd": "Start-Process powershell -Credential (Get-Credential)"}
+{"q": "open task manager", "cmd": "Start-Process taskmgr"}
+{"q": "open the hosts file in notepad as admin", "cmd": "Start-Process notepad C:\\Windows\\System32\\drivers\\etc\\hosts -Verb RunAs"}
+{"q": "show hosts file", "cmd": "Get-Content C:\\Windows\\System32\\drivers\\etc\\hosts"}
+{"q": "list usb devices", "cmd": "Get-PnpDevice -PresentOnly | Where-Object { $_.InstanceId -like 'USB*' }"}
+{"q": "list printers", "cmd": "Get-Printer"}
+{"q": "whats my screen resolution", "cmd": "Get-CimInstance Win32_VideoController | Select-Object CurrentHorizontalResolution, CurrentVerticalResolution"}
+{"q": "show logged in users", "cmd": "quser"}
+{"q": "list local users", "cmd": "Get-LocalUser"}
+{"q": "which groups am i in", "cmd": "whoami /groups"}
+{"q": "firewall rules that are enabled for inbound", "cmd": "Get-NetFirewallRule -Direction Inbound -Enabled True"}
+{"q": "windows defender status", "cmd": "Get-MpComputerStatus"}
+{"q": "startup programs", "cmd": "Get-CimInstance Win32_StartupCommand | Select-Object Name, Command, Location"}
+{"q": "get the module list", "cmd": "Get-Module -ListAvailable"}
+{"q": "help for copy-item with examples", "cmd": "Get-Help Copy-Item -Examples"}
+{"q": "man ls", "cmd": "Get-Help Get-ChildItem"}
+{"q": "what properties does get-process return", "cmd": "Get-Process | Get-Member"}
+{"q": "count lines of output from git log", "cmd": "(git log --oneline | Measure-Object).Count"}
+{"q": "how many commits do i have on this branch", "cmd": "git rev-list --count HEAD"}
+{"q": "kill the process using the most memory", "cmd": "$p = Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 1; Stop-Process -Id $p.Id"}
+{"q": "get the pid of explorer and copy it", "cmd": "(Get-Process explorer).Id | Set-Clipboard"}
+{"q": "speak hello out loud", "cmd": "Add-Type -AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('hello')"}
+{"q": "beep when the build finishes", "cmd": "npm run build; [console]::Beep()"}
+{"q": "cmd /c dir", "cmd": "cmd /c dir"}
+{"q": "reverse lines of list.txt", "cmd": "$l = Get-Content list.txt; [array]::Reverse($l); $l"}
+{"q": "uppercase the text in name.txt", "cmd": "(Get-Content name.txt -Raw).ToUpper()"}
+{"q": "replace foo with bar in config.txt", "cmd": "(Get-Content config.txt -Raw) -replace 'foo', 'bar' | Set-Content config.txt"}
+{"q": "convert file.txt to utf8", "cmd": "(Get-Content file.txt) | Set-Content file.txt -Encoding UTF8"}
+{"q": "make a 100mb dummy file", "cmd": "fsutil file createnew dummy.bin 104857600"}
+{"q": "show cert expiry for google.com", "cmd": "$t = New-Object Net.Sockets.TcpClient('google.com', 443); $s = New-Object Net.Security.SslStream($t.GetStream()); $s.AuthenticateAsClient('google.com'); $s.RemoteCertificate.GetExpirationDateString(); $t.Close()"}

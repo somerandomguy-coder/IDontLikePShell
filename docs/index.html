@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nlsh fine-tuning guide</title>
+<meta name="description" content="Train your own tiny local model that turns plain English into PowerShell commands for the tools you use.">
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --ink: #1d1d1b; --muted: #66645e; --line: #e4e1d8;
+  --accent: #2f6f5e; --accent-soft: #e3efe9; --code-bg: #f3f1ea; --warn: #8a5a00; --warn-soft: #fbf0d9;
+  --term-bg: #16181d; --term-ink: #e6e6e6; --term-dim: #8b9099; --term-ok: #7fd1b0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131417; --surface: #1b1d21; --ink: #ebe9e4; --muted: #a29f97; --line: #2c2f35;
+    --accent: #7fc7ad; --accent-soft: #1f2e29; --code-bg: #22252a; --warn: #f0c36b; --warn-soft: #2e2716;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131417; --surface: #1b1d21; --ink: #ebe9e4; --muted: #a29f97; --line: #2c2f35;
+  --accent: #7fc7ad; --accent-soft: #1f2e29; --code-bg: #22252a; --warn: #f0c36b; --warn-soft: #2e2716;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.65 ui-sans-serif, "Segoe UI", system-ui, -apple-system, sans-serif; }
+main { max-width: 860px; margin: 0 auto; padding: 48px 16px 96px; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; margin: 56px 0 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+h3 { font-size: 1.05rem; margin: 28px 0 8px; }
+p, li { color: var(--ink); }
+.lede { color: var(--muted); font-size: 1.1rem; margin: 0 0 24px; }
+a { color: var(--accent); }
+code { font: 0.9em ui-monospace, "Cascadia Code", Consolas, monospace; background: var(--code-bg);
+  padding: 1px 5px; border-radius: 4px; }
+pre { position: relative; background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px;
+  padding: 14px 16px; overflow-x: auto; font: 0.88rem/1.55 ui-monospace, "Cascadia Code", Consolas, monospace; }
+pre code { background: none; padding: 0; }
+.copy { position: absolute; top: 8px; right: 8px; font: 12px ui-sans-serif, system-ui, sans-serif;
+  background: var(--surface); color: var(--muted); border: 1px solid var(--line); border-radius: 6px;
+  padding: 3px 9px; cursor: pointer; }
+.copy:hover { color: var(--ink); }
+.term { background: var(--term-bg); color: var(--term-ink); border-radius: 10px; padding: 16px 18px;
+  font: 0.92rem/1.7 ui-monospace, "Cascadia Code", Consolas, monospace; overflow-x: auto; }
+.term .p { color: var(--term-dim); } .term .ok { color: var(--term-ok); } .term .dim { color: var(--term-dim); }
+.term .row { white-space: pre; }
+nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 8px; }
+nav.toc a { text-decoration: none; font-size: 0.9rem; border: 1px solid var(--line); background: var(--surface);
+  padding: 4px 10px; border-radius: 999px; color: var(--muted); }
+nav.toc a:hover { color: var(--accent); border-color: var(--accent); }
+.flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0; }
+.flow div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px;
+  font-size: 0.9rem; }
+.flow b { display: block; color: var(--accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: .04em; }
+.note { background: var(--accent-soft); border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+.warn { background: var(--warn-soft); border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+.warn b { color: var(--warn); }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 0.85rem; }
+.steps { counter-reset: s; list-style: none; padding: 0; }
+.steps > li { counter-increment: s; position: relative; padding-left: 40px; margin: 18px 0; }
+.steps > li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 28px; height: 28px;
+  border-radius: 50%; background: var(--accent); color: var(--bg); font-weight: 700; display: grid;
+  place-items: center; font-size: 0.85rem; }
+@media (max-width: 640px) { .flow { grid-template-columns: 1fr 1fr; } h1 { font-size: 1.7rem; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Train your own English&nbsp;&rarr;&nbsp;PowerShell model</h1>
+  <p class="lede">nlsh is a tiny local model that turns plain English into a PowerShell command at your prompt.
+    This guide shows how to teach it the tools <em>you</em> use and retrain it on your own GPU.</p>
+
+  <div class="term" aria-label="Example session">
+    <div class="row"><span class="p">PS&gt;</span> ai where did i put docker-compose.yml</div>
+    <div class="row"><span class="p">PS&gt;</span> ai where did i put docker-compose.yml   <span class="dim">⠋ thinking 0.1s</span></div>
+    <div class="row"><span class="p">PS&gt;</span> <span class="ok">fd '^docker-compose\.yml$'</span>   <span class="dim"># review it, Enter runs it</span></div>
+  </div>
+
+  <nav class="toc">
+    <a href="#how">How it works</a><a href="#need">What you need</a><a href="#quick">Quick start</a>
+    <a href="#teach">Teach a tool</a><a href="#ai">Let an AI write data</a><a href="#train">Train</a>
+    <a href="#eval">Evaluate</a><a href="#base">Pick a base model</a><a href="#trouble">Troubleshooting</a>
+  </nav>
+
+  <h2 id="how">How it works</h2>
+  <div class="flow">
+    <div><b>1 · You type</b><code>ai</code> + English, then Enter</div>
+    <div><b>2 · PSReadLine</b>Enter hook catches lines starting with <code>ai</code></div>
+    <div><b>3 · Ollama</b>fine-tuned 1.5B model, kept loaded on the GPU</div>
+    <div><b>4 · Your prompt</b>line is replaced by the command; nothing runs yet</div>
+  </div>
+  <p>The model is <strong>Qwen2.5-Coder-1.5B</strong> with a LoRA fine-tune on about 3,400 example pairs that cover fd, rg, PowerShell and about 40 common CLIs.
+    Answers come back in about 50-200&nbsp;ms. Every other line you type runs exactly as before.</p>
+
+  <h2 id="need">What you need</h2>
+  <table>
+    <tr><th>Thing</th><th>Why</th><th>Get it</th></tr>
+    <tr><td>Windows + PowerShell 5.1 or 7</td><td>the runtime hooks PSReadLine</td><td>built in</td></tr>
+    <tr><td>Ollama</td><td>serves the model</td><td><code>winget install Ollama.Ollama</code></td></tr>
+    <tr><td>NVIDIA GPU, 8 GB+ VRAM</td><td>only for <em>training</em>; running works on CPU too</td><td></td></tr>
+    <tr><td>uv, git, Python 3.12+</td><td>training environment</td><td><code>winget install astral-sh.uv Git.Git</code></td></tr>
+    <tr><td>fd, ripgrep</td><td>the model's file and text search commands use them</td><td><code>winget install sharkdp.fd BurntSushi.ripgrep.MSVC</code></td></tr>
+    <tr><td>~12 GB disk</td><td>PyTorch with CUDA, base model, outputs</td><td></td></tr>
+  </table>
+
+  <h2 id="quick">Quick start</h2>
+  <ol class="steps">
+    <li>Clone the repo and open PowerShell in it.</li>
+    <li>Train and register the model. The first run also builds the training environment (about 3&nbsp;GB of downloads):
+      <pre><code>.\retrain.ps1</code></pre></li>
+    <li>Hook it into your profile:
+      <pre><code>.\install.ps1</code></pre></li>
+    <li>Open a new terminal and try <code>ai find all pdf files</code>.</li>
+  </ol>
+  <div class="note">Not happy with an answer? Press <b>Up</b> to get your <code>ai …</code> line back and press Enter again.
+    Asking the same thing twice in a row gives a different answer.</div>
+
+  <h2 id="teach">Teach it a tool</h2>
+  <p>Training data is plain JSON Lines: one English request and the exact command you want back.</p>
+  <pre><code>{"q": "show my open PRs", "cmd": "gh pr list --author '@me'"}
+{"q": "make a venv", "cmd": "uv venv"}
+{"q": "files starting with gelato, this folder only", "cmd": "fd -t f -d 1 '^gelato'"}</code></pre>
+  <ol class="steps">
+    <li><strong>Read <code>data/STYLE.md</code>.</strong> It sets one canonical form for quoting, flag order and which tool to prefer.
+      A small model learns best from data that always does things the same way.</li>
+    <li><strong>Write 20-40 examples</strong> in a new file such as <code>data/hand/tools_eza.jsonl</code>. Mix the phrasing:
+      <ul>
+        <li>~60% casual English that doesn't name the tool ("list files with icons")</li>
+        <li>~25% that names it ("eza tree 2 levels")</li>
+        <li>~15% terse, typo'd or Linux-style ("ls -la")</li>
+      </ul></li>
+    <li><strong>Check every flag against <code>&lt;tool&gt; --help</code></strong> for the version you have installed. Wrong flags in the data become wrong flags in the answers.</li>
+    <li><strong>Replacing a default?</strong> For example, to get <code>eza</code> instead of <code>Get-ChildItem</code>, add a rule to <code>STYLE.md</code> and
+      rewrite the old examples that contradict it. Otherwise the model sees both answers and picks between them at random.</li>
+    <li><strong>Add 2-5 held-out test cases</strong> to <code>data/eval_tools.jsonl</code> with the answers you'd accept. Don't put these in the training files.</li>
+  </ol>
+  <div class="warn"><b>PowerShell 5.1 gotchas the data must respect:</b> no <code>&amp;&amp;</code> or <code>||</code>.
+    <code>curl</code> is an alias for <code>Invoke-WebRequest</code>, so write <code>curl.exe</code> when you mean curl.
+    Double quotes inside arguments to native programs get mangled, so prefer single quotes.
+    <code>fd -X</code> can only launch real programs; to use a cmdlet like <code>Remove-Item</code>, pipe into it instead.</div>
+
+  <h2 id="ai">Let an AI write the data</h2>
+  <p>Writing examples is the slow part, and any capable coding assistant can do it. Point it at <code>AGENTS.md</code>, which
+    covers the repo layout, the rules and how to validate. Or paste this prompt:</p>
+  <pre><code>Read AGENTS.md and data/STYLE.md in this repo. Then add training data for the tool
+&lt;TOOL&gt; to data/hand/tools_&lt;TOOL&gt;.jsonl: about 30 {"q","cmd"} pairs covering the
+subcommands I actually use: &lt;LIST THEM&gt;. Check every flag with `&lt;TOOL&gt; --help`
+(read-only, don't run anything that changes state). Validate the file as AGENTS.md
+describes, add 3 held-out cases to data/eval_tools.jsonl, then run .\retrain.ps1
+and report the benchmark before and after.</code></pre>
+  <p>Data that one model generates and another model checks against the real <code>--help</code> output works well.
+    Before training, skim 10 random lines yourself anyway.</p>
+
+  <h2 id="train">Train</h2>
+  <pre><code>.\retrain.ps1                                        # defaults: 1.5B, 3 epochs, model name nlsh
+.\retrain.ps1 -Base Qwen/Qwen2.5-Coder-0.5B-Instruct -Name nlsh-small</code></pre>
+  <p>What it runs:</p>
+  <ol>
+    <li><code>gen_templates.py</code> and <code>build_dataset.py</code> merge your data. Hand-written examples are counted twice, and 8% of them are held out for scoring.</li>
+    <li><code>train/train.py</code> runs the LoRA fine-tune (rank 32, all projection layers, bf16, loss on the answer only) and merges the result into the base model.</li>
+    <li>llama.cpp's converter exports a q8_0 GGUF, and <code>ollama create</code> registers it.</li>
+    <li>The benchmark runs and prints the score.</li>
+  </ol>
+  <p>With the shipped data (about 5,200 training rows after hand-written examples are doubled), 3 epochs take about 16 minutes
+    on an RTX 5060 Ti (16 GB). The whole script takes about 20 minutes. Training time grows linearly with the amount of data.</p>
+
+  <h2 id="eval">Evaluate</h2>
+  <pre><code>python scripts\probe.py nlsh           # exact-match on data/eval*.jsonl, with latency
+python scripts\tool_probe.py nlsh      # 2-3 questions per installed tool, judge by eye</code></pre>
+  <p>Exact match is strict: <code>Sort-Object WS</code> and <code>Sort-Object WorkingSet</code> both work, but only one is in the answer list.
+    Use the score to compare one training run against the next, not as a measure of absolute quality.
+    When a tool scores badly, add training data for it. Don't loosen the answer lists to make the score go up.</p>
+
+  <h2 id="base">Pick a base model</h2>
+  <table>
+    <tr><th>Base</th><th>GGUF size</th><th>Use when</th></tr>
+    <tr><td>Qwen2.5-Coder-0.5B-Instruct</td><td>~0.5 GB</td><td>no GPU, or very old hardware; expect more mistakes on multi-step requests</td></tr>
+    <tr><td><b>Qwen2.5-Coder-1.5B-Instruct</b> (default)</td><td>~1.6 GB</td><td>best balance; about 100 ms per answer on a midrange GPU</td></tr>
+    <tr><td>Qwen2.5-Coder-3B-Instruct</td><td>~3.3 GB</td><td>you have VRAM to spare and want better multi-step pipelines</td></tr>
+  </table>
+  <p>Any Hugging Face causal LM with ChatML tokens and llama.cpp support should work, though only the Qwen2.5-Coder models above have been tried here.
+    If you switch to a model family with a different chat format, update <code>prompt()</code> in <code>train/train.py</code> and the
+    <code>TEMPLATE</code> in <code>ollama/Modelfile</code> to match.</p>
+
+  <h2 id="trouble">Troubleshooting</h2>
+  <table>
+    <tr><th>Symptom</th><th>Fix</th></tr>
+    <tr><td>Beep, nothing happens; title bar says "Ollama is not running"</td><td>Start the Ollama app or run <code>ollama serve</code>.</td></tr>
+    <tr><td><code>unsupported MLX architecture</code> from <code>ollama create</code></td><td>Recent Ollama can't import safetensors for this model type; use the GGUF that <code>retrain.ps1</code> builds.</td></tr>
+    <tr><td><code>'list' object has no attribute 'keys'</code> in the converter</td><td>The tokenizer was saved by a newer transformers. <code>retrain.ps1</code> copies the base model's tokenizer files back in for you.</td></tr>
+    <tr><td>Model ignores your new tool</td><td>Not enough examples, or other examples contradict them. Search <code>data/hand</code> for the old way of doing it.</td></tr>
+    <tr><td>Answer is right but the command fails</td><td>Usually PS 5.1 quoting, or <code>fd -X</code> with a cmdlet. Fix the examples, not the runtime.</td></tr>
+    <tr><td>CUDA out of memory while training</td><td>Lower the batch size (<code>.\retrain.ps1 -BatchSize 8</code>) or pick a smaller base model.</td></tr>
+  </table>
+</main>
+<script>
+document.querySelectorAll('pre').forEach(pre => {
+  const b = document.createElement('button');
+  b.className = 'copy'; b.type = 'button'; b.textContent = 'Copy';
+  b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(pre.innerText.replace(/\nCopy$/, '')); b.textContent = 'Copied'; }
+    catch (e) { b.textContent = 'Select & copy'; }
+    setTimeout(() => (b.textContent = 'Copy'), 1500);
+  });
+  pre.appendChild(b);
+});
+</script>
+</body>
+</html>
